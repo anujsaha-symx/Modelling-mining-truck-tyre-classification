@@ -1,0 +1,12 @@
+pseudo_box:
+  class_id: 0
+  x_center: 0.5
+  y_center: 0.5
+  width: 0.9
+  height: 0.9
+class_names:
+  0: tyre
+split_counts:
+  train: 2464
+  val: 528
+  test: 529

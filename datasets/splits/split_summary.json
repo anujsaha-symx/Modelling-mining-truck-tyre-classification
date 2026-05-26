@@ -1,0 +1,35 @@
+{
+  "train": {
+    "total": 2464,
+    "class_distribution": {
+      "bad": 1304,
+      "good": 1160
+    },
+    "source_distribution": {
+      "kaggle": 1286,
+      "mendeley": 1178
+    }
+  },
+  "val": {
+    "total": 528,
+    "class_distribution": {
+      "bad": 279,
+      "good": 249
+    },
+    "source_distribution": {
+      "kaggle": 272,
+      "mendeley": 256
+    }
+  },
+  "test": {
+    "total": 529,
+    "class_distribution": {
+      "bad": 280,
+      "good": 249
+    },
+    "source_distribution": {
+      "kaggle": 270,
+      "mendeley": 259
+    }
+  }
+}
