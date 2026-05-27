@@ -1,0 +1,11 @@
+{
+  "source": "datasets\\yolo\\images\\test\\bad_kaggle_bad_Defective (1004).jpg",
+  "source_type": "file_or_folder",
+  "confidence_threshold": 0.25,
+  "fallback_review_threshold": 0.4,
+  "use_fallback_for_low_confidence": true,
+  "frames_processed": 1,
+  "fallback_count": 0,
+  "low_confidence_count": 0,
+  "review_recommended_count": 0
+}

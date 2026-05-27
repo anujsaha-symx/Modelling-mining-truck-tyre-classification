@@ -1,0 +1,9 @@
+2026-05-25 14:34:25,725 | INFO | src.models.yolo_detector | Evaluating YOLO weights outputs\yolo_detection\yolov8n_pseudo_detection\weights\best.pt
+2026-05-25 14:36:03,570 | INFO | src.models.yolo_detector | Copied D:\Tyre_Classification\outputs\yolo_detection\evaluation\confusion_matrix.png to D:\Tyre_Classification\outputs\yolo_detection\artifacts\evaluation\confusion_matrix.png
+2026-05-25 14:36:03,584 | INFO | src.models.yolo_detector | Copied D:\Tyre_Classification\outputs\yolo_detection\evaluation\confusion_matrix_normalized.png to D:\Tyre_Classification\outputs\yolo_detection\artifacts\evaluation\confusion_matrix_normalized.png
+2026-05-25 14:36:03,596 | INFO | src.models.yolo_detector | Copied D:\Tyre_Classification\outputs\yolo_detection\evaluation\BoxPR_curve.png to D:\Tyre_Classification\outputs\yolo_detection\artifacts\evaluation\BoxPR_curve.png
+2026-05-25 14:36:03,606 | INFO | src.models.yolo_detector | Copied D:\Tyre_Classification\outputs\yolo_detection\evaluation\BoxP_curve.png to D:\Tyre_Classification\outputs\yolo_detection\artifacts\evaluation\BoxP_curve.png
+2026-05-25 14:36:03,622 | INFO | src.models.yolo_detector | Copied D:\Tyre_Classification\outputs\yolo_detection\evaluation\BoxR_curve.png to D:\Tyre_Classification\outputs\yolo_detection\artifacts\evaluation\BoxR_curve.png
+2026-05-25 14:36:03,622 | INFO | src.models.yolo_detector | Saved YOLO evaluation metrics to D:\Tyre_Classification\outputs\yolo_detection\evaluation\metrics.json
+2026-05-25 14:36:05,731 | INFO | src.models.yolo_detector | Saved sample predictions to D:\Tyre_Classification\outputs\yolo_detection\sample_predictions
+2026-05-25 14:36:05,735 | INFO | __main__ | YOLO evaluation complete: {'map50': 0.9168486646084414, 'map50_95': 0.7606659633902408, 'precision': 0.7993514665244236, 'recall': 0.8449905482041588}

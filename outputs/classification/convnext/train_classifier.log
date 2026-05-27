@@ -1,0 +1,11 @@
+2026-05-25 17:06:35,390 | INFO | src.data.classification_dataset | Saved classification leakage audit to D:\Tyre_Classification\outputs\classification\leakage_audit.json
+2026-05-25 17:06:39,774 | INFO | src.data.classification_dataset | Prepared train classification manifest with 8 samples (0 crops, 8 fallbacks).
+2026-05-25 17:06:41,236 | INFO | src.data.classification_dataset | Prepared val classification manifest with 8 samples (0 crops, 8 fallbacks).
+2026-05-25 17:06:42,405 | INFO | src.data.classification_dataset | Prepared test classification manifest with 8 samples (1 crops, 7 fallbacks).
+2026-05-25 17:07:14,084 | INFO | __main__ | Training convnext on cpu
+2026-05-25 17:07:20,818 | INFO | __main__ | Epoch 1 | train={'accuracy': 0.625, 'precision': 1.0, 'recall': 0.625, 'f1_score': 0.7692307692307693, 'loss': 0.7457176744937897} | val={'accuracy': 0.875, 'precision': 1.0, 'recall': 0.875, 'f1_score': 0.9333333333333333, 'loss': 0.5229812562465668}
+2026-05-25 17:07:21,798 | INFO | src.models.classifiers | Saved classifier checkpoint to D:\Tyre_Classification\outputs\classification\convnext\checkpoints\best_model.pt
+2026-05-25 17:07:22,242 | INFO | src.models.classifiers | Saved classifier checkpoint to D:\Tyre_Classification\outputs\classification\convnext\checkpoints\last_model.pt
+2026-05-25 17:07:26,374 | INFO | src.models.classifiers | Loaded convnext classifier weights from D:\Tyre_Classification\outputs\classification\convnext\checkpoints\best_model.pt
+2026-05-25 17:07:34,091 | INFO | src.evaluation.evaluate_classifier | Saved classifier evaluation artifacts to D:\Tyre_Classification\outputs\classification\convnext
+2026-05-25 17:07:34,193 | INFO | __main__ | Final test metrics for convnext: {'loss': 0.5166620016098022, 'accuracy': 0.875, 'precision': 1.0, 'recall': 0.875, 'f1_score': 0.9333333333333333, 'roc_auc': None, 'average_precision': None, 'sample_count': 8, 'threshold': 0.5, 'split': 'test', 'model_name': 'convnext'}

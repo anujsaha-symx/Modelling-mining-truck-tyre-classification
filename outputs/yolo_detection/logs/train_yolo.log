@@ -1,0 +1,5 @@
+2026-05-25 12:24:21,624 | INFO | src.data.prepare_yolo_dataset | Preparing YOLO train split with 2464 images.
+2026-05-25 12:25:17,962 | INFO | src.data.prepare_yolo_dataset | Preparing YOLO val split with 528 images.
+2026-05-25 12:25:27,796 | INFO | src.data.prepare_yolo_dataset | Preparing YOLO test split with 529 images.
+2026-05-25 12:25:37,329 | INFO | src.data.prepare_yolo_dataset | Created YOLO dataset config at D:\Tyre_Classification\datasets\yolo\data.yaml
+2026-05-25 12:25:37,341 | INFO | src.models.yolo_detector | Starting YOLO training using D:\Tyre_Classification\datasets\yolo\data.yaml

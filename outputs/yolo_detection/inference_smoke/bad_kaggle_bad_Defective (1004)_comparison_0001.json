@@ -1,0 +1,23 @@
+{
+  "source": "D:\\Tyre_Classification\\datasets\\yolo\\images\\test\\bad_kaggle_bad_Defective (1004).jpg",
+  "crop_path": "outputs\\crops\\bad_kaggle_bad_Defective (1004)_crop_0001.jpg",
+  "visualization_path": "outputs\\yolo_detection\\inference_smoke\\bad_kaggle_bad_Defective (1004)_comparison_0001.jpg",
+  "confidence_threshold": 0.25,
+  "fallback_review_threshold": 0.4,
+  "detection_confidence": 0.823474645614624,
+  "fallback_used": false,
+  "fallback_reason": null,
+  "review_recommended": false,
+  "detected_box_xyxy": [
+    1,
+    8,
+    1532,
+    1532
+  ],
+  "crop_box_xyxy": [
+    1,
+    8,
+    1532,
+    1532
+  ]
+}

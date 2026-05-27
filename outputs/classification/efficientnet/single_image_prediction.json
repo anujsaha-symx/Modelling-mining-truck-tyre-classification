@@ -1,0 +1,10 @@
+{
+  "image_path": "D:\\Tyre_Classification\\datasets\\processed\\bad\\kaggle_bad_Defective (1004).jpg",
+  "predicted_label": "bad",
+  "confidence": 0.537492036819458,
+  "probabilities": {
+    "good": 0.46250802278518677,
+    "bad": 0.537492036819458
+  },
+  "model_name": "efficientnet"
+}
