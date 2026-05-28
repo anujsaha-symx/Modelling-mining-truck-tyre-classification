@@ -1,15 +1,11 @@
 from __future__ import annotations
-import logging
 import sys
 from argparse import ArgumentParser, Namespace
 from pathlib import Path
-
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
 if str(PROJECT_ROOT) not in sys.path:
     sys.path.insert(0, str(PROJECT_ROOT))
-
 from src.models.yolo_detector import evaluate_yolo_detector, generate_sample_predictions
-from src.utils.logging_utils import configure_logging
 
 YOLO_ROOT = PROJECT_ROOT / "datasets" / "yolo"
 OUTPUT_ROOT = PROJECT_ROOT / "outputs" / "yolo_detection"
@@ -24,7 +20,6 @@ def parse_args() -> Namespace:
 
 def run(args: Namespace | None = None) -> None:
     args = args or parse_args()
-    configure_logging(OUTPUT_ROOT / "logs" / "evaluate_yolo.log")
     data_yaml = Path(args.data)
     weights_path = Path(args.weights)
     metrics = evaluate_yolo_detector(weights_path=weights_path, data_yaml=data_yaml, output_root=OUTPUT_ROOT)
@@ -34,7 +29,7 @@ def run(args: Namespace | None = None) -> None:
         output_root=OUTPUT_ROOT,
         limit=args.samples,
     )
-    logging.getLogger(__name__).info("YOLO evaluation complete: %s", metrics)
+    print(f"YOLO evaluation complete: {metrics}")
 
 if __name__ == "__main__":
     run()

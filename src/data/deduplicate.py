@@ -1,11 +1,8 @@
 from __future__ import annotations
 import json
-import logging
 import shutil
 from pathlib import Path
 import pandas as pd
-
-LOGGER = logging.getLogger(__name__)
 
 def load_validated_dataset(validated_csv_path: Path) -> pd.DataFrame:
     if not validated_csv_path.exists():
@@ -51,11 +48,9 @@ def deduplicate_dataset(
     keep_mask = ~dataset_df.duplicated(subset=["content_hash"], keep="first")
     canonical_df = dataset_df[keep_mask].copy()
     removed_df = dataset_df[~keep_mask].copy()
-    LOGGER.info(
-        "Duplicate-content analysis complete. Groups: %d | Removed images: %d | Canonical images kept: %d",
-        len(duplicate_groups_df),
-        len(removed_df),
-        len(canonical_df),
+    print(
+        f"Duplicate-content analysis complete. Groups: {len(duplicate_groups_df)} | "
+        f"Removed images: {len(removed_df)} | Canonical images kept: {len(canonical_df)}"
     )
     for label_dir in (processed_root / "good", processed_root / "bad"):
         if label_dir.exists():
@@ -85,5 +80,60 @@ def deduplicate_dataset(
             ["content_hash", "source_dataset", "label", "raw_filepath", "processed_filepath"]
         ].to_dict("records"),
     }
-    LOGGER.info("Saved deduplicated dataset manifest to %s", deduplicated_dataset_path)
     return canonical_df, summary
+
+def run_leakage_audit(
+    deduplicated_df: pd.DataFrame,
+    split_frames: dict[str, pd.DataFrame],
+    dedup_summary: dict,
+    output_path: Path,
+) -> dict:
+    hash_lookup = deduplicated_df[["processed_filepath", "content_hash"]].rename(
+        columns={"processed_filepath": "filepath"}
+    )
+    enriched_splits: dict[str, pd.DataFrame] = {}
+    for split_name, split_df in split_frames.items():
+        enriched = split_df.merge(hash_lookup, on="filepath", how="left", validate="many_to_one")
+        if enriched["content_hash"].isna().any():
+            missing = enriched[enriched["content_hash"].isna()]["filepath"].tolist()
+            raise ValueError(f"Split {split_name} contains files missing from deduplicated manifest: {missing[:5]}")
+        enriched_splits[split_name] = enriched
+    split_names = sorted(enriched_splits)
+    hash_overlap_details: list[dict[str, object]] = []
+    filepath_overlap_details: list[dict[str, object]] = []
+    for index, left_name in enumerate(split_names):
+        for right_name in split_names[index + 1 :]:
+            left_df = enriched_splits[left_name]
+            right_df = enriched_splits[right_name]
+            shared_hashes = sorted(set(left_df["content_hash"]).intersection(right_df["content_hash"]))
+            if shared_hashes:
+                hash_overlap_details.append(
+                    {
+                        "split_pair": [left_name, right_name],
+                        "shared_content_hashes": shared_hashes,
+                        "shared_content_hash_count": len(shared_hashes),
+                    }
+                )
+            shared_filepaths = sorted(set(left_df["filepath"]).intersection(right_df["filepath"]))
+            if shared_filepaths:
+                filepath_overlap_details.append(
+                    {
+                        "split_pair": [left_name, right_name],
+                        "shared_filepaths": shared_filepaths,
+                        "shared_filepath_count": len(shared_filepaths),
+                    }
+                )
+    audit = {
+        "duplicate_groups_found": int(dedup_summary.get("duplicate_groups_found", 0)),
+        "removed_duplicates": int(dedup_summary.get("removed_duplicates", 0)),
+        "remaining_duplicates": int(deduplicated_df["content_hash"].duplicated().sum()),
+        "duplicate_groups": dedup_summary.get("duplicate_groups", []),
+        "removed_duplicate_records": dedup_summary.get("removed_duplicate_records", []),
+        "content_hash_leakage_detected": bool(hash_overlap_details),
+        "filepath_leakage_detected": bool(filepath_overlap_details),
+        "leakage_free": not hash_overlap_details and not filepath_overlap_details,
+        "content_hash_overlap_details": hash_overlap_details,
+        "filepath_overlap_details": filepath_overlap_details,
+    }
+    output_path.write_text(json.dumps(audit, indent=2), encoding="utf-8")
+    return audit

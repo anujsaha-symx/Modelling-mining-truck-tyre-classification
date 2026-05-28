@@ -1,5 +1,4 @@
 from __future__ import annotations
-import logging
 from dataclasses import dataclass
 from pathlib import Path
 from typing import Any
@@ -7,7 +6,6 @@ import torch
 from torch import nn
 from torchvision import models
 
-LOGGER = logging.getLogger(__name__)
 SUPPORTED_CLASSIFIERS = ("efficientnet", "convnext")
 
 @dataclass(frozen=True)
@@ -103,7 +101,6 @@ def save_classifier_checkpoint(
         "extra_metadata": extra_metadata or {},
     }
     torch.save(checkpoint, destination)
-    LOGGER.info("Saved classifier checkpoint to %s", destination)
 def load_classifier_checkpoint(weights_path: Path, device: torch.device | str) -> tuple[TyreWearClassifier, dict[str, Any]]:
     checkpoint = torch.load(weights_path, map_location=device)
     class_names = tuple(checkpoint.get("class_names", ["good", "bad"]))
@@ -117,5 +114,4 @@ def load_classifier_checkpoint(weights_path: Path, device: torch.device | str) -
     model.load_state_dict(checkpoint["state_dict"])
     model.to(device)
     model.eval()
-    LOGGER.info("Loaded %s classifier weights from %s", model_name, weights_path)
     return model, checkpoint

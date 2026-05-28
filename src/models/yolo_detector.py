@@ -1,7 +1,7 @@
 from __future__ import annotations
 import json
-import logging
 import shutil
+import sys
 from dataclasses import dataclass
 from pathlib import Path
 from typing import Any
@@ -18,7 +18,6 @@ except ImportError as exc:  # pragma: no cover
 else:
     IMPORT_ERROR = None
 
-LOGGER = logging.getLogger(__name__)
 FALLBACK_BOX = (0.05, 0.05, 0.95, 0.95)
 VIDEO_SUFFIXES = {".avi", ".mkv", ".mov", ".mp4", ".mpeg", ".mpg", ".wmv"}
 
@@ -52,12 +51,10 @@ def _copy_weights(source_dir: Path, checkpoints_root: Path) -> None:
         weight_path = weights_dir / filename
         if weight_path.exists():
             shutil.copy2(weight_path, checkpoints_root / filename)
-            LOGGER.info("Copied %s to %s", weight_path, checkpoints_root / filename)
 def _copy_if_exists(source_path: Path, destination_path: Path) -> None:
     if source_path.exists():
         destination_path.parent.mkdir(parents=True, exist_ok=True)
         shutil.copy2(source_path, destination_path)
-        LOGGER.info("Copied %s to %s", source_path, destination_path)
 def _archive_run_artifacts(run_root: Path, archive_root: Path, artifact_names: tuple[str, ...]) -> None:
     archive_root.mkdir(parents=True, exist_ok=True)
     for artifact_name in artifact_names:
@@ -85,7 +82,6 @@ def _create_video_writer(output_root: Path, frame_shape: tuple[int, int, int]) -
     )
     if not writer.isOpened():
         raise RuntimeError(f"Unable to create video writer at {destination}")
-    LOGGER.info("Saving comparison video to %s", destination)
     return writer
 def _safe_float(value: Any) -> float | None:
     if value is None:
@@ -120,7 +116,6 @@ def export_training_curves(results_csv_path: Path, output_path: Path) -> Path:
     output_path.parent.mkdir(parents=True, exist_ok=True)
     figure.savefig(output_path, dpi=200, bbox_inches="tight")
     plt.close(figure)
-    LOGGER.info("Exported training curves to %s", output_path)
     return output_path
 
 def train_yolo_detector(config: YoloTrainingConfig) -> Path:
@@ -128,7 +123,7 @@ def train_yolo_detector(config: YoloTrainingConfig) -> Path:
     run_root = config.output_root / config.experiment_name
     _reset_directory(run_root)
     config.checkpoints_root.mkdir(parents=True, exist_ok=True)
-    LOGGER.info("Starting YOLO training using %s", config.data_yaml)
+    print(f"Starting YOLO training using {config.data_yaml}")
     model = YOLO(config.model_name)
     model.train(
         data=str(config.data_yaml),
@@ -170,7 +165,7 @@ def train_yolo_detector(config: YoloTrainingConfig) -> Path:
     best_weights = config.checkpoints_root / "best.pt"
     if not best_weights.exists():
         raise FileNotFoundError(f"Expected trained weights not found: {best_weights}")
-    LOGGER.info("Training complete. Best weights stored at %s", best_weights)
+    print(f"Training complete. Best weights stored at {best_weights}")
     return best_weights
 
 def evaluate_yolo_detector(weights_path: Path, data_yaml: Path, output_root: Path, experiment_name: str = "evaluation") -> dict:
@@ -178,7 +173,7 @@ def evaluate_yolo_detector(weights_path: Path, data_yaml: Path, output_root: Pat
     run_root = output_root / experiment_name
     _reset_directory(run_root)
     model = YOLO(str(weights_path))
-    LOGGER.info("Evaluating YOLO weights %s", weights_path)
+    print(f"Evaluating YOLO weights {weights_path}")
     metrics = model.val(
         data=str(data_yaml),
         split="test",
@@ -212,7 +207,6 @@ def evaluate_yolo_detector(weights_path: Path, data_yaml: Path, output_root: Pat
             "results.csv",
         ),
     )
-    LOGGER.info("Saved YOLO evaluation metrics to %s", metrics_path)
     return metrics_payload
 
 def generate_sample_predictions(
@@ -239,7 +233,6 @@ def generate_sample_predictions(
         exist_ok=True,
         verbose=True,
     )
-    LOGGER.info("Saved sample predictions to %s", run_root)
     return run_root
 
 def _fallback_crop(image_bgr: np.ndarray) -> tuple[np.ndarray, tuple[int, int, int, int]]:
@@ -346,13 +339,7 @@ def run_inference_and_save(
             if fallback_used:
                 summary["fallback_count"] += 1
                 review_recommended = True
-                LOGGER.warning(
-                    "Using fallback crop for %s due to %s.",
-                    result.path,
-                    fallback_reason,
-                )
-            else:
-                LOGGER.info("Detected tyre in %s with confidence %.4f", result.path, confidence)
+                print(f"Using fallback crop for {result.path} due to {fallback_reason}.", file=sys.stderr)
             if review_recommended:
                 summary["review_recommended_count"] += 1
             crop_name = f"{source_name}_crop_{index:04d}.jpg"
@@ -379,13 +366,11 @@ def run_inference_and_save(
                 "crop_box_xyxy": crop_box,
             }
             _write_json(metadata, output_root / f"{source_name}_comparison_{index:04d}.json")
-            LOGGER.info("Saved inference outputs for %s", result.path)
     finally:
         if video_writer is not None:
             video_writer.release()
     summary_path = output_root / "inference_summary.json"
     _write_json(summary, summary_path)
-    LOGGER.info("Saved inference summary to %s", summary_path)
 
 def save_crop_preview(crop_path: Path, output_path: Path) -> None:
     with Image.open(crop_path) as image:

@@ -1,18 +1,15 @@
 from __future__ import annotations
-import logging
 from pathlib import Path
 import matplotlib.pyplot as plt
 import pandas as pd
 from PIL import Image
-
-LOGGER = logging.getLogger(__name__)
 
 def _save_figure(output_path: Path) -> None:
     output_path.parent.mkdir(parents=True, exist_ok=True)
     plt.tight_layout()
     plt.savefig(output_path, dpi=200, bbox_inches="tight")
     plt.close()
-    LOGGER.info("Saved figure: %s", output_path)
+
 def plot_class_distribution(dataset_df: pd.DataFrame, output_dir: Path) -> None:
     counts = dataset_df["label"].value_counts().sort_index()
     plt.figure(figsize=(7, 5))

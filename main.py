@@ -7,8 +7,6 @@ from src.data.dataset_validator import RawDatasetSpec, validate_and_merge_datase
 from src.data.eda import generate_eda_reports
 from src.data.prepare_yolo_dataset import prepare_yolo_dataset
 
-PROJECT_ROOT = Path(__file__).resolve().parent
-
 def configure_logging() -> None:
     logging.basicConfig(
         level=logging.INFO,

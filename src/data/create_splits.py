@@ -1,11 +1,8 @@
 from __future__ import annotations
 import json
-import logging
 from pathlib import Path
 import pandas as pd
 from sklearn.model_selection import train_test_split
-
-LOGGER = logging.getLogger(__name__)
 
 def create_stratified_splits(
     dataset_df: pd.DataFrame,
@@ -35,7 +32,7 @@ def create_stratified_splits(
     for split_name, dataframe in outputs.items():
         output_path = splits_root / f"{split_name}.csv"
         dataframe.sort_values(by="filepath").to_csv(output_path, index=False)
-        LOGGER.info("Saved %s split with %d rows to %s", split_name, len(dataframe), output_path)
+        print(f"Saved {split_name} split with {len(dataframe)} rows to {output_path}")
     metadata = {
         split_name: {
             "total": int(len(dataframe)),

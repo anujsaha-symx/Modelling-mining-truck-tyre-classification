@@ -1,7 +1,6 @@
 from __future__ import annotations
 import hashlib
 import json
-import logging
 import shutil
 from collections import Counter
 from dataclasses import dataclass
@@ -11,7 +10,6 @@ import pandas as pd
 from PIL import Image, UnidentifiedImageError
 from tqdm import tqdm
 
-LOGGER = logging.getLogger(__name__)
 VALID_EXTENSIONS = {".jpg", ".jpeg", ".png", ".bmp", ".tif", ".tiff", ".webp"}
 
 @dataclass(frozen=True)
@@ -21,7 +19,7 @@ class RawDatasetSpec:
 def scan_raw_datasets(dataset_specs: Iterable[RawDatasetSpec]) -> pd.DataFrame:
     records: list[dict[str, str]] = []
     for spec in dataset_specs:
-        LOGGER.info("Scanning dataset: %s", spec.name)
+        print(f"Scanning dataset: {spec.name}")
         for label_dir in sorted(spec.root.iterdir()):
             if not label_dir.is_dir():
                 continue
@@ -40,7 +38,7 @@ def scan_raw_datasets(dataset_specs: Iterable[RawDatasetSpec]) -> pd.DataFrame:
     if not records:
         raise FileNotFoundError("No supported image files were found in the configured raw datasets.")
     dataframe = pd.DataFrame(records)
-    LOGGER.info("Discovered %d image candidates.", len(dataframe))
+    print(f"Discovered {len(dataframe)} image candidates.")
     return dataframe
 
 def _compute_file_hash(file_path: Path, chunk_size: int = 1024 * 1024) -> str:
@@ -69,7 +67,6 @@ def validate_and_merge_datasets(
     valid_records: list[dict[str, object]] = []
     invalid_records: list[dict[str, object]] = []
     hash_counter: Counter[str] = Counter()
-
     for record in tqdm(raw_df.to_dict("records"), desc="Validating images", unit="image"):
         file_path = Path(record["raw_filepath"])
         try:
@@ -103,7 +100,6 @@ def validate_and_merge_datasets(
         columns=["source_dataset", "label", "raw_filepath", "filename", "extension", "error"],
     )
     duplicate_content_counts = Counter({file_hash: count for file_hash, count in hash_counter.items() if count > 1})
-
     summary = {
         "total_discovered": int(len(raw_df)),
         "total_valid": int(len(valid_df)),
@@ -124,13 +120,12 @@ def validate_and_merge_datasets(
             "max": int(valid_df["height"].max()) if not valid_df.empty else None,
         },
     }
-
     valid_output = metrics_root / "validated_dataset.csv"
     invalid_output = metrics_root / "invalid_files.csv"
     summary_output = metrics_root / "validation_summary.json"
     valid_df.to_csv(valid_output, index=False)
     invalid_df.to_csv(invalid_output, index=False)
     summary_output.write_text(json.dumps(summary, indent=2), encoding="utf-8")
-    LOGGER.info("Validation complete. Valid: %d | Invalid: %d", len(valid_df), len(invalid_df))
-    LOGGER.info("Merged valid images into %s", processed_root)
+    print(f"Validation complete. Valid: {len(valid_df)} | Invalid: {len(invalid_df)}")
+    print(f"Merged valid images into {processed_root}")
     return valid_df, summary

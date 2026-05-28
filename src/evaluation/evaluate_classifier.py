@@ -1,6 +1,5 @@
 from __future__ import annotations
 import json
-import logging
 import sys
 from argparse import ArgumentParser, Namespace
 from pathlib import Path
@@ -32,9 +31,7 @@ from src.data.classification_dataset import (  # noqa: E402
     build_eval_transforms,
 )
 from src.models.classifiers import load_classifier_checkpoint  # noqa: E402
-from src.utils.logging_utils import configure_logging  # noqa: E402
 
-LOGGER = logging.getLogger(__name__)
 OUTPUT_ROOT = PROJECT_ROOT / "outputs" / "classification"
 SPLITS_ROOT = PROJECT_ROOT / "datasets" / "splits"
 DEDUPLICATED_MANIFEST = PROJECT_ROOT / "outputs" / "metrics" / "deduplicated_dataset.csv"
@@ -112,6 +109,35 @@ def _plot_pr_curve(true_labels: np.ndarray, positive_scores: np.ndarray, output_
     figure.savefig(output_path, dpi=200, bbox_inches="tight")
     plt.close(figure)
     return float(average_precision)
+
+def _save_failure_cases(
+    manifest: pd.DataFrame,
+    probabilities: np.ndarray,
+    predictions: np.ndarray,
+    output_root: Path,
+    split_name: str,
+    class_names: tuple[str, ...],
+) -> None:
+    failure_root = OUTPUT_ROOT / "failure_cases" / output_root.name / split_name
+    failure_root.mkdir(parents=True, exist_ok=True)
+    for row, probability, prediction in zip(manifest.itertuples(index=False), probabilities, predictions):
+        if int(row.label_id) == int(prediction):
+            continue
+        source_path = Path(row.image_path)
+        destination_path = failure_root / source_path.name
+        metadata_path = failure_root / f"{source_path.stem}.json"
+        destination_path.write_bytes(source_path.read_bytes())
+        _save_json(
+            {
+                "image_path": row.image_path,
+                "source_filepath": row.source_filepath,
+                "true_label": row.label,
+                "predicted_label": class_names[int(prediction)],
+                "bad_confidence": float(probability),
+                "input_source": row.input_source,
+            },
+            metadata_path,
+        )
 
 def evaluate_checkpoint(
     weights_path: Path,
@@ -203,14 +229,12 @@ def evaluate_checkpoint(
     (output_root / "classification_report.txt").write_text(report_text, encoding="utf-8")
     _save_json(metrics, output_root / "metrics.json")
     _save_failure_cases(manifest=manifest, probabilities=positive_scores, predictions=predicted_labels, output_root=output_root, split_name=split_name, class_names=class_names)
-    LOGGER.info("Saved classifier evaluation artifacts to %s", output_root)
     return metrics
 
 def run(args: Namespace | None = None) -> dict[str, float | int | None]:
     args = args or parse_args()
     weights_path = Path(args.weights)
     output_root = _derive_output_root(weights_path=weights_path, override=args.output_dir)
-    configure_logging(output_root / "evaluate_classifier.log")
     metrics = evaluate_checkpoint(
         weights_path=weights_path,
         split_name=args.split,
@@ -219,7 +243,7 @@ def run(args: Namespace | None = None) -> dict[str, float | int | None]:
         threshold=args.threshold,
         output_root=output_root,
     )
-    LOGGER.info("Classifier evaluation complete: %s", metrics)
+    print(f"Classifier evaluation complete: {metrics}")
     return metrics
 
 if __name__ == "__main__":

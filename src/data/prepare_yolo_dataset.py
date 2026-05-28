@@ -1,5 +1,4 @@
 from __future__ import annotations
-import logging
 import shutil
 from pathlib import Path
 from typing import NamedTuple
@@ -7,7 +6,6 @@ import pandas as pd
 import yaml
 from tqdm import tqdm
 
-LOGGER = logging.getLogger(__name__)
 PSEUDO_BOX = (0, 0.5, 0.5, 0.9, 0.9)
 
 class PreparedDataset(NamedTuple):
@@ -45,7 +43,7 @@ def prepare_yolo_dataset(splits_root: Path, yolo_root: Path) -> PreparedDataset:
             raise FileNotFoundError(f"Split CSV not found: {split_csv}")
         dataframe = pd.read_csv(split_csv)
         split_counts[split_name] = len(dataframe)
-        LOGGER.info("Preparing YOLO %s split with %d images.", split_name, len(dataframe))
+        print(f"Preparing YOLO {split_name} split with {len(dataframe)} images.")
         for row in tqdm(dataframe.itertuples(index=False), total=len(dataframe), desc=f"YOLO {split_name}", unit="image"):
             source_path = Path(row.filepath)
             if not source_path.exists():
@@ -77,5 +75,5 @@ def prepare_yolo_dataset(splits_root: Path, yolo_root: Path) -> PreparedDataset:
         "split_counts": split_counts,
     }
     summary_path.write_text(yaml.safe_dump(summary_payload, sort_keys=False), encoding="utf-8")
-    LOGGER.info("Created YOLO dataset config at %s", data_yaml_path)
+    print(f"Created YOLO dataset config at {data_yaml_path}")
     return PreparedDataset(data_yaml_path=data_yaml_path, summary_path=summary_path)
