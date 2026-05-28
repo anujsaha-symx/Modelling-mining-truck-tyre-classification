@@ -1,0 +1,401 @@
+{
+  "failure_categories": {
+    "blur": 17,
+    "lighting": 0,
+    "side_angle": 0,
+    "low_texture": 5,
+    "background_clutter": 0,
+    "ambiguous_wear": 41,
+    "unknown": 0
+  },
+  "details": {
+    "blur": [
+      {
+        "image_path": "D:\\Tyre_Classification\\datasets\\processed\\bad\\kaggle_bad_Defective (137).jpg",
+        "true_label": "bad",
+        "predicted_label": "good",
+        "bad_confidence": 0.17946040630340576
+      },
+      {
+        "image_path": "D:\\Tyre_Classification\\datasets\\processed\\bad\\kaggle_bad_Defective (139).jpg",
+        "true_label": "bad",
+        "predicted_label": "good",
+        "bad_confidence": 0.4992053508758545
+      },
+      {
+        "image_path": "D:\\Tyre_Classification\\datasets\\processed\\bad\\kaggle_bad_Defective (210).jpg",
+        "true_label": "bad",
+        "predicted_label": "good",
+        "bad_confidence": 0.01754949986934662
+      },
+      {
+        "image_path": "D:\\Tyre_Classification\\datasets\\processed\\bad\\kaggle_bad_Defective (232).jpg",
+        "true_label": "bad",
+        "predicted_label": "good",
+        "bad_confidence": 0.45386549830436707
+      },
+      {
+        "image_path": "D:\\Tyre_Classification\\datasets\\processed\\bad\\kaggle_bad_Defective (243).jpg",
+        "true_label": "bad",
+        "predicted_label": "good",
+        "bad_confidence": 0.3972693383693695
+      },
+      {
+        "image_path": "D:\\Tyre_Classification\\datasets\\processed\\bad\\kaggle_bad_Defective (266).jpg",
+        "true_label": "bad",
+        "predicted_label": "good",
+        "bad_confidence": 0.4704849123954773
+      },
+      {
+        "image_path": "D:\\Tyre_Classification\\datasets\\processed\\bad\\kaggle_bad_Defective (277).jpg",
+        "true_label": "bad",
+        "predicted_label": "good",
+        "bad_confidence": 0.3789203464984894
+      },
+      {
+        "image_path": "D:\\Tyre_Classification\\datasets\\processed\\bad\\kaggle_bad_Defective (298).jpg",
+        "true_label": "bad",
+        "predicted_label": "good",
+        "bad_confidence": 0.4362334609031677
+      },
+      {
+        "image_path": "D:\\Tyre_Classification\\datasets\\processed\\bad\\kaggle_bad_Defective (333).jpg",
+        "true_label": "bad",
+        "predicted_label": "good",
+        "bad_confidence": 0.3489953875541687
+      },
+      {
+        "image_path": "D:\\Tyre_Classification\\datasets\\processed\\bad\\kaggle_bad_Defective (338).jpg",
+        "true_label": "bad",
+        "predicted_label": "good",
+        "bad_confidence": 0.24213258922100067
+      },
+      {
+        "image_path": "D:\\Tyre_Classification\\datasets\\processed\\bad\\kaggle_bad_Defective (345).jpg",
+        "true_label": "bad",
+        "predicted_label": "good",
+        "bad_confidence": 0.3710767924785614
+      },
+      {
+        "image_path": "D:\\Tyre_Classification\\datasets\\processed\\bad\\kaggle_bad_Defective (662).jpg",
+        "true_label": "bad",
+        "predicted_label": "good",
+        "bad_confidence": 0.12661699950695038
+      },
+      {
+        "image_path": "D:\\Tyre_Classification\\datasets\\processed\\bad\\kaggle_bad_Defective (789).jpg",
+        "true_label": "bad",
+        "predicted_label": "good",
+        "bad_confidence": 0.4545857608318329
+      },
+      {
+        "image_path": "D:\\Tyre_Classification\\datasets\\processed\\good\\kaggle_good_good (266).jpg",
+        "true_label": "good",
+        "predicted_label": "bad",
+        "bad_confidence": 0.5293930768966675
+      },
+      {
+        "image_path": "D:\\Tyre_Classification\\datasets\\processed\\good\\kaggle_good_good (603).jpg",
+        "true_label": "good",
+        "predicted_label": "bad",
+        "bad_confidence": 0.670915961265564
+      },
+      {
+        "image_path": "D:\\Tyre_Classification\\datasets\\processed\\good\\kaggle_good_good (798).jpg",
+        "true_label": "good",
+        "predicted_label": "bad",
+        "bad_confidence": 0.7157491445541382
+      },
+      {
+        "image_path": "D:\\Tyre_Classification\\datasets\\processed\\good\\mendeley_good_good (288).jpg",
+        "true_label": "good",
+        "predicted_label": "bad",
+        "bad_confidence": 0.7642073631286621
+      }
+    ],
+    "lighting": [],
+    "side_angle": [],
+    "low_texture": [
+      {
+        "image_path": "D:\\Tyre_Classification\\datasets\\processed\\bad\\kaggle_bad_Defective (1011).jpg",
+        "true_label": "bad",
+        "predicted_label": "good",
+        "bad_confidence": 0.41417908668518066
+      },
+      {
+        "image_path": "D:\\Tyre_Classification\\datasets\\processed\\bad\\kaggle_bad_Defective (340).jpg",
+        "true_label": "bad",
+        "predicted_label": "good",
+        "bad_confidence": 0.3720848262310028
+      },
+      {
+        "image_path": "D:\\Tyre_Classification\\datasets\\processed\\good\\kaggle_good_good (598).jpg",
+        "true_label": "good",
+        "predicted_label": "bad",
+        "bad_confidence": 0.8196352124214172
+      },
+      {
+        "image_path": "D:\\Tyre_Classification\\datasets\\processed\\good\\kaggle_good_good (661).jpg",
+        "true_label": "good",
+        "predicted_label": "bad",
+        "bad_confidence": 0.5842940211296082
+      },
+      {
+        "image_path": "D:\\Tyre_Classification\\datasets\\processed\\good\\mendeley_good_good (701).jpg",
+        "true_label": "good",
+        "predicted_label": "bad",
+        "bad_confidence": 0.5214968919754028
+      }
+    ],
+    "background_clutter": [],
+    "ambiguous_wear": [
+      {
+        "image_path": "D:\\Tyre_Classification\\datasets\\processed\\bad\\kaggle_bad_Defective (311).jpg",
+        "true_label": "bad",
+        "predicted_label": "good",
+        "bad_confidence": 0.16463622450828552
+      },
+      {
+        "image_path": "D:\\Tyre_Classification\\datasets\\processed\\bad\\kaggle_bad_Defective (613).jpg",
+        "true_label": "bad",
+        "predicted_label": "good",
+        "bad_confidence": 0.18456290662288666
+      },
+      {
+        "image_path": "D:\\Tyre_Classification\\datasets\\processed\\bad\\kaggle_bad_Defective (616).jpg",
+        "true_label": "bad",
+        "predicted_label": "good",
+        "bad_confidence": 0.18074795603752136
+      },
+      {
+        "image_path": "D:\\Tyre_Classification\\datasets\\processed\\bad\\kaggle_bad_Defective (626).jpg",
+        "true_label": "bad",
+        "predicted_label": "good",
+        "bad_confidence": 0.14740818738937378
+      },
+      {
+        "image_path": "D:\\Tyre_Classification\\datasets\\processed\\bad\\kaggle_bad_Defective (708).jpg",
+        "true_label": "bad",
+        "predicted_label": "good",
+        "bad_confidence": 0.05841663107275963
+      },
+      {
+        "image_path": "D:\\Tyre_Classification\\datasets\\processed\\bad\\kaggle_bad_Defective (725).jpg",
+        "true_label": "bad",
+        "predicted_label": "good",
+        "bad_confidence": 0.1611572802066803
+      },
+      {
+        "image_path": "D:\\Tyre_Classification\\datasets\\processed\\bad\\kaggle_bad_Defective (767).jpg",
+        "true_label": "bad",
+        "predicted_label": "good",
+        "bad_confidence": 0.2939754128456116
+      },
+      {
+        "image_path": "D:\\Tyre_Classification\\datasets\\processed\\bad\\kaggle_bad_Defective (99).jpg",
+        "true_label": "bad",
+        "predicted_label": "good",
+        "bad_confidence": 0.18956290185451508
+      },
+      {
+        "image_path": "D:\\Tyre_Classification\\datasets\\processed\\bad\\mendeley_bad_Defective (108).jpg",
+        "true_label": "bad",
+        "predicted_label": "good",
+        "bad_confidence": 0.20832569897174835
+      },
+      {
+        "image_path": "D:\\Tyre_Classification\\datasets\\processed\\bad\\mendeley_bad_Defective (130).jpg",
+        "true_label": "bad",
+        "predicted_label": "good",
+        "bad_confidence": 0.2259567528963089
+      },
+      {
+        "image_path": "D:\\Tyre_Classification\\datasets\\processed\\bad\\mendeley_bad_Defective (148).jpg",
+        "true_label": "bad",
+        "predicted_label": "good",
+        "bad_confidence": 0.49686869978904724
+      },
+      {
+        "image_path": "D:\\Tyre_Classification\\datasets\\processed\\bad\\mendeley_bad_Defective (180).jpg",
+        "true_label": "bad",
+        "predicted_label": "good",
+        "bad_confidence": 0.26804518699645996
+      },
+      {
+        "image_path": "D:\\Tyre_Classification\\datasets\\processed\\bad\\mendeley_bad_Defective (181).jpg",
+        "true_label": "bad",
+        "predicted_label": "good",
+        "bad_confidence": 0.1200300082564354
+      },
+      {
+        "image_path": "D:\\Tyre_Classification\\datasets\\processed\\bad\\mendeley_bad_Defective (30).jpg",
+        "true_label": "bad",
+        "predicted_label": "good",
+        "bad_confidence": 0.31260496377944946
+      },
+      {
+        "image_path": "D:\\Tyre_Classification\\datasets\\processed\\bad\\mendeley_bad_Defective (319).jpg",
+        "true_label": "bad",
+        "predicted_label": "good",
+        "bad_confidence": 0.3135890066623688
+      },
+      {
+        "image_path": "D:\\Tyre_Classification\\datasets\\processed\\bad\\mendeley_bad_Defective (325).jpg",
+        "true_label": "bad",
+        "predicted_label": "good",
+        "bad_confidence": 0.41350409388542175
+      },
+      {
+        "image_path": "D:\\Tyre_Classification\\datasets\\processed\\bad\\mendeley_bad_Defective (328).jpg",
+        "true_label": "bad",
+        "predicted_label": "good",
+        "bad_confidence": 0.09853755682706833
+      },
+      {
+        "image_path": "D:\\Tyre_Classification\\datasets\\processed\\bad\\mendeley_bad_Defective (332).jpg",
+        "true_label": "bad",
+        "predicted_label": "good",
+        "bad_confidence": 0.3379269242286682
+      },
+      {
+        "image_path": "D:\\Tyre_Classification\\datasets\\processed\\bad\\mendeley_bad_Defective (374).jpg",
+        "true_label": "bad",
+        "predicted_label": "good",
+        "bad_confidence": 0.47803938388824463
+      },
+      {
+        "image_path": "D:\\Tyre_Classification\\datasets\\processed\\bad\\mendeley_bad_Defective (400).jpg",
+        "true_label": "bad",
+        "predicted_label": "good",
+        "bad_confidence": 0.4185136556625366
+      },
+      {
+        "image_path": "D:\\Tyre_Classification\\datasets\\processed\\bad\\mendeley_bad_Defective (421).jpg",
+        "true_label": "bad",
+        "predicted_label": "good",
+        "bad_confidence": 0.3125894367694855
+      },
+      {
+        "image_path": "D:\\Tyre_Classification\\datasets\\processed\\bad\\mendeley_bad_Defective (444).jpg",
+        "true_label": "bad",
+        "predicted_label": "good",
+        "bad_confidence": 0.034476954489946365
+      },
+      {
+        "image_path": "D:\\Tyre_Classification\\datasets\\processed\\bad\\mendeley_bad_Defective (464).jpg",
+        "true_label": "bad",
+        "predicted_label": "good",
+        "bad_confidence": 0.011411004699766636
+      },
+      {
+        "image_path": "D:\\Tyre_Classification\\datasets\\processed\\bad\\mendeley_bad_Defective (522).jpg",
+        "true_label": "bad",
+        "predicted_label": "good",
+        "bad_confidence": 0.447301983833313
+      },
+      {
+        "image_path": "D:\\Tyre_Classification\\datasets\\processed\\bad\\mendeley_bad_Defective (656).jpg",
+        "true_label": "bad",
+        "predicted_label": "good",
+        "bad_confidence": 0.41357600688934326
+      },
+      {
+        "image_path": "D:\\Tyre_Classification\\datasets\\processed\\bad\\mendeley_bad_Defective (694).jpg",
+        "true_label": "bad",
+        "predicted_label": "good",
+        "bad_confidence": 0.40724387764930725
+      },
+      {
+        "image_path": "D:\\Tyre_Classification\\datasets\\processed\\bad\\mendeley_bad_Defective (811).jpg",
+        "true_label": "bad",
+        "predicted_label": "good",
+        "bad_confidence": 0.20142674446105957
+      },
+      {
+        "image_path": "D:\\Tyre_Classification\\datasets\\processed\\good\\kaggle_good_good (140).jpg",
+        "true_label": "good",
+        "predicted_label": "bad",
+        "bad_confidence": 0.5362074375152588
+      },
+      {
+        "image_path": "D:\\Tyre_Classification\\datasets\\processed\\good\\kaggle_good_good (284).jpg",
+        "true_label": "good",
+        "predicted_label": "bad",
+        "bad_confidence": 0.8003878593444824
+      },
+      {
+        "image_path": "D:\\Tyre_Classification\\datasets\\processed\\good\\mendeley_good_good (239).jpg",
+        "true_label": "good",
+        "predicted_label": "bad",
+        "bad_confidence": 0.6187846064567566
+      },
+      {
+        "image_path": "D:\\Tyre_Classification\\datasets\\processed\\good\\mendeley_good_good (245).jpg",
+        "true_label": "good",
+        "predicted_label": "bad",
+        "bad_confidence": 0.6054487228393555
+      },
+      {
+        "image_path": "D:\\Tyre_Classification\\datasets\\processed\\good\\mendeley_good_good (332).jpg",
+        "true_label": "good",
+        "predicted_label": "bad",
+        "bad_confidence": 0.9024019241333008
+      },
+      {
+        "image_path": "D:\\Tyre_Classification\\datasets\\processed\\good\\mendeley_good_good (422).jpg",
+        "true_label": "good",
+        "predicted_label": "bad",
+        "bad_confidence": 0.5379986763000488
+      },
+      {
+        "image_path": "D:\\Tyre_Classification\\datasets\\processed\\good\\mendeley_good_good (635).jpg",
+        "true_label": "good",
+        "predicted_label": "bad",
+        "bad_confidence": 0.6485084295272827
+      },
+      {
+        "image_path": "D:\\Tyre_Classification\\datasets\\processed\\good\\mendeley_good_good (713).jpg",
+        "true_label": "good",
+        "predicted_label": "bad",
+        "bad_confidence": 0.6633080840110779
+      },
+      {
+        "image_path": "D:\\Tyre_Classification\\datasets\\processed\\good\\mendeley_good_good (724).jpg",
+        "true_label": "good",
+        "predicted_label": "bad",
+        "bad_confidence": 0.6475476026535034
+      },
+      {
+        "image_path": "D:\\Tyre_Classification\\datasets\\processed\\good\\mendeley_good_good (737).jpg",
+        "true_label": "good",
+        "predicted_label": "bad",
+        "bad_confidence": 0.5075087547302246
+      },
+      {
+        "image_path": "D:\\Tyre_Classification\\datasets\\processed\\good\\mendeley_good_good (766).jpg",
+        "true_label": "good",
+        "predicted_label": "bad",
+        "bad_confidence": 0.620682418346405
+      },
+      {
+        "image_path": "D:\\Tyre_Classification\\datasets\\processed\\good\\mendeley_good_good (767).jpg",
+        "true_label": "good",
+        "predicted_label": "bad",
+        "bad_confidence": 0.6120823621749878
+      },
+      {
+        "image_path": "D:\\Tyre_Classification\\datasets\\processed\\good\\mendeley_good_good (795).jpg",
+        "true_label": "good",
+        "predicted_label": "bad",
+        "bad_confidence": 0.8013036251068115
+      },
+      {
+        "image_path": "D:\\Tyre_Classification\\datasets\\processed\\good\\mendeley_good_good (798).jpg",
+        "true_label": "good",
+        "predicted_label": "bad",
+        "bad_confidence": 0.6294959783554077
+      }
+    ],
+    "unknown": []
+  }
+}

@@ -1,26 +1,29 @@
 {
   "train": {
-    "sample_count": 16,
+    "sample_count": 2464,
     "crop_count": 0,
-    "fallback_count": 16,
+    "fallback_count": 2464,
     "class_distribution": {
-      "bad": 16
+      "bad": 1304,
+      "good": 1160
     }
   },
   "val": {
-    "sample_count": 8,
+    "sample_count": 528,
     "crop_count": 0,
-    "fallback_count": 8,
+    "fallback_count": 528,
     "class_distribution": {
-      "bad": 8
+      "bad": 279,
+      "good": 249
     }
   },
   "test": {
-    "sample_count": 8,
+    "sample_count": 529,
     "crop_count": 1,
-    "fallback_count": 7,
+    "fallback_count": 528,
     "class_distribution": {
-      "bad": 8
+      "bad": 280,
+      "good": 249
     }
   }
 }

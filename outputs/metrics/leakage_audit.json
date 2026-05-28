@@ -1,0 +1,707 @@
+{
+  "duplicate_groups_found": 33,
+  "removed_duplicates": 33,
+  "remaining_duplicates": 0,
+  "duplicate_groups": [
+    {
+      "content_hash": "0b1b4b07d7be2b8b4dc1a47357167294",
+      "duplicate_count": 2,
+      "labels": [
+        "good"
+      ],
+      "source_datasets": [
+        "mendeley"
+      ],
+      "raw_filepaths": [
+        "D:\\Tyre_Classification\\datasets\\raw\\mendeley\\good\\good (377).jpg",
+        "D:\\Tyre_Classification\\datasets\\raw\\mendeley\\good\\good (619).jpg"
+      ]
+    },
+    {
+      "content_hash": "0db7833ad766d1d4d8fc7d2df7534468",
+      "duplicate_count": 2,
+      "labels": [
+        "bad"
+      ],
+      "source_datasets": [
+        "kaggle"
+      ],
+      "raw_filepaths": [
+        "D:\\Tyre_Classification\\datasets\\raw\\kaggle\\bad\\Defective (832).jpg",
+        "D:\\Tyre_Classification\\datasets\\raw\\kaggle\\bad\\Defective (833).jpg"
+      ]
+    },
+    {
+      "content_hash": "1413da608bf29a06b6fe8852bb4bcd27",
+      "duplicate_count": 2,
+      "labels": [
+        "bad"
+      ],
+      "source_datasets": [
+        "kaggle"
+      ],
+      "raw_filepaths": [
+        "D:\\Tyre_Classification\\datasets\\raw\\kaggle\\bad\\Defective (860).jpg",
+        "D:\\Tyre_Classification\\datasets\\raw\\kaggle\\bad\\Defective (861).jpg"
+      ]
+    },
+    {
+      "content_hash": "206c02c7e7a167e7850869880d944967",
+      "duplicate_count": 2,
+      "labels": [
+        "bad"
+      ],
+      "source_datasets": [
+        "kaggle"
+      ],
+      "raw_filepaths": [
+        "D:\\Tyre_Classification\\datasets\\raw\\kaggle\\bad\\Defective (864).jpg",
+        "D:\\Tyre_Classification\\datasets\\raw\\kaggle\\bad\\Defective (865).jpg"
+      ]
+    },
+    {
+      "content_hash": "22b0e13970e006a86e1db9a06d2eaf54",
+      "duplicate_count": 2,
+      "labels": [
+        "bad"
+      ],
+      "source_datasets": [
+        "kaggle"
+      ],
+      "raw_filepaths": [
+        "D:\\Tyre_Classification\\datasets\\raw\\kaggle\\bad\\Defective (838).jpg",
+        "D:\\Tyre_Classification\\datasets\\raw\\kaggle\\bad\\Defective (839).jpg"
+      ]
+    },
+    {
+      "content_hash": "3a80d4be6638fd7a44c67c0ad4e96c39",
+      "duplicate_count": 2,
+      "labels": [
+        "bad"
+      ],
+      "source_datasets": [
+        "kaggle"
+      ],
+      "raw_filepaths": [
+        "D:\\Tyre_Classification\\datasets\\raw\\kaggle\\bad\\Defective (854).jpg",
+        "D:\\Tyre_Classification\\datasets\\raw\\kaggle\\bad\\Defective (855).jpg"
+      ]
+    },
+    {
+      "content_hash": "4224a35b705966393208e4be748a5190",
+      "duplicate_count": 2,
+      "labels": [
+        "bad"
+      ],
+      "source_datasets": [
+        "kaggle"
+      ],
+      "raw_filepaths": [
+        "D:\\Tyre_Classification\\datasets\\raw\\kaggle\\bad\\Defective (846).jpg",
+        "D:\\Tyre_Classification\\datasets\\raw\\kaggle\\bad\\Defective (847).jpg"
+      ]
+    },
+    {
+      "content_hash": "48dddf00bcda2b341348b6398854f305",
+      "duplicate_count": 2,
+      "labels": [
+        "bad"
+      ],
+      "source_datasets": [
+        "kaggle"
+      ],
+      "raw_filepaths": [
+        "D:\\Tyre_Classification\\datasets\\raw\\kaggle\\bad\\Defective (866).jpg",
+        "D:\\Tyre_Classification\\datasets\\raw\\kaggle\\bad\\Defective (867).jpg"
+      ]
+    },
+    {
+      "content_hash": "567ddf5ce220a7536c2f1027694bbaec",
+      "duplicate_count": 2,
+      "labels": [
+        "bad"
+      ],
+      "source_datasets": [
+        "kaggle"
+      ],
+      "raw_filepaths": [
+        "D:\\Tyre_Classification\\datasets\\raw\\kaggle\\bad\\Defective (858).jpg",
+        "D:\\Tyre_Classification\\datasets\\raw\\kaggle\\bad\\Defective (859).jpg"
+      ]
+    },
+    {
+      "content_hash": "655364365ae599ea86701bebf3d62a62",
+      "duplicate_count": 2,
+      "labels": [
+        "bad"
+      ],
+      "source_datasets": [
+        "mendeley"
+      ],
+      "raw_filepaths": [
+        "D:\\Tyre_Classification\\datasets\\raw\\mendeley\\bad\\Defective (48).jpg",
+        "D:\\Tyre_Classification\\datasets\\raw\\mendeley\\bad\\Defective (91).jpg"
+      ]
+    },
+    {
+      "content_hash": "65a7af07cadc26cca2ba50c6a6c1e793",
+      "duplicate_count": 2,
+      "labels": [
+        "bad"
+      ],
+      "source_datasets": [
+        "kaggle"
+      ],
+      "raw_filepaths": [
+        "D:\\Tyre_Classification\\datasets\\raw\\kaggle\\bad\\Defective (856).jpg",
+        "D:\\Tyre_Classification\\datasets\\raw\\kaggle\\bad\\Defective (857).jpg"
+      ]
+    },
+    {
+      "content_hash": "6c782e6919ebedece056d0aa67d300ff",
+      "duplicate_count": 2,
+      "labels": [
+        "bad"
+      ],
+      "source_datasets": [
+        "kaggle"
+      ],
+      "raw_filepaths": [
+        "D:\\Tyre_Classification\\datasets\\raw\\kaggle\\bad\\Defective (828).jpg",
+        "D:\\Tyre_Classification\\datasets\\raw\\kaggle\\bad\\Defective (829).jpg"
+      ]
+    },
+    {
+      "content_hash": "6cb1d4c4980d73bc199636463e3254cb",
+      "duplicate_count": 2,
+      "labels": [
+        "bad"
+      ],
+      "source_datasets": [
+        "kaggle"
+      ],
+      "raw_filepaths": [
+        "D:\\Tyre_Classification\\datasets\\raw\\kaggle\\bad\\Defective (816).jpg",
+        "D:\\Tyre_Classification\\datasets\\raw\\kaggle\\bad\\Defective (817).jpg"
+      ]
+    },
+    {
+      "content_hash": "744bc429ecf9c728d24d047cd70f9936",
+      "duplicate_count": 2,
+      "labels": [
+        "bad"
+      ],
+      "source_datasets": [
+        "kaggle"
+      ],
+      "raw_filepaths": [
+        "D:\\Tyre_Classification\\datasets\\raw\\kaggle\\bad\\Defective (814).jpg",
+        "D:\\Tyre_Classification\\datasets\\raw\\kaggle\\bad\\Defective (815).jpg"
+      ]
+    },
+    {
+      "content_hash": "8821d490cf14b441990ae8db4946ff61",
+      "duplicate_count": 2,
+      "labels": [
+        "bad"
+      ],
+      "source_datasets": [
+        "kaggle"
+      ],
+      "raw_filepaths": [
+        "D:\\Tyre_Classification\\datasets\\raw\\kaggle\\bad\\Defective (818).jpg",
+        "D:\\Tyre_Classification\\datasets\\raw\\kaggle\\bad\\Defective (819).jpg"
+      ]
+    },
+    {
+      "content_hash": "8bc0cafd1c87eb2636b8613a0a379f9f",
+      "duplicate_count": 2,
+      "labels": [
+        "bad"
+      ],
+      "source_datasets": [
+        "kaggle"
+      ],
+      "raw_filepaths": [
+        "D:\\Tyre_Classification\\datasets\\raw\\kaggle\\bad\\Defective (848).jpg",
+        "D:\\Tyre_Classification\\datasets\\raw\\kaggle\\bad\\Defective (849).jpg"
+      ]
+    },
+    {
+      "content_hash": "8e2bf3f9e0824eccd944928ad8b84b97",
+      "duplicate_count": 2,
+      "labels": [
+        "bad"
+      ],
+      "source_datasets": [
+        "kaggle"
+      ],
+      "raw_filepaths": [
+        "D:\\Tyre_Classification\\datasets\\raw\\kaggle\\bad\\Defective (840).jpg",
+        "D:\\Tyre_Classification\\datasets\\raw\\kaggle\\bad\\Defective (841).jpg"
+      ]
+    },
+    {
+      "content_hash": "8e3913a9485a245103454bfcb28466a2",
+      "duplicate_count": 2,
+      "labels": [
+        "bad"
+      ],
+      "source_datasets": [
+        "kaggle"
+      ],
+      "raw_filepaths": [
+        "D:\\Tyre_Classification\\datasets\\raw\\kaggle\\bad\\Defective (844).jpg",
+        "D:\\Tyre_Classification\\datasets\\raw\\kaggle\\bad\\Defective (845).jpg"
+      ]
+    },
+    {
+      "content_hash": "94c145fbaaf5e4cfab1363d32ab835a1",
+      "duplicate_count": 2,
+      "labels": [
+        "bad"
+      ],
+      "source_datasets": [
+        "kaggle"
+      ],
+      "raw_filepaths": [
+        "D:\\Tyre_Classification\\datasets\\raw\\kaggle\\bad\\Defective (826).jpg",
+        "D:\\Tyre_Classification\\datasets\\raw\\kaggle\\bad\\Defective (827).jpg"
+      ]
+    },
+    {
+      "content_hash": "9e008f359b54d7c47c84522ece242b09",
+      "duplicate_count": 2,
+      "labels": [
+        "bad"
+      ],
+      "source_datasets": [
+        "kaggle"
+      ],
+      "raw_filepaths": [
+        "D:\\Tyre_Classification\\datasets\\raw\\kaggle\\bad\\Defective (812).jpg",
+        "D:\\Tyre_Classification\\datasets\\raw\\kaggle\\bad\\Defective (813).jpg"
+      ]
+    },
+    {
+      "content_hash": "9ece41fa6f7d5db25d70a30bac82eea7",
+      "duplicate_count": 2,
+      "labels": [
+        "bad"
+      ],
+      "source_datasets": [
+        "kaggle"
+      ],
+      "raw_filepaths": [
+        "D:\\Tyre_Classification\\datasets\\raw\\kaggle\\bad\\Defective (820).jpg",
+        "D:\\Tyre_Classification\\datasets\\raw\\kaggle\\bad\\Defective (821).jpg"
+      ]
+    },
+    {
+      "content_hash": "a99680447c76a38c9314bfa4787ce442",
+      "duplicate_count": 2,
+      "labels": [
+        "bad"
+      ],
+      "source_datasets": [
+        "mendeley"
+      ],
+      "raw_filepaths": [
+        "D:\\Tyre_Classification\\datasets\\raw\\mendeley\\bad\\Defective (611).jpg",
+        "D:\\Tyre_Classification\\datasets\\raw\\mendeley\\bad\\Defective (618).jpg"
+      ]
+    },
+    {
+      "content_hash": "b27c4cded394efe2f7d5637373cda6d3",
+      "duplicate_count": 2,
+      "labels": [
+        "bad"
+      ],
+      "source_datasets": [
+        "kaggle"
+      ],
+      "raw_filepaths": [
+        "D:\\Tyre_Classification\\datasets\\raw\\kaggle\\bad\\Defective (836).jpg",
+        "D:\\Tyre_Classification\\datasets\\raw\\kaggle\\bad\\Defective (837).jpg"
+      ]
+    },
+    {
+      "content_hash": "c1876af4e3c868bd193cadda7a8787d4",
+      "duplicate_count": 2,
+      "labels": [
+        "bad"
+      ],
+      "source_datasets": [
+        "kaggle"
+      ],
+      "raw_filepaths": [
+        "D:\\Tyre_Classification\\datasets\\raw\\kaggle\\bad\\Defective (32).jpg",
+        "D:\\Tyre_Classification\\datasets\\raw\\kaggle\\bad\\Defective (33).jpg"
+      ]
+    },
+    {
+      "content_hash": "c76e974937a5f1f45c14cc3c17946869",
+      "duplicate_count": 2,
+      "labels": [
+        "bad"
+      ],
+      "source_datasets": [
+        "kaggle"
+      ],
+      "raw_filepaths": [
+        "D:\\Tyre_Classification\\datasets\\raw\\kaggle\\bad\\Defective (824).jpg",
+        "D:\\Tyre_Classification\\datasets\\raw\\kaggle\\bad\\Defective (825).jpg"
+      ]
+    },
+    {
+      "content_hash": "cc15555674b10eab0461e4cf4e6133d9",
+      "duplicate_count": 2,
+      "labels": [
+        "bad"
+      ],
+      "source_datasets": [
+        "mendeley"
+      ],
+      "raw_filepaths": [
+        "D:\\Tyre_Classification\\datasets\\raw\\mendeley\\bad\\Defective (27).jpg",
+        "D:\\Tyre_Classification\\datasets\\raw\\mendeley\\bad\\Defective (28).jpg"
+      ]
+    },
+    {
+      "content_hash": "cc5f316b4540c52ca24e487fc3b57329",
+      "duplicate_count": 2,
+      "labels": [
+        "bad"
+      ],
+      "source_datasets": [
+        "kaggle"
+      ],
+      "raw_filepaths": [
+        "D:\\Tyre_Classification\\datasets\\raw\\kaggle\\bad\\Defective (862).jpg",
+        "D:\\Tyre_Classification\\datasets\\raw\\kaggle\\bad\\Defective (863).jpg"
+      ]
+    },
+    {
+      "content_hash": "de45a5a15ae89ba8be475b4c53173617",
+      "duplicate_count": 2,
+      "labels": [
+        "bad"
+      ],
+      "source_datasets": [
+        "kaggle"
+      ],
+      "raw_filepaths": [
+        "D:\\Tyre_Classification\\datasets\\raw\\kaggle\\bad\\Defective (834).jpg",
+        "D:\\Tyre_Classification\\datasets\\raw\\kaggle\\bad\\Defective (835).jpg"
+      ]
+    },
+    {
+      "content_hash": "e0651ac3f9f81432e1d7427a280a780b",
+      "duplicate_count": 2,
+      "labels": [
+        "bad"
+      ],
+      "source_datasets": [
+        "kaggle"
+      ],
+      "raw_filepaths": [
+        "D:\\Tyre_Classification\\datasets\\raw\\kaggle\\bad\\Defective (822).jpg",
+        "D:\\Tyre_Classification\\datasets\\raw\\kaggle\\bad\\Defective (823).jpg"
+      ]
+    },
+    {
+      "content_hash": "e71449b4a30c57b8f12674e35f5a8039",
+      "duplicate_count": 2,
+      "labels": [
+        "bad"
+      ],
+      "source_datasets": [
+        "kaggle"
+      ],
+      "raw_filepaths": [
+        "D:\\Tyre_Classification\\datasets\\raw\\kaggle\\bad\\Defective (852).jpg",
+        "D:\\Tyre_Classification\\datasets\\raw\\kaggle\\bad\\Defective (853).jpg"
+      ]
+    },
+    {
+      "content_hash": "e736e0665d2ea68acbf93acfd853e772",
+      "duplicate_count": 2,
+      "labels": [
+        "bad"
+      ],
+      "source_datasets": [
+        "kaggle"
+      ],
+      "raw_filepaths": [
+        "D:\\Tyre_Classification\\datasets\\raw\\kaggle\\bad\\Defective (842).jpg",
+        "D:\\Tyre_Classification\\datasets\\raw\\kaggle\\bad\\Defective (843).jpg"
+      ]
+    },
+    {
+      "content_hash": "e896194298edce04902827f9973dafe9",
+      "duplicate_count": 2,
+      "labels": [
+        "good"
+      ],
+      "source_datasets": [
+        "mendeley"
+      ],
+      "raw_filepaths": [
+        "D:\\Tyre_Classification\\datasets\\raw\\mendeley\\good\\good (108).jpg",
+        "D:\\Tyre_Classification\\datasets\\raw\\mendeley\\good\\good (467).jpg"
+      ]
+    },
+    {
+      "content_hash": "fde54e9604e353aef89a70435e9d1e74",
+      "duplicate_count": 2,
+      "labels": [
+        "bad"
+      ],
+      "source_datasets": [
+        "kaggle"
+      ],
+      "raw_filepaths": [
+        "D:\\Tyre_Classification\\datasets\\raw\\kaggle\\bad\\Defective (830).jpg",
+        "D:\\Tyre_Classification\\datasets\\raw\\kaggle\\bad\\Defective (831).jpg"
+      ]
+    }
+  ],
+  "removed_duplicate_records": [
+    {
+      "content_hash": "0b1b4b07d7be2b8b4dc1a47357167294",
+      "source_dataset": "mendeley",
+      "label": "good",
+      "raw_filepath": "D:\\Tyre_Classification\\datasets\\raw\\mendeley\\good\\good (619).jpg",
+      "processed_filepath": "D:\\Tyre_Classification\\datasets\\processed\\good\\mendeley_good_good (619).jpg"
+    },
+    {
+      "content_hash": "0db7833ad766d1d4d8fc7d2df7534468",
+      "source_dataset": "kaggle",
+      "label": "bad",
+      "raw_filepath": "D:\\Tyre_Classification\\datasets\\raw\\kaggle\\bad\\Defective (833).jpg",
+      "processed_filepath": "D:\\Tyre_Classification\\datasets\\processed\\bad\\kaggle_bad_Defective (833).jpg"
+    },
+    {
+      "content_hash": "1413da608bf29a06b6fe8852bb4bcd27",
+      "source_dataset": "kaggle",
+      "label": "bad",
+      "raw_filepath": "D:\\Tyre_Classification\\datasets\\raw\\kaggle\\bad\\Defective (861).jpg",
+      "processed_filepath": "D:\\Tyre_Classification\\datasets\\processed\\bad\\kaggle_bad_Defective (861).jpg"
+    },
+    {
+      "content_hash": "206c02c7e7a167e7850869880d944967",
+      "source_dataset": "kaggle",
+      "label": "bad",
+      "raw_filepath": "D:\\Tyre_Classification\\datasets\\raw\\kaggle\\bad\\Defective (865).jpg",
+      "processed_filepath": "D:\\Tyre_Classification\\datasets\\processed\\bad\\kaggle_bad_Defective (865).jpg"
+    },
+    {
+      "content_hash": "22b0e13970e006a86e1db9a06d2eaf54",
+      "source_dataset": "kaggle",
+      "label": "bad",
+      "raw_filepath": "D:\\Tyre_Classification\\datasets\\raw\\kaggle\\bad\\Defective (839).jpg",
+      "processed_filepath": "D:\\Tyre_Classification\\datasets\\processed\\bad\\kaggle_bad_Defective (839).jpg"
+    },
+    {
+      "content_hash": "3a80d4be6638fd7a44c67c0ad4e96c39",
+      "source_dataset": "kaggle",
+      "label": "bad",
+      "raw_filepath": "D:\\Tyre_Classification\\datasets\\raw\\kaggle\\bad\\Defective (855).jpg",
+      "processed_filepath": "D:\\Tyre_Classification\\datasets\\processed\\bad\\kaggle_bad_Defective (855).jpg"
+    },
+    {
+      "content_hash": "4224a35b705966393208e4be748a5190",
+      "source_dataset": "kaggle",
+      "label": "bad",
+      "raw_filepath": "D:\\Tyre_Classification\\datasets\\raw\\kaggle\\bad\\Defective (847).jpg",
+      "processed_filepath": "D:\\Tyre_Classification\\datasets\\processed\\bad\\kaggle_bad_Defective (847).jpg"
+    },
+    {
+      "content_hash": "48dddf00bcda2b341348b6398854f305",
+      "source_dataset": "kaggle",
+      "label": "bad",
+      "raw_filepath": "D:\\Tyre_Classification\\datasets\\raw\\kaggle\\bad\\Defective (867).jpg",
+      "processed_filepath": "D:\\Tyre_Classification\\datasets\\processed\\bad\\kaggle_bad_Defective (867).jpg"
+    },
+    {
+      "content_hash": "567ddf5ce220a7536c2f1027694bbaec",
+      "source_dataset": "kaggle",
+      "label": "bad",
+      "raw_filepath": "D:\\Tyre_Classification\\datasets\\raw\\kaggle\\bad\\Defective (859).jpg",
+      "processed_filepath": "D:\\Tyre_Classification\\datasets\\processed\\bad\\kaggle_bad_Defective (859).jpg"
+    },
+    {
+      "content_hash": "655364365ae599ea86701bebf3d62a62",
+      "source_dataset": "mendeley",
+      "label": "bad",
+      "raw_filepath": "D:\\Tyre_Classification\\datasets\\raw\\mendeley\\bad\\Defective (91).jpg",
+      "processed_filepath": "D:\\Tyre_Classification\\datasets\\processed\\bad\\mendeley_bad_Defective (91).jpg"
+    },
+    {
+      "content_hash": "65a7af07cadc26cca2ba50c6a6c1e793",
+      "source_dataset": "kaggle",
+      "label": "bad",
+      "raw_filepath": "D:\\Tyre_Classification\\datasets\\raw\\kaggle\\bad\\Defective (857).jpg",
+      "processed_filepath": "D:\\Tyre_Classification\\datasets\\processed\\bad\\kaggle_bad_Defective (857).jpg"
+    },
+    {
+      "content_hash": "6c782e6919ebedece056d0aa67d300ff",
+      "source_dataset": "kaggle",
+      "label": "bad",
+      "raw_filepath": "D:\\Tyre_Classification\\datasets\\raw\\kaggle\\bad\\Defective (829).jpg",
+      "processed_filepath": "D:\\Tyre_Classification\\datasets\\processed\\bad\\kaggle_bad_Defective (829).jpg"
+    },
+    {
+      "content_hash": "6cb1d4c4980d73bc199636463e3254cb",
+      "source_dataset": "kaggle",
+      "label": "bad",
+      "raw_filepath": "D:\\Tyre_Classification\\datasets\\raw\\kaggle\\bad\\Defective (817).jpg",
+      "processed_filepath": "D:\\Tyre_Classification\\datasets\\processed\\bad\\kaggle_bad_Defective (817).jpg"
+    },
+    {
+      "content_hash": "744bc429ecf9c728d24d047cd70f9936",
+      "source_dataset": "kaggle",
+      "label": "bad",
+      "raw_filepath": "D:\\Tyre_Classification\\datasets\\raw\\kaggle\\bad\\Defective (815).jpg",
+      "processed_filepath": "D:\\Tyre_Classification\\datasets\\processed\\bad\\kaggle_bad_Defective (815).jpg"
+    },
+    {
+      "content_hash": "8821d490cf14b441990ae8db4946ff61",
+      "source_dataset": "kaggle",
+      "label": "bad",
+      "raw_filepath": "D:\\Tyre_Classification\\datasets\\raw\\kaggle\\bad\\Defective (819).jpg",
+      "processed_filepath": "D:\\Tyre_Classification\\datasets\\processed\\bad\\kaggle_bad_Defective (819).jpg"
+    },
+    {
+      "content_hash": "8bc0cafd1c87eb2636b8613a0a379f9f",
+      "source_dataset": "kaggle",
+      "label": "bad",
+      "raw_filepath": "D:\\Tyre_Classification\\datasets\\raw\\kaggle\\bad\\Defective (849).jpg",
+      "processed_filepath": "D:\\Tyre_Classification\\datasets\\processed\\bad\\kaggle_bad_Defective (849).jpg"
+    },
+    {
+      "content_hash": "8e2bf3f9e0824eccd944928ad8b84b97",
+      "source_dataset": "kaggle",
+      "label": "bad",
+      "raw_filepath": "D:\\Tyre_Classification\\datasets\\raw\\kaggle\\bad\\Defective (841).jpg",
+      "processed_filepath": "D:\\Tyre_Classification\\datasets\\processed\\bad\\kaggle_bad_Defective (841).jpg"
+    },
+    {
+      "content_hash": "8e3913a9485a245103454bfcb28466a2",
+      "source_dataset": "kaggle",
+      "label": "bad",
+      "raw_filepath": "D:\\Tyre_Classification\\datasets\\raw\\kaggle\\bad\\Defective (845).jpg",
+      "processed_filepath": "D:\\Tyre_Classification\\datasets\\processed\\bad\\kaggle_bad_Defective (845).jpg"
+    },
+    {
+      "content_hash": "94c145fbaaf5e4cfab1363d32ab835a1",
+      "source_dataset": "kaggle",
+      "label": "bad",
+      "raw_filepath": "D:\\Tyre_Classification\\datasets\\raw\\kaggle\\bad\\Defective (827).jpg",
+      "processed_filepath": "D:\\Tyre_Classification\\datasets\\processed\\bad\\kaggle_bad_Defective (827).jpg"
+    },
+    {
+      "content_hash": "9e008f359b54d7c47c84522ece242b09",
+      "source_dataset": "kaggle",
+      "label": "bad",
+      "raw_filepath": "D:\\Tyre_Classification\\datasets\\raw\\kaggle\\bad\\Defective (813).jpg",
+      "processed_filepath": "D:\\Tyre_Classification\\datasets\\processed\\bad\\kaggle_bad_Defective (813).jpg"
+    },
+    {
+      "content_hash": "9ece41fa6f7d5db25d70a30bac82eea7",
+      "source_dataset": "kaggle",
+      "label": "bad",
+      "raw_filepath": "D:\\Tyre_Classification\\datasets\\raw\\kaggle\\bad\\Defective (821).jpg",
+      "processed_filepath": "D:\\Tyre_Classification\\datasets\\processed\\bad\\kaggle_bad_Defective (821).jpg"
+    },
+    {
+      "content_hash": "a99680447c76a38c9314bfa4787ce442",
+      "source_dataset": "mendeley",
+      "label": "bad",
+      "raw_filepath": "D:\\Tyre_Classification\\datasets\\raw\\mendeley\\bad\\Defective (618).jpg",
+      "processed_filepath": "D:\\Tyre_Classification\\datasets\\processed\\bad\\mendeley_bad_Defective (618).jpg"
+    },
+    {
+      "content_hash": "b27c4cded394efe2f7d5637373cda6d3",
+      "source_dataset": "kaggle",
+      "label": "bad",
+      "raw_filepath": "D:\\Tyre_Classification\\datasets\\raw\\kaggle\\bad\\Defective (837).jpg",
+      "processed_filepath": "D:\\Tyre_Classification\\datasets\\processed\\bad\\kaggle_bad_Defective (837).jpg"
+    },
+    {
+      "content_hash": "c1876af4e3c868bd193cadda7a8787d4",
+      "source_dataset": "kaggle",
+      "label": "bad",
+      "raw_filepath": "D:\\Tyre_Classification\\datasets\\raw\\kaggle\\bad\\Defective (33).jpg",
+      "processed_filepath": "D:\\Tyre_Classification\\datasets\\processed\\bad\\kaggle_bad_Defective (33).jpg"
+    },
+    {
+      "content_hash": "c76e974937a5f1f45c14cc3c17946869",
+      "source_dataset": "kaggle",
+      "label": "bad",
+      "raw_filepath": "D:\\Tyre_Classification\\datasets\\raw\\kaggle\\bad\\Defective (825).jpg",
+      "processed_filepath": "D:\\Tyre_Classification\\datasets\\processed\\bad\\kaggle_bad_Defective (825).jpg"
+    },
+    {
+      "content_hash": "cc15555674b10eab0461e4cf4e6133d9",
+      "source_dataset": "mendeley",
+      "label": "bad",
+      "raw_filepath": "D:\\Tyre_Classification\\datasets\\raw\\mendeley\\bad\\Defective (28).jpg",
+      "processed_filepath": "D:\\Tyre_Classification\\datasets\\processed\\bad\\mendeley_bad_Defective (28).jpg"
+    },
+    {
+      "content_hash": "cc5f316b4540c52ca24e487fc3b57329",
+      "source_dataset": "kaggle",
+      "label": "bad",
+      "raw_filepath": "D:\\Tyre_Classification\\datasets\\raw\\kaggle\\bad\\Defective (863).jpg",
+      "processed_filepath": "D:\\Tyre_Classification\\datasets\\processed\\bad\\kaggle_bad_Defective (863).jpg"
+    },
+    {
+      "content_hash": "de45a5a15ae89ba8be475b4c53173617",
+      "source_dataset": "kaggle",
+      "label": "bad",
+      "raw_filepath": "D:\\Tyre_Classification\\datasets\\raw\\kaggle\\bad\\Defective (835).jpg",
+      "processed_filepath": "D:\\Tyre_Classification\\datasets\\processed\\bad\\kaggle_bad_Defective (835).jpg"
+    },
+    {
+      "content_hash": "e0651ac3f9f81432e1d7427a280a780b",
+      "source_dataset": "kaggle",
+      "label": "bad",
+      "raw_filepath": "D:\\Tyre_Classification\\datasets\\raw\\kaggle\\bad\\Defective (823).jpg",
+      "processed_filepath": "D:\\Tyre_Classification\\datasets\\processed\\bad\\kaggle_bad_Defective (823).jpg"
+    },
+    {
+      "content_hash": "e71449b4a30c57b8f12674e35f5a8039",
+      "source_dataset": "kaggle",
+      "label": "bad",
+      "raw_filepath": "D:\\Tyre_Classification\\datasets\\raw\\kaggle\\bad\\Defective (853).jpg",
+      "processed_filepath": "D:\\Tyre_Classification\\datasets\\processed\\bad\\kaggle_bad_Defective (853).jpg"
+    },
+    {
+      "content_hash": "e736e0665d2ea68acbf93acfd853e772",
+      "source_dataset": "kaggle",
+      "label": "bad",
+      "raw_filepath": "D:\\Tyre_Classification\\datasets\\raw\\kaggle\\bad\\Defective (843).jpg",
+      "processed_filepath": "D:\\Tyre_Classification\\datasets\\processed\\bad\\kaggle_bad_Defective (843).jpg"
+    },
+    {
+      "content_hash": "e896194298edce04902827f9973dafe9",
+      "source_dataset": "mendeley",
+      "label": "good",
+      "raw_filepath": "D:\\Tyre_Classification\\datasets\\raw\\mendeley\\good\\good (467).jpg",
+      "processed_filepath": "D:\\Tyre_Classification\\datasets\\processed\\good\\mendeley_good_good (467).jpg"
+    },
+    {
+      "content_hash": "fde54e9604e353aef89a70435e9d1e74",
+      "source_dataset": "kaggle",
+      "label": "bad",
+      "raw_filepath": "D:\\Tyre_Classification\\datasets\\raw\\kaggle\\bad\\Defective (831).jpg",
+      "processed_filepath": "D:\\Tyre_Classification\\datasets\\processed\\bad\\kaggle_bad_Defective (831).jpg"
+    }
+  ],
+  "content_hash_leakage_detected": false,
+  "filepath_leakage_detected": false,
+  "leakage_free": true,
+  "content_hash_overlap_details": [],
+  "filepath_overlap_details": []
+}

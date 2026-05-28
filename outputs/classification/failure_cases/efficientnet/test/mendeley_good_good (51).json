@@ -1,0 +1,8 @@
+{
+  "image_path": "D:\\Tyre_Classification\\datasets\\processed\\good\\mendeley_good_good (51).jpg",
+  "source_filepath": "D:\\Tyre_Classification\\datasets\\processed\\good\\mendeley_good_good (51).jpg",
+  "true_label": "good",
+  "predicted_label": "bad",
+  "bad_confidence": 0.6761273145675659,
+  "input_source": "processed"
+}

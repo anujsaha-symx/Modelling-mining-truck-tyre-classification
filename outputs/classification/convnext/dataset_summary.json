@@ -1,0 +1,26 @@
+{
+  "train": {
+    "sample_count": 8,
+    "crop_count": 0,
+    "fallback_count": 8,
+    "class_distribution": {
+      "bad": 8
+    }
+  },
+  "val": {
+    "sample_count": 8,
+    "crop_count": 0,
+    "fallback_count": 8,
+    "class_distribution": {
+      "bad": 8
+    }
+  },
+  "test": {
+    "sample_count": 8,
+    "crop_count": 1,
+    "fallback_count": 7,
+    "class_distribution": {
+      "bad": 8
+    }
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "image_path": "D:\\Tyre_Classification\\datasets\\processed\\bad\\kaggle_bad_Defective (311).jpg",
+  "source_filepath": "D:\\Tyre_Classification\\datasets\\processed\\bad\\kaggle_bad_Defective (311).jpg",
+  "true_label": "bad",
+  "predicted_label": "good",
+  "bad_confidence": 0.24843302369117737,
+  "input_source": "processed"
+}
