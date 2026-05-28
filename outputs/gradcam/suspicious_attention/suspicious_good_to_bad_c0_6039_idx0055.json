@@ -1,0 +1,16 @@
+{
+  "image_path": "D:\\Tyre_Classification\\datasets\\processed\\good\\kaggle_good_good (140).jpg",
+  "true_label": "good",
+  "predicted_label": "bad",
+  "bad_class_confidence": 0.6038870215415955,
+  "category": "false_positive",
+  "suspicious_reasons": [
+    "High edge attention (52.5%)"
+  ],
+  "attention_metrics": {
+    "com_offset_from_center": 0.2681126788735888,
+    "corner_activation_fraction": 0.13782614676335256,
+    "edge_activation_fraction": 0.5246173840351592,
+    "activation_spread": 0.17290377616882324
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "image_path": "D:\\Tyre_Classification\\datasets\\processed\\good\\mendeley_good_good (737).jpg",
+  "true_label": "good",
+  "predicted_label": "bad",
+  "bad_class_confidence": 0.5261001586914062,
+  "category": "false_positive",
+  "suspicious_reasons": [
+    "High edge attention (63.8%)",
+    "Attention off-center (offset=0.48)"
+  ],
+  "attention_metrics": {
+    "com_offset_from_center": 0.4831459461204989,
+    "corner_activation_fraction": 0.11789370388982896,
+    "edge_activation_fraction": 0.6379500044365214,
+    "activation_spread": 0.21711622178554535
+  }
+}

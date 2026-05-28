@@ -1,0 +1,16 @@
+{
+  "image_path": "D:\\Tyre_Classification\\outputs\\crops\\bad_kaggle_bad_Defective (1004)_crop_0001.jpg",
+  "true_label": "bad",
+  "predicted_label": "bad",
+  "bad_class_confidence": 0.887834906578064,
+  "category": "high_confidence",
+  "suspicious_reasons": [
+    "High edge attention (57.2%)"
+  ],
+  "attention_metrics": {
+    "com_offset_from_center": 0.13921195072193296,
+    "corner_activation_fraction": 0.11158461689427879,
+    "edge_activation_fraction": 0.5719346225016,
+    "activation_spread": 0.22806306183338165
+  }
+}

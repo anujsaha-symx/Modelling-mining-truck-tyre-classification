@@ -1,0 +1,16 @@
+{
+  "image_path": "D:\\Tyre_Classification\\datasets\\processed\\bad\\kaggle_bad_Defective (954).jpg",
+  "true_label": "bad",
+  "predicted_label": "bad",
+  "bad_class_confidence": 0.9088696837425232,
+  "category": "high_confidence",
+  "suspicious_reasons": [
+    "High edge attention (60.2%)"
+  ],
+  "attention_metrics": {
+    "com_offset_from_center": 0.21562850888836477,
+    "corner_activation_fraction": 0.06940653405282368,
+    "edge_activation_fraction": 0.6016534522773386,
+    "activation_spread": 0.22653552889823914
+  }
+}

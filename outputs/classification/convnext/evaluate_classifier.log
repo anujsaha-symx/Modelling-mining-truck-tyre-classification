@@ -1,6 +1,0 @@
-src.models.classifiers | Loaded convnext classifier weights from outputs\classification\convnext\checkpoints\best_model.pt
-src.data.classification_dataset | Prepared train classification manifest with 2464 samples (0 crops, 2464 fallbacks).
-src.data.classification_dataset | Prepared val classification manifest with 528 samples (0 crops, 528 fallbacks).
-src.data.classification_dataset | Prepared test classification manifest with 529 samples (1 crops, 528 fallbacks).
-Saved classifier evaluation artifacts to D:\Tyre_Classification\outputs\classification\convnext
-Classifier evaluation complete: {'loss': 0.7828787620441675, 'accuracy': 0.4158790170132325, 'precision': 0.46194225721784776, 'recall': 0.6285714285714286, 'f1_score': 0.5325264750378215, 'roc_auc': 0.36811531841652323, 'average_precision': 0.44643367305551485, 'sample_count': 529, 'threshold': 0.5, 'split': 'test', 'model_name': 'convnext'}

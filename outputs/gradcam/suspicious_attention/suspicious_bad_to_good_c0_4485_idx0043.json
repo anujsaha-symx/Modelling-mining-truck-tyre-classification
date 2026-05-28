@@ -1,0 +1,16 @@
+{
+  "image_path": "D:\\Tyre_Classification\\datasets\\processed\\bad\\mendeley_bad_Defective (400).jpg",
+  "true_label": "bad",
+  "predicted_label": "good",
+  "bad_class_confidence": 0.4484696686267853,
+  "category": "false_negative",
+  "suspicious_reasons": [
+    "Attention off-center (offset=0.45)"
+  ],
+  "attention_metrics": {
+    "com_offset_from_center": 0.44572728467869405,
+    "corner_activation_fraction": 0.03974078736089208,
+    "edge_activation_fraction": 0.4052032820008498,
+    "activation_spread": 0.3004452586174011
+  }
+}
