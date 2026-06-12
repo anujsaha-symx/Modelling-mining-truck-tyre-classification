@@ -1,1 +1,0 @@
-# Modelling-mining-truck-tyre-classification

@@ -1,0 +1,40 @@
+{
+  "target_size": [
+    224,
+    224
+  ],
+  "good_images_processed": 1658,
+  "bad_images_processed": 1863,
+  "total_images_processed": 3521,
+  "failed_images": 0,
+  "failed_details": [],
+  "padding_statistics": {
+    "pad_top": {
+      "min": 0,
+      "max": 61,
+      "mean": 8.87,
+      "std": 20.93
+    },
+    "pad_bottom": {
+      "min": 0,
+      "max": 62,
+      "mean": 9,
+      "std": 21.25
+    },
+    "pad_left": {
+      "min": 0,
+      "max": 61,
+      "mean": 6.41,
+      "std": 18.43
+    },
+    "pad_right": {
+      "min": 0,
+      "max": 62,
+      "mean": 6.51,
+      "std": 18.72
+    },
+    "images_with_padding": 950,
+    "images_without_padding": 2571
+  },
+  "processing_time_seconds": 325.34
+}

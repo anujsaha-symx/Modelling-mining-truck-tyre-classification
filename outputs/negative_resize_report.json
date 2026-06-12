@@ -1,0 +1,12 @@
+{
+  "target_size": [
+    224,
+    224
+  ],
+  "negative_images_processed": 156,
+  "failed_images": 0,
+  "failed_details": [],
+  "image_count_before": 156,
+  "image_count_after": 156,
+  "processing_time_seconds": 2.54
+}

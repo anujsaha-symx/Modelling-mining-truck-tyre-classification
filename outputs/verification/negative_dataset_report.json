@@ -1,0 +1,89 @@
+{
+  "input_roots": [
+    "D:\\Tyre_Classification\\datasets\\tmp_negative_input"
+  ],
+  "output_root": "D:\\Tyre_Classification\\datasets\\negative",
+  "total_images": 20,
+  "unique_images": 20,
+  "duplicate_count": 0,
+  "corruption_count": 0,
+  "tyre_overlap_count": 0,
+  "image_size_statistics": {
+    "width": {
+      "min": 800,
+      "mean": 800.0,
+      "max": 800
+    },
+    "height": {
+      "min": 600,
+      "mean": 600.0,
+      "max": 600
+    }
+  },
+  "category_distribution": {
+    "road": 0,
+    "machinery": 0,
+    "truck_body": 0,
+    "construction_site": 0,
+    "people": 0,
+    "buildings": 0,
+    "nature": 0,
+    "miscellaneous": 20
+  },
+  "source_distribution": {
+    "tmp_negative_input": 20
+  },
+  "duplicate_examples": {},
+  "verification_splits": {
+    "positive_root": "D:\\Tyre_Classification\\datasets\\processed",
+    "negative_roots": [
+      "D:\\Tyre_Classification\\datasets\\negative"
+    ],
+    "total_samples": 3541,
+    "train_size": 0.7,
+    "val_size": 0.15,
+    "test_size": 0.15,
+    "seed": 42,
+    "negatives_per_positive": 1.0,
+    "positive_negative_overlap_removed": 0,
+    "splits": [
+      {
+        "split": "train",
+        "samples": 2478,
+        "class_counts": {
+          "non_tyre": 14,
+          "tyre": 2464
+        },
+        "class_ratio": {
+          "non_tyre": 0.0056,
+          "tyre": 0.9944
+        }
+      },
+      {
+        "split": "val",
+        "samples": 531,
+        "class_counts": {
+          "non_tyre": 3,
+          "tyre": 528
+        },
+        "class_ratio": {
+          "non_tyre": 0.0056,
+          "tyre": 0.9944
+        }
+      },
+      {
+        "split": "test",
+        "samples": 532,
+        "class_counts": {
+          "non_tyre": 3,
+          "tyre": 529
+        },
+        "class_ratio": {
+          "non_tyre": 0.0056,
+          "tyre": 0.9944
+        }
+      }
+    ],
+    "overlap_verified": true
+  }
+}
