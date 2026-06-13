@@ -10,20 +10,27 @@ from sklearn.model_selection import train_test_split
 if __package__ is None or __package__ == "":
     sys.path.append(str(Path(__file__).resolve().parents[2]))
 
-from src.utils.common import CLASS_TO_IDX, PROCESSED_ROOT, SPLITS_ROOT, ensure_dir, save_json
+from src.utils.common import ANNOTATED_ROOT, SPLITS_ROOT, ensure_dir, save_json
+
+
+ANNOTATED_CLASS_TO_LABEL = {
+    "good": 1,
+    "bad": 1,
+    "negative": 0,
+}
 
 
 def build_dataset_index(dataset_root: Path) -> pd.DataFrame:
     records = []
-    for label_name, label_idx in CLASS_TO_IDX.items():
-        class_dir = dataset_root / label_name
+    for class_name, label in ANNOTATED_CLASS_TO_LABEL.items():
+        class_dir = dataset_root / class_name
         for path in sorted(class_dir.glob("*")):
             if path.is_file():
                 records.append(
                     {
                         "filepath": str(path.resolve()),
-                        "label": label_name,
-                        "label_idx": label_idx,
+                        "label": label,
+                        "class_name": class_name,
                     }
                 )
 
@@ -45,23 +52,20 @@ def verify_no_overlap(*frames: pd.DataFrame) -> None:
 
 
 def summarize_split(name: str, frame: pd.DataFrame) -> dict:
-    class_counts = frame["label"].value_counts().sort_index().to_dict()
     return {
-        "split": name,
-        "samples": int(len(frame)),
-        "class_counts": {key: int(value) for key, value in class_counts.items()},
-        "class_ratio": {
-            key: round(value / len(frame), 4) for key, value in class_counts.items()
-        },
+        "count": int(len(frame)),
+        "good": int((frame["class_name"] == "good").sum()),
+        "bad": int((frame["class_name"] == "bad").sum()),
+        "negative": int((frame["class_name"] == "negative").sum()),
     }
 
 
 def create_splits(
-    dataset_root: Path = PROCESSED_ROOT,
+    dataset_root: Path = ANNOTATED_ROOT,
     output_dir: Path = SPLITS_ROOT,
     train_size: float = 0.70,
-    val_size: float = 0.15,
-    test_size: float = 0.15,
+    val_size: float = 0.10,
+    test_size: float = 0.20,
     seed: int = 42,
 ) -> dict:
     total = train_size + val_size + test_size
@@ -74,7 +78,7 @@ def create_splits(
     train_frame, temp_frame = train_test_split(
         dataframe,
         test_size=(1.0 - train_size),
-        stratify=dataframe["label_idx"],
+        stratify=dataframe["label"],
         random_state=seed,
     )
 
@@ -82,7 +86,7 @@ def create_splits(
     val_frame, test_frame = train_test_split(
         temp_frame,
         test_size=(1.0 - relative_val),
-        stratify=temp_frame["label_idx"],
+        stratify=temp_frame["label"],
         random_state=seed,
     )
 
@@ -92,27 +96,16 @@ def create_splits(
 
     verify_no_overlap(train_frame, val_frame, test_frame)
 
-    train_path = output_dir / "train.csv"
-    val_path = output_dir / "val.csv"
-    test_path = output_dir / "test.csv"
-
-    train_frame.to_csv(train_path, index=False)
-    val_frame.to_csv(val_path, index=False)
-    test_frame.to_csv(test_path, index=False)
+    csv_columns = ["filepath", "label", "class_name"]
+    train_frame[csv_columns].to_csv(output_dir / "train.csv", index=False)
+    val_frame[csv_columns].to_csv(output_dir / "val.csv", index=False)
+    test_frame[csv_columns].to_csv(output_dir / "test.csv", index=False)
 
     summary = {
-        "dataset_root": str(dataset_root.resolve()),
-        "total_samples": int(len(dataframe)),
-        "train_size": train_size,
-        "val_size": val_size,
-        "test_size": test_size,
-        "seed": seed,
-        "splits": [
-            summarize_split("train", train_frame),
-            summarize_split("val", val_frame),
-            summarize_split("test", test_frame),
-        ],
-        "overlap_verified": True,
+        "total_images": int(len(dataframe)),
+        "train": summarize_split("train", train_frame),
+        "val": summarize_split("val", val_frame),
+        "test": summarize_split("test", test_frame),
     }
 
     save_json(output_dir / "split_stats.json", summary)
@@ -120,16 +113,54 @@ def create_splits(
 
 
 def main() -> None:
-    parser = argparse.ArgumentParser(description="Create stratified dataset splits for tyre classification.")
-    parser.add_argument("--dataset-root", type=Path, default=PROCESSED_ROOT)
+    parser = argparse.ArgumentParser(
+        description="Create stratified dataset splits for tyre classification from annotated dataset."
+    )
+    parser.add_argument("--dataset-root", type=Path, default=ANNOTATED_ROOT)
     parser.add_argument("--output-dir", type=Path, default=SPLITS_ROOT)
     parser.add_argument("--seed", type=int, default=42)
     args = parser.parse_args()
 
-    summary = create_splits(dataset_root=args.dataset_root, output_dir=args.output_dir, seed=args.seed)
-    print(f"Created splits in {args.output_dir}")
-    for split in summary["splits"]:
-        print(f"{split['split']}: {split['samples']} samples | {split['class_counts']}")
+    summary = create_splits(
+        dataset_root=args.dataset_root,
+        output_dir=args.output_dir,
+        seed=args.seed,
+    )
+
+    print(f"Total images: {summary['total_images']}")
+    print()
+    for split_name in ["train", "val", "test"]:
+        s = summary[split_name]
+        print(f"{split_name}: {s['count']} | good={s['good']}, bad={s['bad']}, negative={s['negative']}")
+
+    print()
+    train_df = pd.read_csv(args.output_dir / "train.csv")
+    val_df = pd.read_csv(args.output_dir / "val.csv")
+    test_df = pd.read_csv(args.output_dir / "test.csv")
+
+    train_paths = set(train_df["filepath"].tolist())
+    val_paths = set(val_df["filepath"].tolist())
+    test_paths = set(test_df["filepath"].tolist())
+
+    print("Leakage check:")
+    print(f"  train vs val:  {len(train_paths & val_paths)} overlapping")
+    print(f"  train vs test: {len(train_paths & test_paths)} overlapping")
+    print(f"  val vs test:   {len(val_paths & test_paths)} overlapping")
+
+    all_split_paths = train_paths | val_paths | test_paths
+    all_annotated = set()
+    for class_name in ANNOTATED_CLASS_TO_LABEL:
+        for p in (args.dataset_root / class_name).glob("*"):
+            if p.is_file():
+                all_annotated.add(str(p.resolve()))
+
+    missing = all_annotated - all_split_paths
+    extra = all_split_paths - all_annotated
+    if missing or extra:
+        print(f"  Missing from splits: {len(missing)}, Extra in splits: {len(extra)}")
+    else:
+        print("  Every annotated image appears exactly once. OK")
+    print(f"\nFinal counts: {len(train_paths)} train, {len(val_paths)} val, {len(test_paths)} test")
 
 
 if __name__ == "__main__":

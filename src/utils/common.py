@@ -15,6 +15,7 @@ IDX_TO_CLASS = {idx: name for name, idx in CLASS_TO_IDX.items()}
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
 DATASET_ROOT = PROJECT_ROOT / "datasets"
 PROCESSED_ROOT = DATASET_ROOT / "processed"
+ANNOTATED_ROOT = DATASET_ROOT / "annotated"
 NEGATIVE_ROOT = DATASET_ROOT / "negative"
 SPLITS_ROOT = DATASET_ROOT / "splits"
 OUTPUTS_ROOT = PROJECT_ROOT / "outputs"
