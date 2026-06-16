@@ -12,7 +12,7 @@ from train_frcnn import get_model
 from utils import collate_fn, load_checkpoint
 
 @torch.no_grad()
-def compute_image_level_metrics(model, dataloader, device, score_threshold=0.5):
+def compute_image_level_metrics(model, dataloader, device, score_threshold=0.5, margin=0.2):
     model.eval()
     tp = fp = fn = 0
     total = len(dataloader.dataset)
@@ -24,14 +24,22 @@ def compute_image_level_metrics(model, dataloader, device, score_threshold=0.5):
         for i, output in enumerate(outputs):
             gt_labels = targets[i]['labels']
 
-            pred_labels = output['labels'].cpu()
-            pred_scores = output['scores'].cpu()
+            pred_labels = output['labels'].cpu().numpy()
+            pred_scores = output['scores'].cpu().numpy()
 
             mask = pred_scores >= score_threshold
             pred_labels = pred_labels[mask]
+            pred_scores = pred_scores[mask]
+            # Gatekeeper logic: Tire wins only if its best score beats Non-Tire by margin
+            tire_scores = pred_scores[pred_labels == 1]
+            non_tire_scores = pred_scores[pred_labels == 2]
+            best_tire = float(tire_scores.max()) if len(tire_scores) > 0 else 0.0
+            best_non_tire = float(non_tire_scores.max()) if len(non_tire_scores) > 0 else 0.0
+
+            pred_tire = (best_tire >= score_threshold and
+                         best_tire > best_non_tire - margin)
 
             gt_tire = (gt_labels == 1).sum().item() > 0
-            pred_tire = (pred_labels == 1).sum().item() > 0
 
             if gt_tire and pred_tire:
                 tp += 1

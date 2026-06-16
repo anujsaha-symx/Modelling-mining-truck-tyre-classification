@@ -7,7 +7,7 @@ from torchvision.models.detection.faster_rcnn import FastRCNNPredictor
 from coco_dataset import COCODetectionDataset, get_transform
 from utils import collate_fn, save_checkpoint
 
-def get_model(num_classes=3, freeze_backbone=True):
+def get_model(num_classes=3, freeze_backbone=False):
     model = torchvision.models.detection.fasterrcnn_mobilenet_v3_large_fpn(
         weights='DEFAULT'
     )
@@ -17,6 +17,8 @@ def get_model(num_classes=3, freeze_backbone=True):
         for param in model.backbone.parameters():
             param.requires_grad = False
         print('Backbone frozen')
+    else:
+        print('Backbone UNFROZEN — will adapt features to tyre/non-tyre domain')
     return model
 
 def train_one_epoch(model, dataloader, optimizer, device, epoch=None):
@@ -61,7 +63,7 @@ def main():
     val_dataset = COCODetectionDataset(
         coco_path, val_csv, transforms=get_transform(train=False)
     )
-    # Identify Non-Tire indices and oversample them for balance
+    # Identify Non-Tire and Tire indices
     train_labels = []
     for i in range(len(full_train)):
         _, t = full_train[i]
@@ -70,14 +72,14 @@ def main():
 
     non_tire_idx = [i for i, v in enumerate(train_labels) if v]
     tire_idx = [i for i, v in enumerate(train_labels) if not v]
-    # Use all Non-Tire + balanced Tire samples (700 total)
-    target_size = 700
+    # Balance classes 50/50 — use all Non-Tire + equal number of Tire
     import random
     random.seed(42)
-    n_tire_from_tire = min(target_size - len(non_tire_idx), len(tire_idx))
-    sampled_tire = random.sample(tire_idx, n_tire_from_tire)
+    n_tire = min(len(non_tire_idx), len(tire_idx))
+    sampled_tire = random.sample(tire_idx, n_tire)
     train_indices = non_tire_idx + sampled_tire
     random.shuffle(train_indices)
+    n_train = len(train_indices)
     train_dataset = Subset(full_train, train_indices)
     train_loader = DataLoader(
         train_dataset, batch_size=4, shuffle=True, num_workers=0,
@@ -97,12 +99,37 @@ def main():
     model = get_model(num_classes=3, freeze_backbone=True).to(device)
     trainable = sum(p.numel() for p in model.parameters() if p.requires_grad)
     total = sum(p.numel() for p in model.parameters())
-    print(f'Trainable params: {trainable:,} / {total:,}')
-    params = [p for p in model.parameters() if p.requires_grad]
-    optimizer = torch.optim.AdamW(params, lr=0.0001, weight_decay=0.0001)
+    print(f'Trainable params (frozen backbone): {trainable:,} / {total:,}')
+    # Load old checkpoint to get pretrained head weights
+    old_ckpt = 'outputs/detection/checkpoints/best_frcnn.pt'
+    if os.path.isfile(old_ckpt):
+        ckpt = torch.load(old_ckpt, map_location=device)
+        model.load_state_dict(ckpt['model_state_dict'])
+        print(f'Loaded checkpoint from {old_ckpt} (epoch {ckpt.get("epoch", "?")})')
+    else:
+        print('No checkpoint found, starting from pretrained COCO weights')
+    # Now unfreeze the backbone for fine-tuning
+    for param in model.backbone.parameters():
+        param.requires_grad = True
+    print('Backbone UNFROZEN for fine-tuning')
+    trainable = sum(p.numel() for p in model.parameters() if p.requires_grad)
+    print(f'Trainable params (all unfrozen): {trainable:,} / {total:,}')
+    # Differential learning rates: lower LR for backbone, higher for heads
+    backbone_params = []
+    head_params = []
+    for name, p in model.named_parameters():
+        if p.requires_grad:
+            if 'backbone' in name:
+                backbone_params.append(p)
+            else:
+                head_params.append(p)
+    optimizer = torch.optim.AdamW([
+        {'params': backbone_params, 'lr': 1e-5},
+        {'params': head_params, 'lr': 1e-4},
+    ], weight_decay=0.0001)
     scheduler = torch.optim.lr_scheduler.StepLR(optimizer, step_size=5, gamma=0.5)
     num_epochs = 15
-    patience = 4
+    patience = 5
     best_val_loss = float('inf')
     patience_counter = 0
     checkpoint_dir = 'outputs/detection/checkpoints'

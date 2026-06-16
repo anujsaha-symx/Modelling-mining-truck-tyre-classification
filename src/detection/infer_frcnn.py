@@ -1,11 +1,9 @@
 import json
 import os
 import sys
-
 import torch
 import torchvision.transforms as T
 from PIL import Image, ImageDraw, ImageFont
-
 from train_frcnn import get_model
 from utils import load_checkpoint
 
@@ -56,12 +54,28 @@ def draw_boxes(image, detections):
             draw.text((x1, max(0, y1 - 10)), label, fill=color)
     return image
 
-def gatekeeper_output(detections):
+def gatekeeper_output(detections, score_threshold=0.5, margin=0.2):
     tire_dets = [d for d in detections if d['class'] == 'Tire']
+    non_tire_dets = [d for d in detections if d['class'] == 'Non-Tire']
     if not tire_dets:
-        return {'is_tire': False}
-    best = max(tire_dets, key=lambda d: d['confidence'])
-    return {'is_tire': True, 'confidence': best['confidence']}
+        return {'is_tire': False, 'reason': 'no_tire_detection'}
+    best_tire = max(tire_dets, key=lambda d: d['confidence'])
+    best_non_tire = max(non_tire_dets, key=lambda d: d['confidence']) if non_tire_dets else None
+
+    # Must exceed threshold AND beat any Non-Tire detection by margin
+    if best_tire['confidence'] < score_threshold:
+        return {'is_tire': False, 'reason': 'below_threshold'}
+
+    if best_non_tire and best_non_tire['confidence'] > best_tire['confidence'] - margin:
+        return {
+            'is_tire': False,
+            'reason': 'non_tire_competition',
+            'tire_conf': best_tire['confidence'],
+            'non_tire_conf': best_non_tire['confidence'],
+        }
+
+    return {'is_tire': True, 'confidence': best_tire['confidence']}
+
 
 def main():
     if len(sys.argv) < 2:
