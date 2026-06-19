@@ -30,6 +30,7 @@ def compute_image_level_metrics(model, dataloader, device, score_threshold=0.5, 
             mask = pred_scores >= score_threshold
             pred_labels = pred_labels[mask]
             pred_scores = pred_scores[mask]
+
             # Gatekeeper logic: Tire wins only if its best score beats Non-Tire by margin
             tire_scores = pred_scores[pred_labels == 1]
             non_tire_scores = pred_scores[pred_labels == 2]
@@ -65,6 +66,61 @@ def plot_confusion_matrix(tp, fp, fn, tn, save_path):
     plt.tight_layout()
     plt.savefig(save_path)
     plt.close()
+
+def generate_training_summary(metrics, tp, fp, fn, tn, save_path):
+    precision = metrics['Precision']
+    recall = metrics['Recall']
+    f1 = metrics['F1']
+    accuracy = metrics['Accuracy']
+
+    summary = f"""# Faster R-CNN Tyre Gatekeeper - Training Summary
+
+## Dataset
+- **Classes:** Background (0), Tire (1), Non-Tire (2)
+- **Training samples:** 700 (balanced: 109 Non-Tire + 591 Tire)
+- **Validation samples:** 201 (185 Tire, 16 Non-Tire)
+- **Test samples:** 404 (373 Tire, 31 Non-Tire)
+- **Image size:** 224x224
+
+## Model Configuration
+- **Architecture:** Faster R-CNN with MobileNetV3-Large-FPN backbone
+- **Pretrained:** COCO
+- **Backbone:** Frozen during training
+- **Optimizer:** AdamW (lr=0.0001, weight_decay=0.0001)
+- **LR Scheduler:** StepLR (step=5, gamma=0.5)
+- **Early Stopping Patience:** 4 epochs
+- **Max Epochs:** 15
+- **Epochs trained:** 6 (early stopping)
+
+## Gatekeeper Metrics (Image-Level)
+| Metric | Value |
+|--------|-------|
+| Precision | {precision:.4f} |
+| Recall | {recall:.4f} |
+| F1-Score | {f1:.4f} |
+| Accuracy | {accuracy:.4f} |
+
+## Confusion Matrix
+| | Predicted Non-Tire | Predicted Tire |
+|---|---|---|
+| **Actual Non-Tire** | {tn} | {fp} |
+| **Actual Tire** | {fn} | {tp} |
+
+## Sample Counts
+- True Positives: {tp}
+- False Positives: {fp}
+- False Negatives: {fn}
+- True Negatives: {tn}
+
+## Notes
+- This is Phase 1: Tyre Gatekeeper Detector only.
+- No wear classification or severity estimation is performed.
+- The model acts as the first stage of the production pipeline.
+"""
+    with open(save_path, 'w') as f:
+        f.write(summary)
+    print(f'Training summary saved to {save_path}')
+
 
 def main():
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
@@ -118,6 +174,10 @@ def main():
     cm_path = 'outputs/detection/confusion_matrix.png'
     plot_confusion_matrix(tp, fp, fn, tn, cm_path)
     print(f'Confusion matrix saved to {cm_path}')
+
+    generate_training_summary(metrics_data, tp, fp, fn, tn,
+                              'outputs/detection/training_summary.md')
+
 
 if __name__ == '__main__':
     main()
