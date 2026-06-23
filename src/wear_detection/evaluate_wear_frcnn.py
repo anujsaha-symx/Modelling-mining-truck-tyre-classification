@@ -17,7 +17,7 @@ from utils import (
 CLASS_LIST = ['Background', 'Good-Tire', 'Bad-Tire', 'Non-Tire']
 
 @torch.no_grad()
-def evaluate(model, dataloader, device, score_threshold=0.5, iou_threshold=0.5):
+def evaluate(model, dataloader, device, score_threshold=0.15, iou_threshold=0.5):
     model.eval()
     all_gt_labels = []
     all_pred_labels = []
