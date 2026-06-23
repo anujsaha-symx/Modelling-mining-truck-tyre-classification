@@ -1,0 +1,405 @@
+filepath,ground_truth,predicted_class,final_class,confidence,reason
+D:\Tyre_Classification\datasets\annotated\bad\bad_103.jpg,Bad-Tire,Bad-Tire,Bad-Tire,0.93,Cut detected on tyre
+D:\Tyre_Classification\datasets\annotated\bad\bad_120.jpg,Bad-Tire,Bad-Tire,Bad-Tire,0.97,Cut detected
+D:\Tyre_Classification\datasets\annotated\bad\bad_126.jpg,Bad-Tire,Bad-Tire,Bad-Tire,0.95,Cut detected on tyre
+D:\Tyre_Classification\datasets\annotated\bad\bad_127.jpg,Bad-Tire,Bad-Tire,Bad-Tire,0.95,Cut detected on tyre
+D:\Tyre_Classification\datasets\annotated\bad\bad_130.jpg,Bad-Tire,Bad-Tire,Bad-Tire,0.75,Cut detected on tyre
+D:\Tyre_Classification\datasets\annotated\bad\bad_132.jpg,Bad-Tire,Bad-Tire,Bad-Tire,0.98,Cut detected
+D:\Tyre_Classification\datasets\annotated\bad\bad_133.jpg,Bad-Tire,Bad-Tire,Bad-Tire,0.89,Cut detected on tyre
+D:\Tyre_Classification\datasets\annotated\bad\bad_137.jpg,Bad-Tire,Bad-Tire,Bad-Tire,0.96,Cut detected on tyre
+D:\Tyre_Classification\datasets\annotated\bad\bad_140.jpg,Bad-Tire,Bad-Tire,Bad-Tire,0.99,Cut detected on tyre
+D:\Tyre_Classification\datasets\annotated\bad\bad_143.jpg,Bad-Tire,Bad-Tire,Bad-Tire,0.95,Cut detected on tyre
+D:\Tyre_Classification\datasets\annotated\bad\bad_156.jpg,Bad-Tire,Bad-Tire,Bad-Tire,0.97,Cut detected on tyre
+D:\Tyre_Classification\datasets\annotated\bad\bad_157.jpg,Bad-Tire,Bad-Tire,Bad-Tire,0.91,Cut detected on tyre
+D:\Tyre_Classification\datasets\annotated\bad\bad_160.jpg,Bad-Tire,Bad-Tire,Bad-Tire,0.91,Cut detected on tyre
+D:\Tyre_Classification\datasets\annotated\bad\bad_161.jpg,Bad-Tire,Good-Tire,Good-Tire,1.0,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\bad\bad_163.jpg,Bad-Tire,Bad-Tire,Bad-Tire,0.93,Cut detected on tyre
+D:\Tyre_Classification\datasets\annotated\bad\bad_165.jpg,Bad-Tire,Good-Tire,Good-Tire,1.0,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\bad\bad_168.jpg,Bad-Tire,Bad-Tire,Bad-Tire,0.84,Cut detected on tyre
+D:\Tyre_Classification\datasets\annotated\bad\bad_171.jpg,Bad-Tire,Bad-Tire,Bad-Tire,0.81,Cut detected on tyre
+D:\Tyre_Classification\datasets\annotated\bad\bad_18.jpg,Bad-Tire,Bad-Tire,Bad-Tire,0.98,Cut detected on tyre
+D:\Tyre_Classification\datasets\annotated\bad\bad_184.jpg,Bad-Tire,Good-Tire,Good-Tire,0.95,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\bad\bad_189.jpg,Bad-Tire,Bad-Tire,Bad-Tire,0.95,Cut detected on tyre
+D:\Tyre_Classification\datasets\annotated\bad\bad_190.jpg,Bad-Tire,Good-Tire,Good-Tire,1.0,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\bad\bad_193.jpg,Bad-Tire,Good-Tire,Good-Tire,1.0,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\bad\bad_2.jpg,Bad-Tire,Bad-Tire,Bad-Tire,0.93,Cut detected on tyre
+D:\Tyre_Classification\datasets\annotated\bad\bad_24.jpg,Bad-Tire,Bad-Tire,Bad-Tire,0.89,Cut detected on tyre
+D:\Tyre_Classification\datasets\annotated\bad\bad_25.jpg,Bad-Tire,Bad-Tire,Bad-Tire,0.96,Cut detected
+D:\Tyre_Classification\datasets\annotated\bad\bad_33.jpg,Bad-Tire,Bad-Tire,Bad-Tire,0.94,Cut detected on tyre
+D:\Tyre_Classification\datasets\annotated\bad\bad_39.jpg,Bad-Tire,Bad-Tire,Bad-Tire,0.95,Cut detected on tyre
+D:\Tyre_Classification\datasets\annotated\bad\bad_44.jpg,Bad-Tire,Bad-Tire,Bad-Tire,0.89,Cut detected
+D:\Tyre_Classification\datasets\annotated\bad\bad_49.jpg,Bad-Tire,Bad-Tire,Bad-Tire,0.92,Cut detected on tyre
+D:\Tyre_Classification\datasets\annotated\bad\bad_50.jpg,Bad-Tire,Good-Tire,Good-Tire,0.98,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\bad\bad_54.jpg,Bad-Tire,Bad-Tire,Bad-Tire,0.87,Cut detected on tyre
+D:\Tyre_Classification\datasets\annotated\bad\bad_57.jpg,Bad-Tire,Bad-Tire,Bad-Tire,0.85,Cut detected
+D:\Tyre_Classification\datasets\annotated\bad\bad_59.jpg,Bad-Tire,Bad-Tire,Bad-Tire,0.91,Cut detected
+D:\Tyre_Classification\datasets\annotated\bad\bad_60.jpg,Bad-Tire,Bad-Tire,Bad-Tire,0.97,Cut detected
+D:\Tyre_Classification\datasets\annotated\bad\bad_64.jpg,Bad-Tire,Bad-Tire,Bad-Tire,0.98,Cut detected on tyre
+D:\Tyre_Classification\datasets\annotated\bad\bad_66.jpg,Bad-Tire,Bad-Tire,Bad-Tire,0.65,Cut detected on tyre
+D:\Tyre_Classification\datasets\annotated\bad\bad_67.jpg,Bad-Tire,Good-Tire,Good-Tire,1.0,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\bad\bad_71.jpg,Bad-Tire,Bad-Tire,Bad-Tire,0.9,Cut detected on tyre
+D:\Tyre_Classification\datasets\annotated\bad\bad_72.jpg,Bad-Tire,Bad-Tire,Bad-Tire,0.69,Cut detected on tyre
+D:\Tyre_Classification\datasets\annotated\bad\bad_81.jpg,Bad-Tire,Bad-Tire,Bad-Tire,0.71,Cut detected on tyre
+D:\Tyre_Classification\datasets\annotated\bad\bad_83.jpg,Bad-Tire,Bad-Tire,Bad-Tire,0.79,Cut detected
+D:\Tyre_Classification\datasets\annotated\bad\bad_91.jpg,Bad-Tire,Bad-Tire,Bad-Tire,0.76,Cut detected on tyre
+D:\Tyre_Classification\datasets\annotated\good\good_10.jpg,Good-Tire,Good-Tire,Good-Tire,1.0,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_1001.jpg,Good-Tire,Good-Tire,Good-Tire,1.0,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_1005.jpg,Good-Tire,Good-Tire,Good-Tire,1.0,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_1008.jpg,Good-Tire,Good-Tire,Good-Tire,0.99,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_1012.jpg,Good-Tire,Good-Tire,Good-Tire,0.99,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_1018.jpg,Good-Tire,Good-Tire,Good-Tire,1.0,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_1021.jpg,Good-Tire,Good-Tire,Good-Tire,1.0,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_1023.jpg,Good-Tire,Good-Tire,Good-Tire,1.0,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_1029.jpg,Good-Tire,Good-Tire,Good-Tire,1.0,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_103.jpg,Good-Tire,Good-Tire,Good-Tire,1.0,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_1030.jpg,Good-Tire,Good-Tire,Good-Tire,1.0,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_1032.jpg,Good-Tire,Good-Tire,Good-Tire,1.0,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_104.jpg,Good-Tire,Good-Tire,Good-Tire,1.0,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_1043.jpg,Good-Tire,Good-Tire,Good-Tire,1.0,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_1046.jpg,Good-Tire,Good-Tire,Good-Tire,1.0,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_105.jpg,Good-Tire,Good-Tire,Good-Tire,1.0,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_1053.jpg,Good-Tire,Good-Tire,Good-Tire,1.0,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_1066.jpg,Good-Tire,Good-Tire,Good-Tire,0.99,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_1082.jpg,Good-Tire,Good-Tire,Good-Tire,0.99,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_1087.jpg,Good-Tire,Good-Tire,Good-Tire,1.0,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_1102.jpg,Good-Tire,Good-Tire,Good-Tire,1.0,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_1105.jpg,Good-Tire,Bad-Tire,Bad-Tire,0.76,Cut detected on tyre
+D:\Tyre_Classification\datasets\annotated\good\good_1108.jpg,Good-Tire,Good-Tire,Good-Tire,1.0,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_1112.jpg,Good-Tire,Good-Tire,Good-Tire,1.0,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_1118.jpg,Good-Tire,Good-Tire,Good-Tire,1.0,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_1132.jpg,Good-Tire,Good-Tire,Good-Tire,1.0,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_1133.jpg,Good-Tire,Good-Tire,Good-Tire,1.0,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_1134.jpg,Good-Tire,Good-Tire,Good-Tire,1.0,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_1137.jpg,Good-Tire,Good-Tire,Good-Tire,1.0,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_1141.jpg,Good-Tire,Bad-Tire,Bad-Tire,0.99,Cut detected on tyre
+D:\Tyre_Classification\datasets\annotated\good\good_1142.jpg,Good-Tire,Good-Tire,Good-Tire,1.0,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_1148.jpg,Good-Tire,Good-Tire,Good-Tire,1.0,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_1150.jpg,Good-Tire,Good-Tire,Good-Tire,1.0,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_1157.jpg,Good-Tire,Good-Tire,Good-Tire,1.0,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_1160.jpg,Good-Tire,Good-Tire,Good-Tire,1.0,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_1166.jpg,Good-Tire,Bad-Tire,Bad-Tire,0.99,Cut detected on tyre
+D:\Tyre_Classification\datasets\annotated\good\good_1169.jpg,Good-Tire,Bad-Tire,Bad-Tire,0.81,Cut detected on tyre
+D:\Tyre_Classification\datasets\annotated\good\good_117.jpg,Good-Tire,Good-Tire,Good-Tire,0.99,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_1170.jpg,Good-Tire,Good-Tire,Good-Tire,1.0,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_1185.jpg,Good-Tire,Good-Tire,Good-Tire,1.0,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_1193.jpg,Good-Tire,Good-Tire,Good-Tire,1.0,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_1194.jpg,Good-Tire,Good-Tire,Good-Tire,1.0,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_1200.jpg,Good-Tire,Bad-Tire,Bad-Tire,0.87,Cut detected on tyre
+D:\Tyre_Classification\datasets\annotated\good\good_1209.jpg,Good-Tire,Good-Tire,Good-Tire,1.0,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_1219.jpg,Good-Tire,Good-Tire,Good-Tire,1.0,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_1225.jpg,Good-Tire,Good-Tire,Good-Tire,1.0,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_1226.jpg,Good-Tire,Good-Tire,Good-Tire,1.0,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_123.jpg,Good-Tire,Good-Tire,Good-Tire,1.0,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_1235.jpg,Good-Tire,Good-Tire,Good-Tire,0.99,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_1236.jpg,Good-Tire,Good-Tire,Good-Tire,1.0,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_124.jpg,Good-Tire,Bad-Tire,Bad-Tire,1.0,Cut detected on tyre
+D:\Tyre_Classification\datasets\annotated\good\good_1249.jpg,Good-Tire,Good-Tire,Good-Tire,1.0,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_1253.jpg,Good-Tire,Good-Tire,Good-Tire,1.0,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_1262.jpg,Good-Tire,Good-Tire,Good-Tire,1.0,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_127.jpg,Good-Tire,Good-Tire,Good-Tire,1.0,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_1272.jpg,Good-Tire,Good-Tire,Good-Tire,0.99,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_1284.jpg,Good-Tire,Good-Tire,Good-Tire,1.0,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_1301.jpg,Good-Tire,Good-Tire,Good-Tire,1.0,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_1302.jpg,Good-Tire,Good-Tire,Good-Tire,1.0,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_1309.jpg,Good-Tire,Good-Tire,Good-Tire,1.0,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_1310.jpg,Good-Tire,Good-Tire,Good-Tire,1.0,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_1319.jpg,Good-Tire,Good-Tire,Good-Tire,1.0,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_134.jpg,Good-Tire,Good-Tire,Good-Tire,1.0,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_1354.jpg,Good-Tire,Good-Tire,Good-Tire,1.0,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_1356.jpg,Good-Tire,Good-Tire,Good-Tire,1.0,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_1358.jpg,Good-Tire,Good-Tire,Good-Tire,1.0,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_1361.jpg,Good-Tire,Good-Tire,Good-Tire,1.0,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_1365.jpg,Good-Tire,Good-Tire,Good-Tire,1.0,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_137.jpg,Good-Tire,Good-Tire,Good-Tire,1.0,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_1387.jpg,Good-Tire,Good-Tire,Good-Tire,1.0,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_1392.jpg,Good-Tire,Bad-Tire,Bad-Tire,0.99,Cut detected on tyre
+D:\Tyre_Classification\datasets\annotated\good\good_1396.jpg,Good-Tire,Bad-Tire,Bad-Tire,0.88,Cut detected on tyre
+D:\Tyre_Classification\datasets\annotated\good\good_1399.jpg,Good-Tire,Good-Tire,Good-Tire,1.0,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_1405.jpg,Good-Tire,Good-Tire,Good-Tire,1.0,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_1407.jpg,Good-Tire,Good-Tire,Good-Tire,1.0,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_1408.jpg,Good-Tire,Good-Tire,Good-Tire,1.0,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_1420.jpg,Good-Tire,Good-Tire,Good-Tire,1.0,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_1423.jpg,Good-Tire,Bad-Tire,Bad-Tire,0.99,Cut detected on tyre
+D:\Tyre_Classification\datasets\annotated\good\good_1426.jpg,Good-Tire,Good-Tire,Good-Tire,1.0,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_1438.jpg,Good-Tire,Good-Tire,Good-Tire,1.0,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_1439.jpg,Good-Tire,Good-Tire,Good-Tire,1.0,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_1440.jpg,Good-Tire,Bad-Tire,Bad-Tire,0.97,Cut detected on tyre
+D:\Tyre_Classification\datasets\annotated\good\good_1445.jpg,Good-Tire,Good-Tire,Good-Tire,1.0,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_1447.jpg,Good-Tire,Good-Tire,Good-Tire,1.0,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_1448.jpg,Good-Tire,Good-Tire,Good-Tire,1.0,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_1452.jpg,Good-Tire,Good-Tire,Good-Tire,1.0,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_1457.jpg,Good-Tire,Good-Tire,Good-Tire,1.0,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_1458.jpg,Good-Tire,Good-Tire,Good-Tire,1.0,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_1459.jpg,Good-Tire,Good-Tire,Good-Tire,1.0,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_146.jpg,Good-Tire,Good-Tire,Good-Tire,1.0,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_1462.jpg,Good-Tire,Good-Tire,Good-Tire,1.0,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_1464.jpg,Good-Tire,Good-Tire,Good-Tire,1.0,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_1468.jpg,Good-Tire,Good-Tire,Good-Tire,1.0,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_1482.jpg,Good-Tire,Good-Tire,Good-Tire,1.0,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_1490.jpg,Good-Tire,Good-Tire,Good-Tire,1.0,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_1501.jpg,Good-Tire,Bad-Tire,Bad-Tire,0.99,Cut detected on tyre
+D:\Tyre_Classification\datasets\annotated\good\good_1504.jpg,Good-Tire,Good-Tire,Good-Tire,1.0,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_1515.jpg,Good-Tire,Good-Tire,Good-Tire,1.0,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_1527.jpg,Good-Tire,Good-Tire,Good-Tire,1.0,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_1534.jpg,Good-Tire,Good-Tire,Good-Tire,1.0,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_1542.jpg,Good-Tire,Good-Tire,Good-Tire,0.99,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_1544.jpg,Good-Tire,Good-Tire,Good-Tire,1.0,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_1546.jpg,Good-Tire,Good-Tire,Good-Tire,1.0,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_1553.jpg,Good-Tire,Good-Tire,Good-Tire,1.0,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_156.jpg,Good-Tire,Good-Tire,Good-Tire,0.96,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_1561.jpg,Good-Tire,Good-Tire,Good-Tire,0.99,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_1563.jpg,Good-Tire,Good-Tire,Good-Tire,1.0,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_1568.jpg,Good-Tire,Good-Tire,Good-Tire,1.0,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_1569.jpg,Good-Tire,Good-Tire,Good-Tire,1.0,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_1570.jpg,Good-Tire,Good-Tire,Good-Tire,1.0,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_1574.jpg,Good-Tire,Good-Tire,Good-Tire,1.0,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_1575.jpg,Good-Tire,Good-Tire,Good-Tire,1.0,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_1576.jpg,Good-Tire,Good-Tire,Good-Tire,0.99,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_158.jpg,Good-Tire,Good-Tire,Good-Tire,0.98,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_1582.jpg,Good-Tire,Good-Tire,Good-Tire,1.0,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_1586.jpg,Good-Tire,Good-Tire,Good-Tire,1.0,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_1587.jpg,Good-Tire,Good-Tire,Good-Tire,1.0,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_1589.jpg,Good-Tire,Good-Tire,Good-Tire,1.0,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_159.jpg,Good-Tire,Good-Tire,Good-Tire,1.0,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_1591.jpg,Good-Tire,Good-Tire,Good-Tire,1.0,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_1592.jpg,Good-Tire,Good-Tire,Good-Tire,1.0,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_1595.jpg,Good-Tire,Good-Tire,Good-Tire,1.0,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_1602.jpg,Good-Tire,Good-Tire,Good-Tire,0.99,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_1611.jpg,Good-Tire,Good-Tire,Good-Tire,1.0,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_1613.jpg,Good-Tire,Good-Tire,Good-Tire,0.99,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_1614.jpg,Good-Tire,Bad-Tire,Bad-Tire,0.99,Cut detected on tyre
+D:\Tyre_Classification\datasets\annotated\good\good_1615.jpg,Good-Tire,Good-Tire,Good-Tire,1.0,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_1617.jpg,Good-Tire,Bad-Tire,Bad-Tire,0.94,Cut detected on tyre
+D:\Tyre_Classification\datasets\annotated\good\good_1619.jpg,Good-Tire,Good-Tire,Good-Tire,1.0,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_162.jpg,Good-Tire,Good-Tire,Good-Tire,1.0,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_1625.jpg,Good-Tire,Bad-Tire,Bad-Tire,0.88,Cut detected on tyre
+D:\Tyre_Classification\datasets\annotated\good\good_1628.jpg,Good-Tire,Good-Tire,Good-Tire,1.0,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_1631.jpg,Good-Tire,Good-Tire,Good-Tire,1.0,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_1640.jpg,Good-Tire,Good-Tire,Good-Tire,0.99,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_1644.jpg,Good-Tire,Good-Tire,Good-Tire,1.0,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_1652.jpg,Good-Tire,Good-Tire,Good-Tire,1.0,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_1654.jpg,Good-Tire,Good-Tire,Good-Tire,0.99,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_1655.jpg,Good-Tire,Good-Tire,Good-Tire,1.0,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_1658.jpg,Good-Tire,Good-Tire,Good-Tire,1.0,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_170.jpg,Good-Tire,Good-Tire,Good-Tire,1.0,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_180.jpg,Good-Tire,Good-Tire,Good-Tire,1.0,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_181.jpg,Good-Tire,Good-Tire,Good-Tire,1.0,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_184.jpg,Good-Tire,Good-Tire,Good-Tire,1.0,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_189.jpg,Good-Tire,Good-Tire,Good-Tire,0.99,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_190.jpg,Good-Tire,Good-Tire,Good-Tire,0.99,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_191.jpg,Good-Tire,Good-Tire,Good-Tire,1.0,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_198.jpg,Good-Tire,Good-Tire,Good-Tire,1.0,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_203.jpg,Good-Tire,Good-Tire,Good-Tire,1.0,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_216.jpg,Good-Tire,Good-Tire,Good-Tire,0.98,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_217.jpg,Good-Tire,Good-Tire,Good-Tire,1.0,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_218.jpg,Good-Tire,Good-Tire,Good-Tire,1.0,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_220.jpg,Good-Tire,Good-Tire,Good-Tire,1.0,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_223.jpg,Good-Tire,Good-Tire,Good-Tire,1.0,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_227.jpg,Good-Tire,Good-Tire,Good-Tire,1.0,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_239.jpg,Good-Tire,Good-Tire,Good-Tire,1.0,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_24.jpg,Good-Tire,Good-Tire,Good-Tire,0.99,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_245.jpg,Good-Tire,Good-Tire,Good-Tire,1.0,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_247.jpg,Good-Tire,Good-Tire,Good-Tire,0.99,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_249.jpg,Good-Tire,Good-Tire,Good-Tire,0.99,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_253.jpg,Good-Tire,Good-Tire,Good-Tire,1.0,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_256.jpg,Good-Tire,Good-Tire,Good-Tire,1.0,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_258.jpg,Good-Tire,Good-Tire,Good-Tire,1.0,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_27.jpg,Good-Tire,Good-Tire,Good-Tire,0.99,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_271.jpg,Good-Tire,Good-Tire,Good-Tire,1.0,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_272.jpg,Good-Tire,Good-Tire,Good-Tire,1.0,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_274.jpg,Good-Tire,Good-Tire,Good-Tire,1.0,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_275.jpg,Good-Tire,Good-Tire,Good-Tire,0.99,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_283.jpg,Good-Tire,Good-Tire,Good-Tire,1.0,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_286.jpg,Good-Tire,Good-Tire,Good-Tire,1.0,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_290.jpg,Good-Tire,Good-Tire,Good-Tire,1.0,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_291.jpg,Good-Tire,Good-Tire,Good-Tire,1.0,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_294.jpg,Good-Tire,Good-Tire,Good-Tire,1.0,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_295.jpg,Good-Tire,Good-Tire,Good-Tire,1.0,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_297.jpg,Good-Tire,Good-Tire,Good-Tire,1.0,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_300.jpg,Good-Tire,Good-Tire,Good-Tire,0.99,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_301.jpg,Good-Tire,Good-Tire,Good-Tire,0.99,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_302.jpg,Good-Tire,Good-Tire,Good-Tire,0.95,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_310.jpg,Good-Tire,Good-Tire,Good-Tire,0.99,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_311.jpg,Good-Tire,Good-Tire,Good-Tire,1.0,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_312.jpg,Good-Tire,Bad-Tire,Bad-Tire,0.8,Cut detected on tyre
+D:\Tyre_Classification\datasets\annotated\good\good_326.jpg,Good-Tire,Good-Tire,Good-Tire,1.0,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_327.jpg,Good-Tire,Good-Tire,Good-Tire,0.99,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_328.jpg,Good-Tire,Good-Tire,Good-Tire,0.99,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_341.jpg,Good-Tire,Good-Tire,Good-Tire,1.0,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_347.jpg,Good-Tire,Good-Tire,Good-Tire,0.99,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_348.jpg,Good-Tire,Good-Tire,Good-Tire,1.0,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_357.jpg,Good-Tire,Good-Tire,Good-Tire,1.0,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_359.jpg,Good-Tire,Good-Tire,Good-Tire,1.0,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_364.jpg,Good-Tire,Good-Tire,Good-Tire,0.99,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_365.jpg,Good-Tire,Good-Tire,Good-Tire,0.99,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_367.jpg,Good-Tire,Good-Tire,Good-Tire,1.0,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_368.jpg,Good-Tire,Good-Tire,Good-Tire,1.0,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_379.jpg,Good-Tire,Good-Tire,Good-Tire,1.0,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_380.jpg,Good-Tire,Good-Tire,Good-Tire,1.0,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_386.jpg,Good-Tire,Good-Tire,Good-Tire,0.71,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_399.jpg,Good-Tire,Good-Tire,Good-Tire,1.0,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_402.jpg,Good-Tire,Good-Tire,Good-Tire,0.97,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_409.jpg,Good-Tire,Good-Tire,Good-Tire,1.0,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_416.jpg,Good-Tire,Good-Tire,Good-Tire,0.99,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_417.jpg,Good-Tire,Good-Tire,Good-Tire,0.99,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_419.jpg,Good-Tire,Good-Tire,Good-Tire,0.97,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_420.jpg,Good-Tire,Good-Tire,Good-Tire,0.99,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_423.jpg,Good-Tire,Good-Tire,Good-Tire,1.0,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_424.jpg,Good-Tire,Good-Tire,Good-Tire,1.0,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_428.jpg,Good-Tire,Good-Tire,Good-Tire,0.98,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_435.jpg,Good-Tire,Good-Tire,Good-Tire,1.0,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_441.jpg,Good-Tire,Good-Tire,Good-Tire,0.99,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_444.jpg,Good-Tire,Good-Tire,Good-Tire,0.96,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_447.jpg,Good-Tire,Good-Tire,Good-Tire,0.99,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_45.jpg,Good-Tire,Good-Tire,Good-Tire,0.99,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_452.jpg,Good-Tire,Good-Tire,Good-Tire,0.99,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_460.jpg,Good-Tire,Good-Tire,Good-Tire,0.99,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_462.jpg,Good-Tire,Good-Tire,Good-Tire,0.99,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_465.jpg,Good-Tire,Good-Tire,Good-Tire,0.99,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_466.jpg,Good-Tire,Good-Tire,Good-Tire,0.98,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_47.jpg,Good-Tire,Good-Tire,Good-Tire,1.0,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_471.jpg,Good-Tire,Good-Tire,Good-Tire,1.0,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_475.jpg,Good-Tire,Good-Tire,Good-Tire,0.99,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_476.jpg,Good-Tire,Good-Tire,Good-Tire,0.98,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_48.jpg,Good-Tire,Good-Tire,Good-Tire,1.0,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_49.jpg,Good-Tire,Good-Tire,Good-Tire,1.0,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_490.jpg,Good-Tire,Good-Tire,Good-Tire,1.0,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_495.jpg,Good-Tire,Good-Tire,Good-Tire,0.99,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_496.jpg,Good-Tire,Good-Tire,Good-Tire,1.0,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_504.jpg,Good-Tire,Good-Tire,Good-Tire,1.0,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_51.jpg,Good-Tire,Good-Tire,Good-Tire,1.0,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_513.jpg,Good-Tire,Good-Tire,Good-Tire,0.99,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_516.jpg,Good-Tire,Bad-Tire,Bad-Tire,0.67,Cut detected on tyre
+D:\Tyre_Classification\datasets\annotated\good\good_517.jpg,Good-Tire,Bad-Tire,Bad-Tire,0.92,Cut detected on tyre
+D:\Tyre_Classification\datasets\annotated\good\good_52.jpg,Good-Tire,Good-Tire,Good-Tire,1.0,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_522.jpg,Good-Tire,Good-Tire,Good-Tire,1.0,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_528.jpg,Good-Tire,Good-Tire,Good-Tire,1.0,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_529.jpg,Good-Tire,Bad-Tire,Bad-Tire,0.95,Cut detected on tyre
+D:\Tyre_Classification\datasets\annotated\good\good_531.jpg,Good-Tire,Good-Tire,Good-Tire,0.99,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_532.jpg,Good-Tire,Good-Tire,Good-Tire,0.99,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_533.jpg,Good-Tire,Good-Tire,Good-Tire,0.99,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_539.jpg,Good-Tire,Good-Tire,Good-Tire,0.99,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_54.jpg,Good-Tire,Good-Tire,Good-Tire,1.0,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_540.jpg,Good-Tire,Good-Tire,Good-Tire,0.99,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_541.jpg,Good-Tire,Good-Tire,Good-Tire,0.99,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_544.jpg,Good-Tire,Good-Tire,Good-Tire,1.0,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_545.jpg,Good-Tire,Good-Tire,Good-Tire,1.0,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_546.jpg,Good-Tire,Good-Tire,Good-Tire,1.0,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_547.jpg,Good-Tire,Good-Tire,Good-Tire,0.97,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_549.jpg,Good-Tire,Bad-Tire,Bad-Tire,0.97,Cut detected on tyre
+D:\Tyre_Classification\datasets\annotated\good\good_556.jpg,Good-Tire,Good-Tire,Good-Tire,0.99,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_557.jpg,Good-Tire,Good-Tire,Good-Tire,1.0,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_560.jpg,Good-Tire,Bad-Tire,Bad-Tire,0.96,Cut detected on tyre
+D:\Tyre_Classification\datasets\annotated\good\good_561.jpg,Good-Tire,Good-Tire,Good-Tire,0.99,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_563.jpg,Good-Tire,Good-Tire,Good-Tire,1.0,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_571.jpg,Good-Tire,Good-Tire,Good-Tire,1.0,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_572.jpg,Good-Tire,Good-Tire,Good-Tire,1.0,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_574.jpg,Good-Tire,Good-Tire,Good-Tire,1.0,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_59.jpg,Good-Tire,Good-Tire,Good-Tire,1.0,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_593.jpg,Good-Tire,Good-Tire,Good-Tire,1.0,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_595.jpg,Good-Tire,Good-Tire,Good-Tire,1.0,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_6.jpg,Good-Tire,Good-Tire,Good-Tire,0.99,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_60.jpg,Good-Tire,Good-Tire,Good-Tire,1.0,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_601.jpg,Good-Tire,Good-Tire,Good-Tire,1.0,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_602.jpg,Good-Tire,Bad-Tire,Bad-Tire,0.98,Cut detected on tyre
+D:\Tyre_Classification\datasets\annotated\good\good_608.jpg,Good-Tire,Bad-Tire,Bad-Tire,0.99,Cut detected on tyre
+D:\Tyre_Classification\datasets\annotated\good\good_625.jpg,Good-Tire,Bad-Tire,Bad-Tire,0.92,Cut detected on tyre
+D:\Tyre_Classification\datasets\annotated\good\good_628.jpg,Good-Tire,Good-Tire,Good-Tire,1.0,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_633.jpg,Good-Tire,Good-Tire,Good-Tire,0.98,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_635.jpg,Good-Tire,Bad-Tire,Bad-Tire,0.98,Cut detected on tyre
+D:\Tyre_Classification\datasets\annotated\good\good_638.jpg,Good-Tire,Good-Tire,Good-Tire,0.99,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_640.jpg,Good-Tire,Good-Tire,Good-Tire,0.99,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_654.jpg,Good-Tire,Good-Tire,Good-Tire,0.98,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_655.jpg,Good-Tire,Good-Tire,Good-Tire,1.0,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_656.jpg,Good-Tire,Good-Tire,Good-Tire,1.0,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_660.jpg,Good-Tire,Good-Tire,Good-Tire,1.0,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_669.jpg,Good-Tire,Good-Tire,Good-Tire,1.0,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_673.jpg,Good-Tire,Good-Tire,Good-Tire,0.99,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_677.jpg,Good-Tire,Good-Tire,Good-Tire,1.0,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_684.jpg,Good-Tire,Good-Tire,Good-Tire,1.0,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_687.jpg,Good-Tire,Good-Tire,Good-Tire,1.0,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_699.jpg,Good-Tire,Good-Tire,Good-Tire,1.0,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_700.jpg,Good-Tire,Good-Tire,Good-Tire,0.99,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_72.jpg,Good-Tire,Good-Tire,Good-Tire,1.0,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_725.jpg,Good-Tire,Good-Tire,Good-Tire,1.0,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_739.jpg,Good-Tire,Good-Tire,Good-Tire,1.0,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_740.jpg,Good-Tire,Good-Tire,Good-Tire,0.92,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_742.jpg,Good-Tire,Good-Tire,Good-Tire,1.0,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_745.jpg,Good-Tire,Good-Tire,Good-Tire,1.0,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_746.jpg,Good-Tire,Bad-Tire,Bad-Tire,0.85,Cut detected on tyre
+D:\Tyre_Classification\datasets\annotated\good\good_750.jpg,Good-Tire,Good-Tire,Good-Tire,1.0,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_756.jpg,Good-Tire,Good-Tire,Good-Tire,1.0,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_763.jpg,Good-Tire,Bad-Tire,Bad-Tire,0.98,Cut detected on tyre
+D:\Tyre_Classification\datasets\annotated\good\good_764.jpg,Good-Tire,Good-Tire,Good-Tire,1.0,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_765.jpg,Good-Tire,Good-Tire,Good-Tire,0.99,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_766.jpg,Good-Tire,Bad-Tire,Bad-Tire,0.93,Cut detected on tyre
+D:\Tyre_Classification\datasets\annotated\good\good_767.jpg,Good-Tire,Good-Tire,Good-Tire,1.0,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_769.jpg,Good-Tire,Bad-Tire,Bad-Tire,0.96,Cut detected on tyre
+D:\Tyre_Classification\datasets\annotated\good\good_77.jpg,Good-Tire,Good-Tire,Good-Tire,1.0,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_775.jpg,Good-Tire,Good-Tire,Good-Tire,0.99,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_776.jpg,Good-Tire,Bad-Tire,Bad-Tire,0.71,Cut detected on tyre
+D:\Tyre_Classification\datasets\annotated\good\good_781.jpg,Good-Tire,Bad-Tire,Bad-Tire,0.85,Cut detected on tyre
+D:\Tyre_Classification\datasets\annotated\good\good_790.jpg,Good-Tire,Good-Tire,Good-Tire,0.99,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_800.jpg,Good-Tire,Good-Tire,Good-Tire,1.0,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_802.jpg,Good-Tire,Bad-Tire,Bad-Tire,0.75,Cut detected on tyre
+D:\Tyre_Classification\datasets\annotated\good\good_805.jpg,Good-Tire,Bad-Tire,Bad-Tire,0.72,Cut detected on tyre
+D:\Tyre_Classification\datasets\annotated\good\good_807.jpg,Good-Tire,Good-Tire,Good-Tire,0.99,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_811.jpg,Good-Tire,Good-Tire,Good-Tire,0.99,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_818.jpg,Good-Tire,Good-Tire,Good-Tire,0.99,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_822.jpg,Good-Tire,Good-Tire,Good-Tire,1.0,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_840.jpg,Good-Tire,Good-Tire,Good-Tire,1.0,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_852.jpg,Good-Tire,Good-Tire,Good-Tire,1.0,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_854.jpg,Good-Tire,Good-Tire,Good-Tire,1.0,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_857.jpg,Good-Tire,Good-Tire,Good-Tire,1.0,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_875.jpg,Good-Tire,Good-Tire,Good-Tire,1.0,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_881.jpg,Good-Tire,Good-Tire,Good-Tire,1.0,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_883.jpg,Good-Tire,Good-Tire,Good-Tire,1.0,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_884.jpg,Good-Tire,Good-Tire,Good-Tire,1.0,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_886.jpg,Good-Tire,Good-Tire,Good-Tire,1.0,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_887.jpg,Good-Tire,Good-Tire,Good-Tire,1.0,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_888.jpg,Good-Tire,Good-Tire,Good-Tire,1.0,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_889.jpg,Good-Tire,Good-Tire,Good-Tire,1.0,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_901.jpg,Good-Tire,Good-Tire,Good-Tire,1.0,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_902.jpg,Good-Tire,Good-Tire,Good-Tire,1.0,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_908.jpg,Good-Tire,Good-Tire,Good-Tire,1.0,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_928.jpg,Good-Tire,Good-Tire,Good-Tire,1.0,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_929.jpg,Good-Tire,Good-Tire,Good-Tire,1.0,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_932.jpg,Good-Tire,Good-Tire,Good-Tire,0.98,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_94.jpg,Good-Tire,Good-Tire,Good-Tire,1.0,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_963.jpg,Good-Tire,Good-Tire,Good-Tire,1.0,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_967.jpg,Good-Tire,Good-Tire,Good-Tire,1.0,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_978.jpg,Good-Tire,Good-Tire,Good-Tire,1.0,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_98.jpg,Good-Tire,Good-Tire,Good-Tire,1.0,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_989.jpg,Good-Tire,Good-Tire,Good-Tire,1.0,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\good\good_995.jpg,Good-Tire,Good-Tire,Good-Tire,1.0,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\negative\negative_10.jpg,Non-Tire,Non-Tire,Non-Tire,1.0,No tyre detected
+D:\Tyre_Classification\datasets\annotated\negative\negative_104.jpg,Non-Tire,Non-Tire,Non-Tire,1.0,No tyre detected
+D:\Tyre_Classification\datasets\annotated\negative\negative_110.jpg,Non-Tire,Good-Tire,Good-Tire,0.39,"Tyre detected, no cut detected"
+D:\Tyre_Classification\datasets\annotated\negative\negative_114.jpg,Non-Tire,Non-Tire,Non-Tire,1.0,No tyre detected
+D:\Tyre_Classification\datasets\annotated\negative\negative_118.jpg,Non-Tire,Non-Tire,Non-Tire,1.0,No tyre detected
+D:\Tyre_Classification\datasets\annotated\negative\negative_132.jpg,Non-Tire,Non-Tire,Non-Tire,1.0,No tyre detected
+D:\Tyre_Classification\datasets\annotated\negative\negative_133.jpg,Non-Tire,Non-Tire,Non-Tire,1.0,No tyre detected
+D:\Tyre_Classification\datasets\annotated\negative\negative_142.jpg,Non-Tire,Non-Tire,Non-Tire,1.0,No tyre detected
+D:\Tyre_Classification\datasets\annotated\negative\negative_144.jpg,Non-Tire,Non-Tire,Non-Tire,1.0,No tyre detected
+D:\Tyre_Classification\datasets\annotated\negative\negative_146.jpg,Non-Tire,Non-Tire,Non-Tire,1.0,No tyre detected
+D:\Tyre_Classification\datasets\annotated\negative\negative_150.jpg,Non-Tire,Non-Tire,Non-Tire,1.0,No tyre detected
+D:\Tyre_Classification\datasets\annotated\negative\negative_151.jpg,Non-Tire,Non-Tire,Non-Tire,1.0,No tyre detected
+D:\Tyre_Classification\datasets\annotated\negative\negative_152.jpg,Non-Tire,Non-Tire,Non-Tire,1.0,No tyre detected
+D:\Tyre_Classification\datasets\annotated\negative\negative_156.jpg,Non-Tire,Non-Tire,Non-Tire,0.99,No tyre detected
+D:\Tyre_Classification\datasets\annotated\negative\negative_22.jpg,Non-Tire,Non-Tire,Non-Tire,0.98,No tyre detected
+D:\Tyre_Classification\datasets\annotated\negative\negative_38.jpg,Non-Tire,Non-Tire,Non-Tire,1.0,No tyre detected
+D:\Tyre_Classification\datasets\annotated\negative\negative_39.jpg,Non-Tire,Non-Tire,Non-Tire,1.0,No tyre detected
+D:\Tyre_Classification\datasets\annotated\negative\negative_41.jpg,Non-Tire,Non-Tire,Non-Tire,1.0,No tyre detected
+D:\Tyre_Classification\datasets\annotated\negative\negative_48.jpg,Non-Tire,Non-Tire,Non-Tire,1.0,No tyre detected
+D:\Tyre_Classification\datasets\annotated\negative\negative_49.jpg,Non-Tire,Non-Tire,Non-Tire,1.0,No tyre detected
+D:\Tyre_Classification\datasets\annotated\negative\negative_50.jpg,Non-Tire,Non-Tire,Non-Tire,1.0,No tyre detected
+D:\Tyre_Classification\datasets\annotated\negative\negative_51.jpg,Non-Tire,Non-Tire,Non-Tire,1.0,No tyre detected
+D:\Tyre_Classification\datasets\annotated\negative\negative_55.jpg,Non-Tire,Non-Tire,Non-Tire,1.0,No tyre detected
+D:\Tyre_Classification\datasets\annotated\negative\negative_62.jpg,Non-Tire,Non-Tire,Non-Tire,1.0,No tyre detected
+D:\Tyre_Classification\datasets\annotated\negative\negative_68.jpg,Non-Tire,Non-Tire,Non-Tire,1.0,No tyre detected
+D:\Tyre_Classification\datasets\annotated\negative\negative_75.jpg,Non-Tire,Non-Tire,Non-Tire,1.0,No tyre detected
+D:\Tyre_Classification\datasets\annotated\negative\negative_79.jpg,Non-Tire,Non-Tire,Non-Tire,1.0,No tyre detected
+D:\Tyre_Classification\datasets\annotated\negative\negative_81.jpg,Non-Tire,Non-Tire,Non-Tire,1.0,No tyre detected
+D:\Tyre_Classification\datasets\annotated\negative\negative_82.jpg,Non-Tire,Non-Tire,Non-Tire,1.0,No tyre detected
+D:\Tyre_Classification\datasets\annotated\negative\negative_86.jpg,Non-Tire,Non-Tire,Non-Tire,1.0,No tyre detected
+D:\Tyre_Classification\datasets\annotated\negative\negative_97.jpg,Non-Tire,Non-Tire,Non-Tire,1.0,No tyre detected
