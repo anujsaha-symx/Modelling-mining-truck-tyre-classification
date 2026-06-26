@@ -1,0 +1,26 @@
+{
+  "Gatekeeper": {
+    "Precision": 0.9986,
+    "Recall": 0.9972,
+    "F1": 0.9979,
+    "Accuracy": 0.998,
+    "TruePositives": 702,
+    "FalsePositives": 1,
+    "FalseNegatives": 2,
+    "TrueNegatives": 791
+  },
+  "PerClass": {
+    "Tire": {
+      "precision": 0.9958,
+      "recall": 0.9986,
+      "f1": 0.9972
+    },
+    "Non-Tire": {
+      "precision": 0.9975,
+      "recall": 1.0,
+      "f1": 0.9987
+    }
+  },
+  "BestEpoch": 6,
+  "BestValF1": 0.9986
+}

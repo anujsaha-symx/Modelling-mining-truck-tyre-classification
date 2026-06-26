@@ -1,3 +1,7 @@
 __pycache__/
 *.py[cod]
 /datasets/raw/
+/datasets/processed/
+/datasets/resized/
+/datasets/negative/
+/datasets/colab_gatekeeper_dataset/
