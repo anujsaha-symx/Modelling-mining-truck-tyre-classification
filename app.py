@@ -45,29 +45,46 @@ st.markdown("""
         font-size: 1rem;
         opacity: 0.8;
     }
-    .stage-box {
+    div[data-testid="stImage"] {
+        border: 2px solid #dee2e6;
+        border-radius: 8px;
+        overflow: hidden;
+    }
+    div[data-testid="stImage"] img {
+        max-height: 450px !important;
+        object-fit: contain !important;
+    }
+    .result-metric {
         background: #f8f9fa;
         border: 1px solid #dee2e6;
         border-radius: 10px;
-        padding: 1.2rem;
-        margin: 0.8rem 0;
+        padding: 0.75rem 1rem;
+        text-align: center;
     }
-    .stage-title {
+    .result-metric .label {
+        font-size: 0.75rem;
+        color: #6c757d;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+    }
+    .result-metric .value {
         font-size: 1.1rem;
-        font-weight: 600;
-        margin-bottom: 0.8rem;
-        color: #1a1a2e;
+        font-weight: 700;
+        color: #212529;
+        margin-top: 2px;
     }
-    .status-pass {
-        color: #28a745;
-        font-weight: 600;
-    }
-    .status-fail {
-        color: #dc3545;
-        font-weight: 600;
-    }
+    .result-metric .value.good { color: #28a745; }
+    .result-metric .value.bad { color: #dc3545; }
+    .result-metric .value.info { color: #17a2b8; }
+    .result-metric .value.pass { color: #28a745; }
+    .result-metric .value.fail { color: #dc3545; }
     div[data-testid="stSidebar"] {
         background: #f0f2f6;
+    }
+    .download-section {
+        margin-top: 1rem;
+        padding-top: 1rem;
+        border-top: 1px solid #dee2e6;
     }
 </style>
 """, unsafe_allow_html=True)
@@ -105,89 +122,65 @@ def load_example_image(category):
     return None
 
 
+def resize_display_image(image, max_width=800, max_height=450):
+    w, h = image.size
+    ratio = min(max_width / w, max_height / h, 1.0)
+    if ratio < 1.0:
+        new_size = (int(w * ratio), int(h * ratio))
+        return image.resize(new_size, Image.LANCZOS)
+    return image
+
+
 def process_image(image):
     gatekeeper = init_gatekeeper()
     wear = init_wear()
 
-    stage1_col, stage2_col = st.columns(2)
+    gate_dets = gatekeeper.predict(image)
+    gate_decision = gatekeeper.decide(gate_dets)
 
-    with st.spinner("Stage 1: Tyre Verification in progress..."):
-        gate_dets = gatekeeper.predict(image)
-        gate_decision = gatekeeper.decide(gate_dets)
-
-    with stage1_col:
-        st.markdown('<div class="stage-box">', unsafe_allow_html=True)
-        st.markdown('<div class="stage-title">🔍 Stage 1: Tyre Verification</div>',
-                    unsafe_allow_html=True)
-
-        if gate_decision["is_tire"]:
-            st.markdown(f'<div class="status-pass">✅ Tyre Detected</div>',
-                        unsafe_allow_html=True)
-            st.metric("Confidence", f"{gate_decision['confidence']:.2%}")
-        else:
-            st.markdown(f'<div class="status-fail">❌ Non-Tyre Detected</div>',
-                        unsafe_allow_html=True)
-            st.metric("Reason", gate_decision.get("reason", ""))
-
-        st.markdown('</div>', unsafe_allow_html=True)
-
-    vis_img = image.copy()
+    gate_vis = image.copy()
     if gate_dets:
-        vis_img = draw_boxes(vis_img, gate_dets)
+        gate_vis = draw_boxes(gate_vis, gate_dets)
 
-    with stage2_col:
-        st.markdown('<div class="stage-box">', unsafe_allow_html=True)
-        st.markdown('<div class="stage-title">🛞 Stage 2: Wear Detection</div>',
-                    unsafe_allow_html=True)
+    wear_result = None
+    wear_vis = None
+    final_class = "Non-Tire"
+    confidence = 0.0
 
-        if gate_decision["is_tire"]:
-            with st.spinner("Running wear analysis..."):
-                boxes, scores, labels = wear.predict(image)
-                wear_result = wear.classify_output(boxes, scores, labels)
-
-            final_class = wear_result["final_class"]
-            confidence = max(d["confidence"] for d in wear_result["detections"]) if wear_result["detections"] else 0.0
-
-            st.markdown(f'<div class="stage-title">Result: {final_class}</div>',
-                        unsafe_allow_html=True)
-
-            wear_vis = image.copy()
-            wear_vis = draw_boxes(wear_vis, wear_result["detections"])
-        else:
-            final_class = "Non-Tire"
-            confidence = 0.0
-            wear_result = None
-            wear_vis = None
-            st.markdown(
-                '<div style="color: #dc3545; font-weight: 600;">⛔ Inspection stopped at Stage 1</div>',
-                unsafe_allow_html=True)
-            st.caption("Wear detection was not executed because the image is not a tyre.")
-
-        st.markdown('</div>', unsafe_allow_html=True)
-
-    st.markdown("### 📊 Final Result")
-    st.markdown(result_card_html(final_class, confidence, wear_result["reason"] if wear_result else "Non-Tyre image"),
-                unsafe_allow_html=True)
-
-    st.markdown("### 🖼️ Detection Visualization")
-    vis_tabs = st.tabs(["Gatekeeper", "Wear Detection"])
-    with vis_tabs[0]:
-        st.image(vis_img, caption="Gatekeeper Detections", use_column_width=True)
-    with vis_tabs[1]:
-        if wear_vis is not None:
-            st.image(wear_vis, caption="Wear Detection", use_column_width=True)
-        else:
-            st.info("No wear detection visualization available (non-tyre image).")
+    if gate_decision["is_tire"]:
+        boxes, scores, labels = wear.predict(image)
+        wear_result = wear.classify_output(boxes, scores, labels)
+        final_class = wear_result["final_class"]
+        confidence = max(d["confidence"] for d in wear_result["detections"]) if wear_result["detections"] else 0.0
+        wear_vis = image.copy()
+        wear_vis = draw_boxes(wear_vis, wear_result["detections"])
 
     return {
         "gatekeeper_result": "Tyre" if gate_decision["is_tire"] else "Non-Tyre",
         "gatekeeper_confidence": gate_decision.get("confidence", 0.0),
         "gatekeeper_reason": gate_decision.get("reason", ""),
+        "gatekeeper_detections": gate_dets,
+        "gatekeeper_vis": gate_vis,
         "wear_result": wear_result,
+        "wear_vis": wear_vis,
         "final_class": final_class,
         "confidence": confidence,
-        "gatekeeper_detections": gate_dets,
     }
+
+
+def image_to_bytes(img, format="PNG"):
+    buf = BytesIO()
+    img.save(buf, format=format)
+    return buf.getvalue()
+
+
+def result_metric_html(label, value, css_class=""):
+    return f"""
+    <div class="result-metric">
+        <div class="label">{label}</div>
+        <div class="value {css_class}">{value}</div>
+    </div>
+    """
 
 
 def main():
@@ -225,10 +218,6 @@ def main():
                     st.session_state["image_source"] = "example_neg"
                     st.session_state["run_scan"] = False
                     st.rerun()
-
-        st.markdown("---")
-        st.markdown("## ⚙️ Debug")
-        show_debug = st.checkbox("Show Technical Details", value=False)
 
         st.markdown("---")
         st.markdown("## 📈 Performance")
@@ -304,7 +293,6 @@ def main():
         st.stop()
 
     image = st.session_state["uploaded_image"]
-    st.image(image, caption="Input Image", use_column_width=True)
 
     scan_col1, scan_col2 = st.columns([1, 3])
     with scan_col1:
@@ -315,24 +303,75 @@ def main():
     if scan_clicked:
         st.session_state["run_scan"] = True
 
-    if st.session_state.get("run_scan"):
-        try:
-            result = process_image(image)
-        except FileNotFoundError as e:
-            st.error(f"🚨 Missing checkpoint: {e}")
-            st.warning("Please ensure all model checkpoints are available.")
-            st.stop()
-        except Exception as e:
-            st.error(f"🚨 Inference failed: {e}")
-            st.stop()
-    else:
+    if not st.session_state.get("run_scan"):
+        disp_img = resize_display_image(image)
+        st.image(disp_img, caption="Input Image", use_container_width=True)
         st.info("👆 Press **Start Scan** to run the inspection pipeline.")
         st.stop()
 
-    if show_debug:
-        st.markdown("### 🔧 Technical Details")
-        debug_tabs = st.tabs(["Gatekeeper Raw", "Wear Raw", "Full JSON"])
-        with debug_tabs[0]:
+    try:
+        result = process_image(image)
+    except FileNotFoundError as e:
+        st.error(f"🚨 Missing checkpoint: {e}")
+        st.warning("Please ensure all model checkpoints are available.")
+        st.stop()
+    except Exception as e:
+        st.error(f"🚨 Inference failed: {e}")
+        st.stop()
+
+    # ===== SIDE-BY-SIDE IMAGES =====
+    left_col, right_col = st.columns(2)
+
+    with left_col:
+        disp_original = resize_display_image(image)
+        st.image(disp_original, caption="Uploaded Image", use_container_width=True)
+
+    with right_col:
+        detection_img = result["wear_vis"] if result.get("wear_vis") is not None else result["gatekeeper_vis"]
+        if detection_img is not None:
+            disp_detection = resize_display_image(detection_img)
+            st.image(disp_detection, caption="Detection Result", use_container_width=True)
+
+    # ===== RESULT CARDS =====
+    st.markdown("<div style='height: 0.5rem'></div>", unsafe_allow_html=True)
+
+    final_class = result["final_class"]
+    confidence = result["confidence"]
+    gatekeeper_passed = result["gatekeeper_result"] == "Tyre"
+
+    if final_class == "Good-Tire":
+        status_text = "✅ GOOD"
+        status_css = "good"
+    elif final_class == "Bad-Tire":
+        status_text = "❌ BAD"
+        status_css = "bad"
+    else:
+        status_text = "ℹ️ NON-TYRE"
+        status_css = "info"
+
+    gatekeeper_text = "✅ PASSED" if gatekeeper_passed else "❌ REJECTED"
+    gatekeeper_css = "pass" if gatekeeper_passed else "fail"
+
+    wear_detail = result["wear_result"]["reason"] if result["wear_result"] else "Not inspected (non-tyre)"
+
+    cols = st.columns(4)
+    with cols[0]:
+        st.markdown(result_metric_html("Tyre Status", status_text, status_css),
+                    unsafe_allow_html=True)
+    with cols[1]:
+        st.markdown(result_metric_html("Confidence", f"{confidence:.1%}"),
+                    unsafe_allow_html=True)
+    with cols[2]:
+        st.markdown(result_metric_html("Gatekeeper", gatekeeper_text, gatekeeper_css),
+                    unsafe_allow_html=True)
+    with cols[3]:
+        st.markdown(result_metric_html("Wear Detail", wear_detail),
+                    unsafe_allow_html=True)
+
+    # ===== COLLAPSIBLE TECHNICAL DETAILS =====
+    with st.expander("Technical Details", expanded=False):
+        det_tabs = st.tabs(["Gatekeeper Raw", "Wear Raw", "Full JSON"])
+        with det_tabs[0]:
             st.json({
                 "detections": [
                     {
@@ -348,7 +387,7 @@ def main():
                     "reason": result["gatekeeper_reason"],
                 },
             })
-        with debug_tabs[1]:
+        with det_tabs[1]:
             if result["wear_result"]:
                 st.json({
                     "final_class": result["wear_result"]["final_class"],
@@ -357,13 +396,14 @@ def main():
                         {
                             "class": d["class"],
                             "confidence": round(d["confidence"], 4),
+                            "bbox": [round(b, 2) for b in d["bbox"]],
                         }
                         for d in result["wear_result"]["detections"]
                     ],
                 })
             else:
                 st.info("Wear detection was not executed.")
-        with debug_tabs[2]:
+        with det_tabs[2]:
             st.json({
                 "gatekeeper_result": result["gatekeeper_result"],
                 "wear_result": result["wear_result"]["final_class"] if result["wear_result"] else None,
@@ -371,16 +411,44 @@ def main():
                 "confidence": round(result["confidence"], 4),
             })
 
+    # ===== DOWNLOAD BUTTONS =====
+    st.markdown('<div class="download-section">', unsafe_allow_html=True)
+    dl_col1, dl_col2 = st.columns(2)
+
+    annotated = result.get("wear_vis") or result.get("gatekeeper_vis")
+    if annotated is not None:
+        img_bytes = image_to_bytes(annotated)
+        with dl_col1:
+            st.download_button(
+                label="📷 Download Annotated Image",
+                data=img_bytes,
+                file_name="detection_result.png",
+                mime="image/png",
+                use_container_width=True,
+            )
+
     export_data = {
         "gatekeeper_result": result["gatekeeper_result"],
         "wear_result": result["wear_result"]["final_class"] if result["wear_result"] else None,
         "final_class": result["final_class"],
         "confidence": round(result["confidence"], 4),
+        "gatekeeper_confidence": round(result["gatekeeper_confidence"], 4),
+        "gatekeeper_reason": result["gatekeeper_reason"],
     }
+    json_str = json.dumps(export_data, indent=2)
+    with dl_col2:
+        st.download_button(
+            label="📋 Download Inspection JSON",
+            data=json_str,
+            file_name="inspection_result.json",
+            mime="application/json",
+            use_container_width=True,
+        )
+    st.markdown('</div>', unsafe_allow_html=True)
 
+    # ===== SIDEBAR EXPORT =====
     st.sidebar.markdown("---")
     st.sidebar.markdown("## 💾 Export")
-    json_str = json.dumps(export_data, indent=2)
     st.sidebar.download_button(
         label="Download inspection_result.json",
         data=json_str,
