@@ -2,6 +2,7 @@ import argparse
 import json
 import os
 import sys
+
 import pandas as pd
 import torch
 import torchvision.transforms as T
@@ -28,6 +29,7 @@ def decode_predictions(scores, labels, score_threshold):
             'confidence': round(float(score), 2),
         })
     return detections
+
 
 def classify_output(boxes, scores, labels, score_threshold=0.15):
     detections = decode_predictions(scores, labels, score_threshold)
@@ -73,6 +75,7 @@ def classify_output(boxes, scores, labels, score_threshold=0.15):
 
     return result
 
+
 @torch.no_grad()
 def predict(model, image_path, device, score_threshold=0.15):
     image = Image.open(image_path).convert('RGB')
@@ -88,18 +91,22 @@ def predict(model, image_path, device, score_threshold=0.15):
 
     return boxes, scores, labels
 
+
 @torch.no_grad()
 def predict_image(model, image_path, device, score_threshold=0.15):
     boxes, scores, labels = predict(model, image_path, device, score_threshold)
     return classify_output(boxes, scores, labels, score_threshold)
 
+
 def get_predicted_class(result):
     return result['final_class']
+
 
 def get_confidence(result):
     if result['detections']:
         return max(d['confidence'] for d in result['detections'])
     return 0.0
+
 
 def batch_inference(test_csv, checkpoint_path, output_dir, score_threshold=0.15):
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
@@ -144,6 +151,7 @@ def batch_inference(test_csv, checkpoint_path, output_dir, score_threshold=0.15)
     print(f'Results saved to {out_path}')
     return results_df
 
+
 def main():
     parser = argparse.ArgumentParser(description='Infer wear detection on an image')
     parser.add_argument('image_path', nargs='?', default=None,
@@ -156,6 +164,7 @@ def main():
 
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
     checkpoint_path = 'outputs/wear_detection/checkpoints/best_wear_frcnn.pt'
+
     if not os.path.isfile(checkpoint_path):
         print(f'Error: checkpoint {checkpoint_path} not found. Train first.',
               file=sys.stderr)

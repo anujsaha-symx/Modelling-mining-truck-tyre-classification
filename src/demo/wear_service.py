@@ -5,8 +5,10 @@ from torchvision.models.detection.faster_rcnn import FastRCNNPredictor
 
 from src.demo.utils import WEAR_CKPT, get_device, check_checkpoint
 
+
 CLASS_NAMES = {1: "Good-Tire", 2: "Bad-Tire", 3: "Non-Tire"}
 DISPLAY_NAMES = {"Good-Tire": "Tire", "Bad-Tire": "Cut", "Non-Tire": "Non-Tire"}
+
 
 def _get_wear_model(num_classes=4):
     model = torchvision.models.detection.fasterrcnn_mobilenet_v3_large_fpn(
@@ -16,10 +18,12 @@ def _get_wear_model(num_classes=4):
     model.roi_heads.box_predictor = FastRCNNPredictor(in_features, num_classes)
     return model
 
+
 def _load_checkpoint(model, path, device="cpu"):
     checkpoint = torch.load(path, map_location=device)
     model.load_state_dict(checkpoint["model_state_dict"])
     return checkpoint
+
 
 class WearService:
     def __init__(self, checkpoint_path=None, score_threshold=0.15):

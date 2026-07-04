@@ -8,6 +8,7 @@ COLORS = {
     "Bad-Tire": (255, 0, 0),
 }
 
+
 def draw_boxes(image, detections):
     draw = ImageDraw.Draw(image)
     try:
@@ -28,6 +29,7 @@ def draw_boxes(image, detections):
         draw.text((x1, max(0, y1 - 20)), label, fill=text_color, font=font)
 
     return image
+
 
 def result_card_html(final_class, confidence, reason):
     if final_class == "Good-Tire":
@@ -55,6 +57,7 @@ def result_card_html(final_class, confidence, reason):
         <div style="font-size: 14px; opacity: 0.75; margin-top: 5px;">{reason}</div>
     </div>
     """
+
 
 def metric_card_html(label, value):
     return f"""

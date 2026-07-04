@@ -18,21 +18,27 @@ COLORS = {
 }
 LABEL_MAP = {1: 'Tire', 2: 'Cut', 3: 'Non-Tire'}
 
+
 @torch.no_grad()
 def predict(model, image_path, device, score_threshold=0.15):
     image = Image.open(image_path).convert('RGB')
     transform = T.Compose([T.ToTensor()])
     image_tensor = transform(image).to(device)
+
     model.eval()
     output = model([image_tensor])[0]
+
     boxes = output['boxes'].cpu().numpy()
     scores = output['scores'].cpu().numpy()
     labels = output['labels'].cpu().numpy()
+
     mask = scores >= score_threshold
     boxes = boxes[mask]
     scores = scores[mask]
     labels = labels[mask]
+
     return image, boxes, scores, labels
+
 
 def classify_output(boxes, scores, labels, score_threshold=0.15):
     detections = []
@@ -40,6 +46,7 @@ def classify_output(boxes, scores, labels, score_threshold=0.15):
     has_tire = False
     has_non_tire = False
     cut_scores = []
+
     for box, score, label in zip(boxes, scores, labels):
         cls_name = LABEL_MAP.get(int(label), 'Unknown')
         detections.append({
@@ -54,6 +61,7 @@ def classify_output(boxes, scores, labels, score_threshold=0.15):
             has_tire = True
         elif cls_name == 'Non-Tire' and score >= score_threshold:
             has_non_tire = True
+
     if has_cut:
         final_class = 'Bad-Tire'
         max_cut_score = max(cut_scores)
@@ -67,12 +75,14 @@ def classify_output(boxes, scores, labels, score_threshold=0.15):
     else:
         final_class = 'Unknown'
         reason = 'No objects detected above threshold'
+
     return {
         'final_class': final_class,
         'reason': reason,
         'detections': detections,
         'score_threshold': score_threshold,
     }
+
 
 def draw_detections(image, output):
     draw = ImageDraw.Draw(image)
@@ -88,7 +98,9 @@ def draw_detections(image, output):
         draw.rectangle([x1, y1, x2, y2], outline=color, width=3)
         label = f"{cls_name} {det['confidence']:.2f}"
         draw.text((x1, max(0, y1 - 18)), label, fill=color, font=font)
+
     return image
+
 
 def main():
     parser = argparse.ArgumentParser(description='Faster R-CNN V2 Wear Detection')
@@ -102,21 +114,28 @@ def main():
                         help='Save visualization to path')
     parser.add_argument('--no-visualize', action='store_true',
                         help='Skip visualization output')
+
     args = parser.parse_args()
+
     if not os.path.isfile(args.image_path):
         print(f'Error: {args.image_path} not found', file=sys.stderr)
         sys.exit(1)
+
     if not os.path.isfile(args.checkpoint):
         print(f'Error: checkpoint {args.checkpoint} not found', file=sys.stderr)
         sys.exit(1)
+
     model = get_frcnn_model_v2(num_classes=4, pretrained=False).to(DEVICE)
     checkpoint = torch.load(args.checkpoint, map_location=DEVICE)
     model.load_state_dict(checkpoint['model_state_dict'])
+
     image, boxes, scores, labels = predict(
         model, args.image_path, DEVICE, score_threshold=args.score_threshold
     )
     output = classify_output(boxes, scores, labels, score_threshold=args.score_threshold)
+
     print(json.dumps(output, indent=2))
+
     if not args.no_visualize:
         vis_image = draw_detections(image.copy(), output)
         if args.output:
@@ -129,6 +148,7 @@ def main():
             out_path = os.path.join(out_dir, f'pred_{base}')
             vis_image.save(out_path)
             print(f'Visualization saved to {out_path}')
+
 
 if __name__ == '__main__':
     main()

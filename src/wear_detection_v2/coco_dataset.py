@@ -12,11 +12,14 @@ CURRENT_ROOT = 'D:\\Tyre_Classification'
 
 V2_CATEGORY_NAMES = {0: 'Tire', 1: 'Cut', 2: 'Non-Tire'}
 
+
 def collate_fn(batch):
     return tuple(zip(*batch))
 
+
 def fix_path(path):
     return path.replace(OLD_ROOT, CURRENT_ROOT)
+
 
 class WearDetectionDatasetV2(Dataset):
     def __init__(self, coco_path, split_csv, transforms=None):

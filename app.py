@@ -9,13 +9,18 @@ from PIL import Image
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
+from src.demo import config
 from src.demo.gatekeeper_service import GatekeeperService
 from src.demo.wear_service import WearService
 from src.demo.visualization import draw_boxes, result_card_html, metric_card_html
 from src.demo.utils import (
     GATEKEEPER_METRICS,
     WEAR_METRICS_V2,
+    GATEKEEPER_CKPT,
+    GATEKEEPER_V3_CKPT,
+    WEAR_V2_CKPT,
     load_image,
+    check_checkpoint,
 )
 
 st.set_page_config(
@@ -24,6 +29,18 @@ st.set_page_config(
     layout="wide",
     initial_sidebar_state="expanded",
 )
+
+# Startup validation: verify checkpoints exist
+ckpt_gk = config.GATEKEEPER_CHECKPOINTS[config.GATEKEEPER_MODEL]
+ckpt_wear = str(WEAR_V2_CKPT)
+missing = []
+if not os.path.isfile(ckpt_gk):
+    missing.append(f"Gatekeeper checkpoint: {ckpt_gk}")
+if not os.path.isfile(ckpt_wear):
+    missing.append(f"Wear checkpoint: {ckpt_wear}")
+if missing:
+    st.error(f"Missing checkpoint(s):\n" + "\n".join(missing))
+    st.stop()
 
 st.markdown("""
 <style>
@@ -220,9 +237,25 @@ def main():
                     st.rerun()
 
         st.markdown("---")
+        st.markdown("## 🤖 Model Information")
+        st.markdown(
+            f"**Gatekeeper:**<br>V3 (Production)"
+            f"<br><span style='font-size:0.8rem;color:#666'>({config.GATEKEEPER_MODEL.upper()})</span>",
+            unsafe_allow_html=True,
+        )
+        st.markdown("**Wear Detection:**<br>Current (Faster R-CNN V1)", unsafe_allow_html=True)
+
+        show_paths = st.checkbox("Show Model Paths", value=False)
+        if show_paths:
+            st.code(f"Gatekeeper: {config.GATEKEEPER_CHECKPOINTS[config.GATEKEEPER_MODEL]}")
+            st.code(f"Wear: {WEAR_V2_CKPT}")
+
+        st.markdown("---")
         st.markdown("## 📈 Performance")
         with st.expander("Gatekeeper Performance", expanded=True):
             gk = GATEKEEPER_METRICS
+            st.markdown(metric_card_html("Accuracy", gk.get("Accuracy", "N/A")),
+                        unsafe_allow_html=True)
             st.markdown(metric_card_html("Precision", gk["Precision"]),
                         unsafe_allow_html=True)
             st.markdown(metric_card_html("Recall", gk["Recall"]),
@@ -252,7 +285,7 @@ def main():
         st.markdown("---")
         st.markdown("## ℹ️ About")
         st.caption(
-            "Mining Truck Tyre Inspection System v2.0"
+            "Mining Truck Tyre Inspection System v3.0"
         )
 
     uploaded_file = st.file_uploader(

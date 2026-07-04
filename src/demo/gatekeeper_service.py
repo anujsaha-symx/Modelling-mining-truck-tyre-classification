@@ -3,7 +3,9 @@ import torchvision
 import torchvision.transforms as T
 from torchvision.models.detection.faster_rcnn import FastRCNNPredictor
 
-from src.demo.utils import GATEKEEPER_CKPT, GATEKEEPER_CLASSES, get_device, check_checkpoint
+from src.demo import config
+from src.demo.utils import GATEKEEPER_CLASSES, get_device, check_checkpoint
+
 
 def _get_frcnn_model(num_classes=3):
     model = torchvision.models.detection.fasterrcnn_mobilenet_v3_large_fpn(
@@ -13,24 +15,34 @@ def _get_frcnn_model(num_classes=3):
     model.roi_heads.box_predictor = FastRCNNPredictor(in_features, num_classes)
     return model
 
+
 def _load_checkpoint(model, path, device="cpu"):
     checkpoint = torch.load(path, map_location=device)
     model.load_state_dict(checkpoint["model_state_dict"])
     return checkpoint
+
+
+def _get_ckpt_name(path):
+    return path.rsplit("/", 1)[-1].rsplit("\\", 1)[-1]
+
 
 class GatekeeperService:
     def __init__(self, checkpoint_path=None, score_threshold=0.5, margin=0.2):
         self.device = get_device()
         self.score_threshold = score_threshold
         self.margin = margin
-        ckpt = checkpoint_path or GATEKEEPER_CKPT
+
+        ckpt = checkpoint_path or config.GATEKEEPER_CHECKPOINTS[config.GATEKEEPER_MODEL]
         check_checkpoint(ckpt)
 
         self.model = _get_frcnn_model(num_classes=3).to(self.device)
-        _load_checkpoint(self.model, str(ckpt), device=self.device)
+        _load_checkpoint(self.model, ckpt, device=self.device)
         self.model.eval()
 
         self.transform = T.Compose([T.ToTensor()])
+
+        ckpt_name = _get_ckpt_name(ckpt)
+        print(f"Loaded Gatekeeper: {ckpt_name}")
 
     @torch.no_grad()
     def predict(self, image):

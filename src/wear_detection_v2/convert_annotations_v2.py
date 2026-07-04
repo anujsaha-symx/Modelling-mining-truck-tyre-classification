@@ -11,6 +11,7 @@ V2_CATEGORIES = [
     {'id': 2, 'name': 'Non-Tire', 'supercategory': 'none'},
 ]
 
+
 def _infer_source_class(filename):
     if filename.startswith('good_'):
         return 'good'
@@ -20,24 +21,31 @@ def _infer_source_class(filename):
         return 'negative'
     return None
 
+
 def convert():
     with open(ANNOTATIONS_PATH, 'r') as f:
         coco = json.load(f)
+
     print(f'Original categories: {[c["name"] for c in coco["categories"]]}')
     print(f'Total images: {len(coco["images"])}')
     print(f'Total annotations: {len(coco["annotations"])}')
+
     new_coco = copy.deepcopy(coco)
     new_coco['categories'] = V2_CATEGORIES
+
     image_map = {img['id']: img for img in coco['images']}
+
     new_annotations = []
     next_ann_id = 1
     stats = {'good': 0, 'bad': 0, 'negative': 0, 'unknown': 0}
     cut_created = 0
+
     for ann in coco['annotations']:
         img_id = ann['image_id']
         img_info = image_map.get(img_id)
         if img_info is None:
             continue
+
         filename = img_info['file_name']
         source = _infer_source_class(filename)
         if source is None:
@@ -91,6 +99,7 @@ def convert():
     if stats['unknown']:
         print(f'  Unknown:                             {stats["unknown"]}')
     print(f'\nSaved to {OUTPUT_PATH}')
+
 
 if __name__ == '__main__':
     convert()

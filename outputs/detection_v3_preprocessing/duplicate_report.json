@@ -1,0 +1,411 @@
+{
+  "timestamp": "2026-07-02T17:30:12.996488",
+  "total_images": 16316,
+  "duplicate_groups": 679,
+  "removed_duplicates": 727,
+  "kept_images": 679,
+  "groups": {
+    "189068fdbe89c7706fa993775f74e695acd4c809a4ce6b576e5ed2757092098a": [
+      "106.jpg",
+      "108.jpg"
+    ],
+    "15ae891939268ad9ee8b76c6dd85f903fcbff50b63e7f4e6501c6e9ad2fc8c5e": [
+      "119.jpg",
+      "130.jpg"
+    ],
+    "d776b1bdb0ceb009a377007496ce663ef91ef09bfc6a1ca57a6752bdb15f0421": [
+      "120.jpg",
+      "133.jpg"
+    ],
+    "29f6fcc06fa902be8f1e34c9b419e7683f7fd1fef97ae621273bfa74a885774b": [
+      "126.jpg",
+      "132.jpg"
+    ],
+    "3003d3c4a72c5cd03a4f47a314833ac1f79056416c40285299bfd9c8ad2d9099": [
+      "14.jpg",
+      "87.jpg"
+    ],
+    "0961a00541b1d7112d85419708c7fb1259990e4a74c363f8529007522919c582": [
+      "15.jpg",
+      "85.jpg"
+    ],
+    "3e68a19a258390ede000a6505b6c84d9033a3a2e0f3b2924e3ff8b2a4955b38c": [
+      "16.jpg",
+      "88.jpg"
+    ],
+    "9755882fb10f5f3ed07f56385e51bcb4ff9278496731cc93bb3ae74a2568841f": [
+      "165.jpg",
+      "188.jpg"
+    ],
+    "8a119c3628eba57d08cf6471779593bcb5c61bb7bfe2b6e25f62c49512a966b5": [
+      "18.jpg",
+      "84.jpg"
+    ],
+    "5c0f0e999f02daf646f567523722f4014bf778d86308be0d2ca9c11966386807": [
+      "19.jpg",
+      "86.jpg"
+    ],
+    "6be36fa47e75a5412bb3608d179ee3cfffd9e6de7f6db6a0a8f3d9955679d30b": [
+      "29.jpg",
+      "81.jpg"
+    ],
+    "02f24fa66d522aac36175e6291a32c54eb73008ce36907fe770d73ce2ba70bff": [
+      "30.jpg",
+      "83.jpg"
+    ],
+    "37c5776843c81e8d3f6cc19362c5555ad30c880fb212a407e64110427a0282cc": [
+      "410.jpg",
+      "646.jpg"
+    ],
+    "67d5056b2031facb0e71b07b7f3000f658a2a9d6959a09b5554f3cd42c004be0": [
+      "412.jpg",
+      "663.jpg"
+    ],
+    "bbd95db32592756fa0eaf5b35f2d8697f3c1ad30911512ad526a6e8001fa8319": [
+      "413.jpg",
+      "662.jpg"
+    ],
+    "b6990130badf966179f629bba274c9b8f14bded1ecd3bf7b137b7b061253d0a9": [
+      "415.jpg",
+      "659.jpg"
+    ],
+    "f04ac4000ffa81d21799efbe6fd1c42a9a6777f4ee313dbca8d72d6105235f62": [
+      "416.jpg",
+      "666.jpg"
+    ],
+    "56bcc02cc15b590539beb52176bf314cf855c9efdecb5e2e5dd7482cc36a39e4": [
+      "418.jpg",
+      "649.jpg"
+    ],
+    "b27518cc0c04ef680044e79e3356ae25b9693f60ec0ec85380ae7ef36bcce801": [
+      "419.jpg",
+      "661.jpg"
+    ],
+    "0156756c7516943f5e0bb79d5a6f1fb87cdc6f580e2b6de8d3d667671b886aca": [
+      "420.jpg",
+      "673.jpg"
+    ],
+    "c4542845e7a5f917d876598ca8cdee45e6d22381d79699bce6acc41e7eebddf5": [
+      "422.jpg",
+      "634.jpg"
+    ],
+    "dcb84ca40d8f5077270a1061c4d912e3e907dc323c1959ffdf490db97f7283c1": [
+      "423.jpg",
+      "645.jpg"
+    ],
+    "6891cd89e2454f669dac74425c8b310c7b9c382ffac8bf00fb1c54476bbae8bf": [
+      "424.jpg",
+      "656.jpg"
+    ],
+    "65b14c1e478b64747dc0c7e22e771e3a1bb75ccb935118032694b9292bafd0ed": [
+      "425.jpg",
+      "670.jpg"
+    ],
+    "3ebf1d7eb17398d0910db1acf11741238bd17c93d085173e4ba4a8d8e54a5a42": [
+      "426.jpg",
+      "644.jpg"
+    ],
+    "0bd516f43edbd36370d9efb58471ce431a32446654e9c297a2a8545b8adf6de1": [
+      "427.jpg",
+      "643.jpg"
+    ],
+    "637f84ef8f9f0e4f2dbf2d82a74bb13d7a521ccf90ab590bb5f44407c942b271": [
+      "429.jpg",
+      "639.jpg"
+    ],
+    "d2f481ebed4882945f02b965662a2d15abc15c0eed67363edf45ab2761012a34": [
+      "430.jpg",
+      "668.jpg"
+    ],
+    "04657daa28650a46b708c61d4dff596f87d6f03d9934b9b9242ee06abc719a89": [
+      "431.jpg",
+      "653.jpg"
+    ],
+    "32e9dd2b00bf427fd61df9a669be9fdf2737c3f9527627d1988db41f8671b506": [
+      "434.jpg",
+      "654.jpg"
+    ],
+    "cc221472d5e055c26381c78e4147d9a0a03999c466704768593ec38c0f6cce10": [
+      "435.jpg",
+      "660.jpg"
+    ],
+    "4fbecbe2f8d5b90a4ab1513b585c9d29c88a1ff20a785840630e26aa2b812f09": [
+      "436.jpg",
+      "664.jpg"
+    ],
+    "ea2eca22c674be9413e05db7fd3a633a05d71dba1aa933dce1c6c5c4cafac642": [
+      "437.jpg",
+      "652.jpg"
+    ],
+    "6d6b37debd582cd2e7a5469c95e964ae6a6de3808ac975d61e3fbcd723755849": [
+      "97.jpg",
+      "Image (256)_2.jpg"
+    ],
+    "9dc31a51d7c53534d517c1e0319e7dda8cd997bbb74054555037e38ec8d17801": [
+      "I1.jpg",
+      "I1_2.jpg"
+    ],
+    "bbd1e7461f7f76eb72af4beb2fabc799f723f2cfc599fb33f409cf218f6d27b1": [
+      "I100_5.jpg",
+      "I75_5.jpg"
+    ],
+    "240e8da364d2fb2fda34887a1902d45064f8c066b686afe20f74420d1438ebe3": [
+      "I102_5.jpg",
+      "I661_2.jpg"
+    ],
+    "909a1243184d620b8febae95bfadc70d5c2b1468d7c702027a3a7f47db2a0fad": [
+      "I1083.jpg",
+      "I1090.jpg"
+    ],
+    "58615c56e3c94aacc1b2d9f58edec772d26d64be8fb13d18db618f0623a6bebc": [
+      "I10_2.jpg",
+      "I58_2.jpg"
+    ],
+    "0753594ae4bfd32aab8164781de4df69d97464e3480d5c24cfab001afa5578ce": [
+      "I10_5.jpg",
+      "I12_5.jpg"
+    ],
+    "1e2b9127be7b1fcec5cb5afb97748a530b5f3ff27c1a49ede36638c7e0f085d4": [
+      "I1100.jpg",
+      "I1103.jpg"
+    ],
+    "76e1fd23edb0d664a6217abc87b5a50c13bf98e023ef4d9a5eb4a4bbc211e4c5": [
+      "I110_4.jpg",
+      "I97_4.jpg"
+    ],
+    "1734a5daede8ae495522ca6b66a76fd073ad66b146bbf6ef7737806c8f142a95": [
+      "I112_2.jpg",
+      "I1_1.jpg"
+    ],
+    "c10bbac5320be2696939eb2589a7445f572d1331c0d57994f7b777a11f4dad02": [
+      "I112_4.jpg",
+      "I152_4.jpg"
+    ],
+    "5a89cd749f29e8c909742277b900fd4994a48a9387e6dfa1a8377319243be0b9": [
+      "I1133.jpg",
+      "I1147.jpg"
+    ],
+    "14852cc1605096d247a7aedf80b40f88f66685f592edacaa41491d077256e827": [
+      "I113_2.jpg",
+      "I214_2.jpg"
+    ],
+    "e336d49e3932f03a35234417c13980fa2b465dc0c675649a4123bcfcb2f23c32": [
+      "I1140.jpg",
+      "I1155.jpg"
+    ],
+    "84afc30c0cf189784df65f3616c88602f6053c2f82830832ffce4eba334a4bef": [
+      "I1154.jpg",
+      "I1196.jpg"
+    ],
+    "014d51ba0b0f12081deffee85f2b1e554d8c9d9cb8cf86d8a469e9095d791be5": [
+      "I1159.jpg",
+      "I1204.jpg"
+    ],
+    "04a234bac82b2f98b7273b480acc197db485ccc46ce7f9bb029594175a020bef": [
+      "I1163.jpg",
+      "I1192.jpg"
+    ]
+  },
+  "removed_files": [
+    "108.jpg",
+    "130.jpg",
+    "133.jpg",
+    "132.jpg",
+    "87.jpg",
+    "85.jpg",
+    "88.jpg",
+    "188.jpg",
+    "84.jpg",
+    "86.jpg",
+    "81.jpg",
+    "83.jpg",
+    "646.jpg",
+    "663.jpg",
+    "662.jpg",
+    "659.jpg",
+    "666.jpg",
+    "649.jpg",
+    "661.jpg",
+    "673.jpg",
+    "634.jpg",
+    "645.jpg",
+    "656.jpg",
+    "670.jpg",
+    "644.jpg",
+    "643.jpg",
+    "639.jpg",
+    "668.jpg",
+    "653.jpg",
+    "654.jpg",
+    "660.jpg",
+    "664.jpg",
+    "652.jpg",
+    "Image (256)_2.jpg",
+    "I1_2.jpg",
+    "I75_5.jpg",
+    "I661_2.jpg",
+    "I1090.jpg",
+    "I58_2.jpg",
+    "I12_5.jpg",
+    "I1103.jpg",
+    "I97_4.jpg",
+    "I1_1.jpg",
+    "I152_4.jpg",
+    "I1147.jpg",
+    "I214_2.jpg",
+    "I1155.jpg",
+    "I1196.jpg",
+    "I1204.jpg",
+    "I1192.jpg",
+    "I1199.jpg",
+    "I1203.jpg",
+    "I1202.jpg",
+    "I1200.jpg",
+    "I1198.jpg",
+    "I1226.jpg",
+    "I1225.jpg",
+    "I54_2.jpg",
+    "I215_2.jpg",
+    "I1336.jpg",
+    "I1354.jpg",
+    "I1361.jpg",
+    "I1478.jpg",
+    "I1367.jpg",
+    "I1346.jpg",
+    "I1337.jpg",
+    "I1355.jpg",
+    "I1366.jpg",
+    "I1334.jpg",
+    "I1358.jpg",
+    "I1339.jpg",
+    "I1335.jpg",
+    "I1347.jpg",
+    "I1348.jpg",
+    "I1365.jpg",
+    "I70_2.jpg",
+    "I84_2.jpg",
+    "I1356.jpg",
+    "I1363.jpg",
+    "I1477.jpg",
+    "I1360.jpg",
+    "I1359.jpg",
+    "I1351.jpg",
+    "I1344.jpg",
+    "I1329.jpg",
+    "I1328.jpg",
+    "I1345.jpg",
+    "I1362.jpg",
+    "I1340.jpg",
+    "I1349.jpg",
+    "I1480.jpg",
+    "I213_2.jpg",
+    "I1457.jpg",
+    "I1458.jpg",
+    "I1459.jpg",
+    "I1461.jpg",
+    "I1460.jpg",
+    "I1462.jpg",
+    "I206_2.jpg",
+    "I211_4.jpg",
+    "I1463.jpg",
+    "I1467.jpg",
+    "I1466.jpg",
+    "I1465.jpg",
+    "I1470.jpg",
+    "I1495.jpg",
+    "I1468.jpg",
+    "I1471.jpg",
+    "I1492.jpg",
+    "I1469.jpg",
+    "I1496.jpg",
+    "I1474.jpg",
+    "I1494.jpg",
+    "I1473.jpg",
+    "I1493.jpg",
+    "I1472.jpg",
+    "I1489.jpg",
+    "I1476.jpg",
+    "I1490.jpg",
+    "I1487.jpg",
+    "I1491.jpg",
+    "I1488.jpg",
+    "I1484.jpg",
+    "I1485.jpg",
+    "I1481.jpg",
+    "I1482.jpg",
+    "I177_3.jpg",
+    "I212_2.jpg",
+    "I210_3.jpg",
+    "I43_4.jpg",
+    "I66_2.jpg",
+    "I211_2.jpg",
+    "I20_1.jpg",
+    "I56_2.jpg",
+    "I673_2.jpg",
+    "I61_2.jpg",
+    "I211_3.jpg",
+    "I231_2.jpg",
+    "I208_3.jpg",
+    "I242_2.jpg",
+    "I24_2.jpg",
+    "I687_1.jpg",
+    "I2_2.jpg",
+    "I46_2.jpg",
+    "I35_2.jpg",
+    "I221_2.jpg",
+    "I57_2.jpg",
+    "I27_2.jpg",
+    "I71_2.jpg",
+    "I219_2.jpg",
+    "I68_2.jpg",
+    "I28_2.jpg",
+    "I85_2.jpg",
+    "I656_2.jpg",
+    "I79_2.jpg",
+    "I90_2.jpg",
+    "I621.jpg",
+    "I49_4.jpg",
+    "I33_4.jpg",
+    "I658_2.jpg",
+    "I622.jpg",
+    "I244_3.jpg",
+    "I251_3.jpg",
+    "I248_3.jpg",
+    "I249_3.jpg",
+    "I245_3.jpg",
+    "I248.jpg",
+    "I254_2.jpg",
+    "I241_2.jpg",
+    "I252_3.jpg",
+    "I246_2.jpg",
+    "I250_3.jpg",
+    "I620.jpg",
+    "I244_2.jpg",
+    "I256_2.jpg",
+    "I284_3.jpg",
+    "I255_2.jpg",
+    "I283_3.jpg",
+    "I253_3.jpg",
+    "I287_3.jpg",
+    "I448_2.jpg",
+    "I282_3.jpg",
+    "I286_3.jpg",
+    "I447_2.jpg",
+    "I289_3.jpg",
+    "I285_3.jpg",
+    "I291_1.jpg",
+    "I37_5.jpg",
+    "I288_3.jpg",
+    "I63_2.jpg",
+    "I42_4.jpg",
+    "I40_5.jpg",
+    "I292.jpg",
+    "I83_2.jpg",
+    "I314.jpg",
+    "I59_2.jpg",
+    "I69_2.jpg",
+    "I55_2.jpg",
+    "I39_5.jpg",
+    "I34_4.jpg"
+  ]
+}
