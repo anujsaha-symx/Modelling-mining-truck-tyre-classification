@@ -18,27 +18,33 @@ CLASS_LIST = ['Background', 'Tire', 'Cut', 'Non-Tire']
 OUTPUT_DIR = 'outputs/wear_detection_v2'
 DEVICE = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
+
 @torch.no_grad()
 def evaluate(model, dataloader, device, score_threshold=0.5, iou_threshold=0.5):
     model.eval()
     all_gt_labels = []
     all_pred_labels = []
     all_pred_scores = []
+
     for images, targets in tqdm(dataloader, desc='Evaluating'):
         images = [img.to(device) for img in images]
         outputs = model(images)
+
         for i, output in enumerate(outputs):
             gt_boxes = targets[i]['boxes'].cpu().numpy()
             gt_labels = targets[i]['labels'].cpu().numpy()
             pred_boxes = output['boxes'].cpu().numpy()
             pred_scores = output['scores'].cpu().numpy()
             pred_labels = output['labels'].cpu().numpy()
+
             mask = pred_scores >= 0.05
             pred_boxes = pred_boxes[mask]
             pred_scores = pred_scores[mask]
             pred_labels = pred_labels[mask]
+
             matched_gt = set()
             matched_pred = set()
+
             for p_idx, (p_box, p_label, p_score) in enumerate(
                 zip(pred_boxes, pred_labels, pred_scores)
             ):
@@ -72,7 +78,9 @@ def evaluate(model, dataloader, device, score_threshold=0.5, iou_threshold=0.5):
                     all_gt_labels.append(int(g_label))
                     all_pred_labels.append(0)
                     all_pred_scores.append(0.0)
+
     return all_gt_labels, all_pred_labels, all_pred_scores
+
 
 def compute_per_class_metrics(gt_labels, pred_labels, num_classes):
     metrics = {}
@@ -93,11 +101,13 @@ def compute_per_class_metrics(gt_labels, pred_labels, num_classes):
         }
     return metrics
 
+
 def compute_confusion_matrix(gt_labels, pred_labels, num_classes):
     cm = np.zeros((num_classes, num_classes), dtype=int)
     for g, p in zip(gt_labels, pred_labels):
         cm[g, p] += 1
     return cm
+
 
 def plot_confusion_matrix(cm, save_path):
     plt.figure(figsize=(8, 7))
@@ -111,6 +121,7 @@ def plot_confusion_matrix(cm, save_path):
     plt.close()
     print(f'Confusion matrix saved to {save_path}')
 
+
 @torch.no_grad()
 def compute_map(model, dataloader, device):
     model.eval()
@@ -119,9 +130,11 @@ def compute_map(model, dataloader, device):
     all_pred_boxes = []
     all_pred_scores = []
     all_pred_labels = []
+
     for images, targets in tqdm(dataloader, desc='Computing mAP'):
         images = [img.to(device) for img in images]
         outputs = model(images)
+
         for i, output in enumerate(outputs):
             all_gt_boxes.append(targets[i]['boxes'].cpu())
             all_gt_labels.append(targets[i]['labels'].cpu())
@@ -135,8 +148,10 @@ def compute_map(model, dataloader, device):
 
     iou_thresholds_50 = [0.5]
     iou_thresholds_95 = [0.5, 0.55, 0.6, 0.65, 0.7, 0.75, 0.8, 0.85, 0.9, 0.95]
+
     aps_50 = []
     aps_95 = []
+
     for cls in range(1, NUM_CLASSES):
         gt_per_img = []
         pred_per_img = []
@@ -145,6 +160,7 @@ def compute_map(model, dataloader, device):
             gt_labels = all_gt_labels[i]
             gt_mask = gt_labels == cls
             gt_per_img.append(gt_boxes[gt_mask])
+
             pred_boxes = all_pred_boxes[i]
             pred_scores = all_pred_scores[i]
             pred_labels = all_pred_labels[i]
@@ -154,6 +170,7 @@ def compute_map(model, dataloader, device):
                 'scores': pred_scores[pred_mask],
                 'labels': pred_labels[pred_mask],
             })
+
         ap50 = _compute_ap(gt_per_img, pred_per_img, iou_thresholds_50)
         ap95 = _compute_ap(gt_per_img, pred_per_img, iou_thresholds_95)
         aps_50.append(ap50)
@@ -164,6 +181,7 @@ def compute_map(model, dataloader, device):
     map50 = float(np.mean(aps_50)) if aps_50 else 0.0
     map5095 = float(np.mean(aps_95)) if aps_95 else 0.0
     return map50, map5095
+
 
 def _compute_ap(gt_per_img, pred_per_img, iou_thresholds):
     all_detections = []
@@ -177,8 +195,10 @@ def _compute_ap(gt_per_img, pred_per_img, iou_thresholds):
             })
     all_detections.sort(key=lambda x: x['score'], reverse=True)
     num_gt = sum(len(g) for g in gt_per_img)
+
     tp = np.zeros(len(all_detections))
     fp = np.zeros(len(all_detections))
+
     for d_idx, det in enumerate(all_detections):
         img_idx = det['img_idx']
         gt_boxes = gt_per_img[img_idx]
@@ -200,15 +220,18 @@ def _compute_ap(gt_per_img, pred_per_img, iou_thresholds):
                 fp[d_idx] = 1
         else:
             fp[d_idx] = 1
+
     tp_cum = np.cumsum(tp)
     fp_cum = np.cumsum(fp)
     rec = tp_cum / num_gt if num_gt > 0 else np.zeros_like(tp_cum)
     prec = tp_cum / np.maximum(tp_cum + fp_cum, 1e-10)
+
     ap = 0.0
     for t in np.arange(0, 1.1, 0.1):
         p = np.max(prec[rec >= t]) if np.any(rec >= t) else 0.0
         ap += p / 11
     return ap
+
 
 def generate_cut_recall_report(gt_labels, pred_labels, dataset, output_dir):
     gt_img_class = {}
@@ -226,13 +249,16 @@ def generate_cut_recall_report(gt_labels, pred_labels, dataset, output_dir):
             gt_img_class[idx] = 'non_tire'
         else:
             gt_img_class[idx] = 'unknown'
+
     bad_indices = [i for i, c in gt_img_class.items() if c == 'bad']
     good_indices = [i for i, c in gt_img_class.items() if c == 'good']
     non_tire_indices = [i for i, c in gt_img_class.items() if c == 'non_tire']
+
     bad_with_cut_detected = 0
     bad_cut_missed = 0
     false_cut_good = 0
     false_cut_non_tire = 0
+
     for idx in bad_indices:
         _, target = dataset[idx]
         detected_cut = False
@@ -244,22 +270,27 @@ def generate_cut_recall_report(gt_labels, pred_labels, dataset, output_dir):
             bad_with_cut_detected += 1
         else:
             bad_cut_missed += 1
+
     for idx in good_indices:
         for g, p in zip(gt_labels, pred_labels):
             if p == 2:
                 false_cut_good += 1
                 break
+
     for idx in non_tire_indices:
         for g, p in zip(gt_labels, pred_labels):
             if p == 2:
                 false_cut_non_tire += 1
                 break
+
     total_bad = len(bad_indices)
     total_good = len(good_indices)
     total_non_tire = len(non_tire_indices)
+
     cut_tp = sum(1 for g, p in zip(gt_labels, pred_labels) if g == 2 and p == 2)
     cut_fp = sum(1 for g, p in zip(gt_labels, pred_labels) if g != 2 and p == 2)
     cut_fn = sum(1 for g, p in zip(gt_labels, pred_labels) if g == 2 and p != 2)
+
     cut_precision = cut_tp / (cut_tp + cut_fp) if (cut_tp + cut_fp) > 0 else 0.0
     cut_recall = cut_tp / (cut_tp + cut_fn) if (cut_tp + cut_fn) > 0 else 0.0
     cut_f1 = 2 * cut_precision * cut_recall / (cut_precision + cut_recall) if (cut_precision + cut_recall) > 0 else 0.0
@@ -328,6 +359,51 @@ def generate_cut_recall_report(gt_labels, pred_labels, dataset, output_dir):
         'cut_fn': cut_fn,
     }
 
+
+def generate_training_summary(per_class_metrics, overall_acc, map50, map5095, cm, cut_report, save_path):
+    md_lines = [
+        '# Training Summary - Wear Detection V2\n',
+        '\n',
+        '## Model\n',
+        '\n',
+        '- **Architecture**: Faster R-CNN with MobileNetV3-Large-FPN\n',
+        '- **Classes**: Tire, Cut, Non-Tire (3 foreground + background)\n',
+        '- **Optimizer**: AdamW\n',
+        '- **Scheduler**: CosineAnnealingLR\n',
+        '\n',
+        '## Overall Metrics\n',
+        '\n',
+        f'- **Overall Accuracy**: {overall_acc:.4f}\n',
+        f'- **mAP50**: {map50:.4f}\n',
+        f'- **mAP50:95**: {map5095:.4f}\n',
+        '\n',
+        '## Per-Class Metrics\n',
+        '\n',
+        '| Class | Precision | Recall | F1 | TP | FP | FN |\n',
+        '|-------|-----------|--------|----|----|----|----|\n',
+    ]
+    for cls_name, m in per_class_metrics.items():
+        md_lines.append(
+            f'| {cls_name} | {m["Precision"]:.4f} | {m["Recall"]:.4f} | '
+            f'{m["F1"]:.4f} | {m["TP"]} | {m["FP"]} | {m["FN"]} |\n'
+        )
+
+    md_lines.append('\n')
+    md_lines.append('## Cut Detection (Primary Metric)\n')
+    md_lines.append('\n')
+    md_lines.append(f'- **Cut Precision**: {cut_report["cut_precision"]:.4f}\n')
+    md_lines.append(f'- **Cut Recall**: {cut_report["cut_recall"]:.4f}\n')
+    md_lines.append(f'- **Cut F1**: {cut_report["cut_f1"]:.4f}\n')
+    md_lines.append(f'- **Total bad tyres**: {cut_report["total_bad"]}\n')
+    md_lines.append(f'- **Bad tyres with cut detected**: {cut_report["bad_with_cut_detected"]}\n')
+    md_lines.append(f'- **Bad tyres where cut missed**: {cut_report["bad_cut_missed"]}\n')
+
+    report = ''.join(md_lines)
+    with open(save_path, 'w') as f:
+        f.write(report)
+    print(f'Training summary saved to {save_path}')
+
+
 def main():
     os.makedirs(OUTPUT_DIR, exist_ok=True)
     print(f'Using device: {DEVICE}')
@@ -384,6 +460,7 @@ def main():
     plot_confusion_matrix(cm, cm_path)
 
     summary_path = os.path.join(OUTPUT_DIR, 'training_summary.md')
+    generate_training_summary(per_class_metrics, overall_acc, 0.0, 0.0, cm, cut_report, summary_path)
 
     print('\n--- Attempting mAP computation (may take a while on CPU) ---')
     try:
@@ -394,12 +471,16 @@ def main():
             json.dump(metrics, f, indent=2)
         print(f'mAP50: {map50:.4f} | mAP50:95: {map5095:.4f}')
         summary_path = os.path.join(OUTPUT_DIR, 'training_summary.md')
+        generate_training_summary(per_class_metrics, overall_acc, map50, map5095, cm, cut_report, summary_path)
     except Exception as e:
         print(f'mAP computation did not finish: {e}')
         print('All other results saved successfully.')
+
     for cls_name, m in per_class_metrics.items():
         print(f'  {cls_name:12s}  P={m["Precision"]:.4f}  R={m["Recall"]:.4f}  F1={m["F1"]:.4f}')
+
     print(f'  Cut Recall: {cut_report["cut_recall"]:.4f} (primary metric)')
+
 
 if __name__ == '__main__':
     main()

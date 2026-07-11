@@ -5,6 +5,7 @@ from collections import Counter
 COCO_PATH = 'datasets/annotated/annotations.coco.json'
 OUTPUT_DIR = 'outputs/wear_detection_v2'
 
+
 def audit():
     os.makedirs(OUTPUT_DIR, exist_ok=True)
 
@@ -46,6 +47,38 @@ def audit():
 
     cut_count = images_tire_cut
 
+    md_lines = [
+        '# Annotation Audit Report\n',
+        '\n',
+        '## Overview\n',
+        '\n',
+        f'- **Total Images**: {total_images}\n',
+        f'- **Total Annotations**: {total_annotations}\n',
+        f'- **Categories (original)**: {cat_map}\n',
+        '\n',
+        '## Annotation Counts (from annotations array)\n',
+        '\n',
+        f'- **Tire annotations**: {tire_count}\n',
+        f'- **Non-Tire annotations**: {non_tire_count}\n',
+        f'- **Cut annotations**: 0 (Cut only exists in user_tags, not as bbox annotations)\n',
+        '\n',
+        '## Image-Level Tag Distribution\n',
+        '\n',
+        f'- **Tire only (Good Tyre)**: {images_tire_only}\n',
+        f'- **Tire + Cut (Bad Tyre)**: {images_tire_cut}\n',
+        f'- **Non-Tire only**: {images_non_tire}\n',
+        f'- **Other**: {images_other}\n',
+        '\n',
+        '## Tag Counts (from user_tags)\n',
+        '\n',
+        f'- **Tire tags**: {images_tire_only + images_tire_cut}\n',
+        f'- **Cut tags**: {cut_count}\n',
+        f'- **Non-Tire tags**: {images_non_tire}\n',
+        '\n',
+        '## Consistency Check\n',
+        '\n',
+    ]
+
     tag_total = images_tire_only + images_tire_cut + images_non_tire + images_other
     md_lines.append(f'- Tag total matches image count: {tag_total == total_images}\n')
 
@@ -55,6 +88,24 @@ def audit():
     bad_annotation_count = sum(
         1 for img in coco['images']
         if sorted(img.get('extra', {}).get('user_tags', [])) == ['Cut', 'Tire']
+    )
+    md_lines.append(f'- Bad tyre images (Tire+Cut tags): {bad_annotation_count}\n')
+    md_lines.append(
+        '- Note: Bad tyre images have only Tire bbox annotations. '
+        'No Cut bbox annotations exist.\n'
+    )
+    md_lines.append(
+        '- A Cut annotation must be synthesised for each bad tyre image '
+        'using the existing Tire bbox.\n'
+    )
+    md_lines.append('\n')
+    md_lines.append('## Conclusion\n')
+    md_lines.append('\n')
+    md_lines.append(
+        'The dataset has 2,014 images with exactly one annotation each. '
+        'Good tyres have Tire annotations, bad tyres have Tire annotations '
+        '(with Cut tags only at image level), and non-tyres have Non-Tire annotations. '
+        'For V2 training, Cut annotations will be created from bad tyre images.\n'
     )
 
     report = ''.join(md_lines)
@@ -68,6 +119,7 @@ def audit():
     print(f'  Tire only: {images_tire_only}')
     print(f'  Tire + Cut: {images_tire_cut}')
     print(f'  Non-Tire: {images_non_tire}')
+
 
 if __name__ == '__main__':
     audit()
