@@ -6,3 +6,4 @@ __pycache__/
 /datasets/negative/
 /datasets/colab_gatekeeper_dataset/
 /datasets/colab_gatekeeper_dataset_v3_full/
+/datasets/demo_datasets/
